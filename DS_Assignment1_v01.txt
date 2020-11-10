@@ -1,0 +1,64 @@
+#load data
+regression_train_loan <- read.csv("~/School/S04/02 Data Science/.Assignment/regression_train_loan.csv")
+
+#attach data
+attach(regression_train_loan)
+
+#view data
+View(regression_train_loan)
+
+#count rows
+nrows <- nrow(regression_train_loan)
+
+#count NA values
+na_count <- colSums((is.na(regression_train_loan)))
+print(na_count)
+
+#count blank values
+nonblank_count <- colSums(regression_train_loan != "")
+blank_count <- nrows - nonblank_count
+
+#percentage of NA values
+na_count_perc <- round((na_count / nrows)*100,digits = 0)
+
+#percentage of BLANK values
+blank_count_perc <- round((blank_count / nrows)*100,digits = 0)
+
+#identify columns with more than 70% NA
+na_count_perc70 <- subset(na_count_perc, na_count_perc > 70)
+print(na_count_perc70)
+
+#identify columns with more than 70% BLANK
+blank_count_perc70 <- subset(blank_count, blank_count_perc > 70)
+print(blank_count_perc70)
+
+#remove all columns with more than 70% NA
+library(dplyr)
+regression_train_loan_reduced1 <- select(regression_train_loan, select = -mths_since_last_record, -dti_joint, -open_il_12m, -total_bal_il, -open_rv_24m, -inq_fi, -mths_since_last_major_derog, -open_acc_6m, -open_il_24m, -il_util, -max_bal_bc, -total_cu_tl, -annual_inc_joint, -open_il_6m, -mths_since_rcnt_il, -open_rv_12m, -all_util, -inq_last_12m)
+
+#remove all columns with more than 70% BLANK
+regression_train_loan_reduced2 <- select(.regression_train_loan_reduced1, select = -desc, -verification_status_joint)
+
+#remove the ID columns as we won't need it and it might interfere with algorithms
+regression_train_loan_reduced3 <- select(.regression_train_loan_reduced2, select = -id, -X)
+
+#visualisation of data features by type
+
+data_types <- function(regression_train_loan_reduced3) 
+{
+  res <- lapply(regression_train_loan_reduced3, class)
+  res_frame <- data.frame(unlist(res))
+  barplot(table(res_frame), main="Data Types", col="steelblue", ylab="Number of Features")
+}
+
+data_types(regression_train_loan_reduced3)
+
+#Assess the columns in more detail
+str(regression_train_loan_reduced3)
+
+#As we observe many "character" data type columns, we want to know how many categories we are dealing with
+lengths(lapply(regression_train_loan_reduced3,unique))  
+
+#We will drop "url" as it contains many unique values and therefore would not contribute to a predictive model
+regression_train_loan_reduced4 <- select(.regression_train_loan_reduced3, select = -url)
+
