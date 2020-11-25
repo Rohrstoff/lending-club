@@ -1,0 +1,79 @@
+******************************************************
+SIDENOTE
+
+We also see that variables mths_since_last_delinq, mths_since_last_record, mths_since_last_major_derog, dti_joint and annual_inc_joint have a large share of NA values. 
+If we think about this in more detail, it may be reasonable to assume that NA values for the variables 
+mths_since_last_delinq, mths_since_last_record and mths_since_last_major_derog actually indicate that there was no event/record of any missed payment 
+so there cannot be any time value. 
+Analogously, a missing value for annual_inc_joint and dti_joint may simply indicate that it is a single borrower or the partner has no income. 
+Thus, the first three variables actually carry valuable information that may be lost if we ignored it. 
+We will thus replace the missing values with zeros to make them available for modeling. 
+It should be noted though that a zero time could indicate an event that is just happening so we have to document our assumptions carefully.
+******************************************************
+# define used libraries
+libraries_used <- 
+  c("lazyeval", "readr","plyr" ,"dplyr", "readxl", "ggplot2", 
+    "funModeling", "scales", "tidyverse", "corrplot", "GGally", "caret",
+    "rpart", "randomForest", "pROC", "gbm", "choroplethr", "choroplethrMaps",
+    "microbenchmark", "doParallel", "e1071")
+
+# check missing libraries
+libraries_missing <- 
+  libraries_used[!(libraries_used %in% installed.packages()[,"Package"])]
+# install missing libraries
+if(length(libraries_missing)) install.packages(libraries_missing)
+
+library(dplyr)
+
+#load dataset
+df <- read.csv("regression_train_loan.csv")
+
+#get meta information
+meta_df <- funModeling::df_status( df, print_results = FALSE )
+
+knitr::kable(meta_df)
+
+#get amount and percentage of unique and output the table
+meta_df_p <- meta_df %>% mutate(uniq_rat = unique / nrow(df))
+meta_df_p %>% select(variable, unique, uniq_rat) %>% mutate(unique = unique, uniq_rat = scales::percent(uniq_rat)) %>% knitr::kable()
+
+#convert date attributes
+chr_to_date_vars <-  c("issue_d", "last_pymnt_d", "last_credit_pull_d", "next_pymnt_d", "earliest_cr_line", "next_pymnt_d")
+convert_date <- function(x){
+  as.Date(paste0("01-", x), format = "%d-%b-%Y")
+}
+
+df <- df %>% mutate_at(.funs = funs(convert_date), .vars = chr_to_date_vars)
+
+#output a table with amount of unique, N/A, and zero values
+meta_df %>%
+  select(variable, p_zeros, p_na, unique) %>%
+  knitr::kable()
+
+#recreate meta table
+meta_df <- funModeling::df_status( df, print_results = FALSE )
+
+#set vars from N/A to zero
+na_to_zero_vars <- c("mths_since_last_delinq", "mths_since_last_record", "mths_since_last_major_derog")
+
+df <- df %>% mutate_at(.vars = na_to_zero_vars, .funs = funs(replace(., is.na(.), 0)))
+
+#remove columns deemed unfit for modeling
+vars_to_remove <- c("annual_inc_joint", "dti_joint", "policy_code", "id", "member_id",
+    "emp_title", "url", "desc", "title", "open_acc_6m", "open_il_6m", 
+    "open_il_12m", "open_il_24m", "mths_since_rcnt_il", "total_bal_il", 
+    "il_util", "open_rv_12m", "open_rv_24m", "max_bal_bc", "all_util",
+    "total_rev_hi_lim", "inq_fi", "total_cu_tl", "inq_last_12m",
+    "verification_status_joint", "next_pymnt_d", "sub_grade", "X")
+
+df_clean <- df %>% select(-one_of(vars_to_remove))
+
+#set the seed for reproductionability
+set.seed(1)
+
+#set the training and test data (80% train, 20% test)
+train_index <- caret::createDataPartition(y = df_clean$int_rate, times = 1, p = .8, list = FALSE)
+
+train <- df_clean[train_index, ]
+test <- df_clean[-train_index, ]
+ 
