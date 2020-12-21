@@ -94,6 +94,46 @@ train <- df_clean[train_index, ]
 test <- df_clean[-train_index, ]
 ```
 
+Output numerical vars
+```{r}
+num_vars <- 
+  train %>% 
+  sapply(is.numeric) %>% 
+  which() %>% 
+  names()
+
+meta_train <- funModeling::df_status(train, print_results = FALSE)
+
+meta_train %>%
+  select(variable, p_zeros, p_na, unique) %>%
+  filter_(~ variable %in% num_vars) %>%
+  knitr::kable()
+
+```
+
+Correlation plot
+```{r}
+library(corrplot)
+corrplot::corrplot(cor(train[, num_vars], use = "complete.obs"), 
+                   method = "pie", type = "upper")
+```
+Display highly correlated variables
+```{r}
+caret::findCorrelation(cor(train[, num_vars], use = "complete.obs"), 
+                       names = TRUE, cutoff = .5)
+```
+Remove highly correlated variables
+```{r}
+vars_to_remove <- 
+  c("loan_amnt", "funded_amnt", "funded_amnt_inv", "installment",
+    "total_pymnt_inv", "total_rec_prncp", "mths_since_last_delinq", 
+    "out_prncp", "total_pymnt", "total_rec_int", "total_acc",
+    "mths_since_last_record", "recoveries")
+
+train <- train %>% select(-one_of(vars_to_remove))
+
+```
+
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
 
