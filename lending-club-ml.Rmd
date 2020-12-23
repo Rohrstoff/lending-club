@@ -76,7 +76,7 @@ vars_to_remove <- c("annual_inc_joint", "dti_joint", "policy_code", "id", "membe
                     "open_il_12m", "open_il_24m", "mths_since_rcnt_il", "total_bal_il", 
                     "il_util", "open_rv_12m", "open_rv_24m", "max_bal_bc", "all_util",
                     "total_rev_hi_lim", "inq_fi", "total_cu_tl", "inq_last_12m",
-                    "verification_status_joint", "next_pymnt_d", "sub_grade", "X")
+                    "verification_status_joint", "next_pymnt_d", "sub_grade", "X", "zip_code")
 
 df_clean <- df %>% select(-one_of(vars_to_remove))
 ```
@@ -132,6 +132,42 @@ vars_to_remove <-
 
 train <- train %>% select(-one_of(vars_to_remove))
 
+```
+
+Set proper names for variables
+```{r}
+vars_to_mutate <-
+  train %>%
+  select(which(sapply(.,is.character))) %>%
+  names()
+
+vars_to_mutate
+
+test <-
+  test %>%
+  mutate_at(.funs = make.names, .vars = vars_to_mutate)
+```
+use caret library
+```{r}
+library(caret)
+```
+
+Create model
+```{r}
+attach(test)
+
+fitControl <- trainControl(## 10-fold CV
+                           method = "repeatedcv",
+                           number = 10,
+                           ## repeated ten times
+                           repeats = 10)
+
+model_logreg <- train(int_rate ~ . ,data = train, 
+                 method = "bayesglm",
+                 trControl = fitControl,
+                 na.action=na.exclude)
+
+class(model_logreg)
 ```
 
 
