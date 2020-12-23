@@ -29,6 +29,12 @@ load dataset
 df <- read.csv("regression_train_loan.csv")
 ```
 
+get unique values of loan_status
+```{r}
+unique( df$loan_status )
+```
+
+
 get meta information and output it
 ```{r}
 meta_df <- funModeling::df_status( df, print_results = FALSE )
