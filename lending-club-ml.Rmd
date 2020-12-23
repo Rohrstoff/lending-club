@@ -15,7 +15,7 @@ libraries_used <- c("lazyeval", "readr","plyr" ,"dplyr", "readxl", "ggplot2",
 check missing libraries and install them
 
 ```{r}
-libraries_used[!(libraries_used %in% installed.packages()[,"Package"])]
+libraries_missing <- libraries_used[!(libraries_used %in% installed.packages()[,"Package"])]
 if(length(libraries_missing)) install.packages(libraries_missing)
 ```
 
@@ -162,7 +162,7 @@ fitControl <- trainControl(## 10-fold CV
                            ## repeated ten times
                            repeats = 10)
 
-model_logreg <- train(int_rate ~ . ,data = train, 
+model_logreg <- train(int_rate ~ ., data = train, 
                  method = "bayesglm",
                  trControl = fitControl,
                  na.action=na.exclude)
