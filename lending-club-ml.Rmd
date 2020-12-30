@@ -4,7 +4,6 @@ output: html_notebook
 ---
 
 define used libraries
-
 ```{r}
 libraries_used <- c("lazyeval", "readr","plyr" ,"dplyr", "readxl", "ggplot2", 
     "funModeling", "scales", "tidyverse", "corrplot", "GGally", "caret",
@@ -75,7 +74,7 @@ na_to_zero_vars <- c("mths_since_last_delinq", "mths_since_last_record", "mths_s
 df <- df %>% mutate_at(.vars = na_to_zero_vars, .funs = funs(replace(., is.na(.), 0)))
 ```
 
-remove columns deemed unfit for modeling
+remove columns deemed unfit for modeling. All columns with more than 70% missing values are deemed to be unhelpful in modelling and exploration.
 ```{r}
 vars_to_remove <- c("annual_inc_joint", "dti_joint", "policy_code", "id", "member_id",
                     "emp_title", "url", "desc", "title", "open_acc_6m", "open_il_6m", 
@@ -117,24 +116,24 @@ meta_train %>%
 
 ```
 
-Correlation plot
+Correlation plot. First step to get an overview of potential collinearities. Failing to identify multicollinearity could result in misleading interpretations of the results.
 ```{r}
 library(corrplot)
 corrplot::corrplot(cor(train[, num_vars], use = "complete.obs"), 
-                   method = "pie", type = "upper")
+                   method = "pie", type = "upper",tl.cex = 0.45)
 ```
-Display highly correlated variables
+Display highly correlated variables. We want to identify collinearities which could affect our regression model. A Cut-off at 0.8 is applied as suggest by Berry & Feldman, 1985: Multiple Regression in Practice (Quantitative Applications in the Social Sciences)
+
 ```{r}
 caret::findCorrelation(cor(train[, num_vars], use = "complete.obs"), 
-                       names = TRUE, cutoff = .5)
+                       names = TRUE, cutoff = .8)
 ```
-Remove highly correlated variables
+
+Remove highly correlated variables to avoid the interference of collinearity in our model.  Multicollinearity arises when at least two highly correlated predictors are assessed simultaneously in a regression model.
 ```{r}
 vars_to_remove <- 
   c("loan_amnt", "funded_amnt", "funded_amnt_inv", "installment",
-    "total_pymnt_inv", "total_rec_prncp", "mths_since_last_delinq", 
-    "out_prncp", "total_pymnt", "total_rec_int", "total_acc",
-    "mths_since_last_record", "recoveries")
+    "total_pymnt_inv", "out_prncp", "collection_recovery_fee")
 
 train <- train %>% select(-one_of(vars_to_remove))
 
@@ -158,7 +157,9 @@ use caret library
 library(caret)
 ```
 
-Create model
+Assignment 1: Regression Model for predicting int_rate.
+
+Create model for a logistic regression
 ```{r}
 attach(test)
 
@@ -174,6 +175,45 @@ model_logreg <- train(int_rate ~ ., data = train,
                  na.action=na.exclude)
 
 class(model_logreg)
+
+summary (model_logreg)
+```
+
+
+Interpret Model performance using ROC
+```{r}
+library(pROC)
+
+roc_model_logreg <- pROC::roc(response = int_rate, predictor = model_logreg)
+roc_model_logreg
+
+pROC::plot.roc(x = roc_model_logreg, legacy.axes = FALSE, xlim = c(1, 0), asp = NA,
+               col = "green", print.auc = FALSE, print.auc.y = .4)
+
+legend(x = "bottomright", col = c("green"), lty = 1, cex = 1.0)
+```
+
+Assignment 2 : Provide a classification model for the default status of customers using neuronal
+networks
+
+https://blogs.rstudio.com/ai/posts/2018-01-11-keras-customer-churn/
+
+```{r}
+# Load libraries
+library(keras)
+library(lime)
+library(tidyquant)
+library(rsample)
+library(recipes)
+library(yardstick)
+library(corrr)
+```
+
+```{r}
+# Split test/training sets
+set.seed(100)
+train_test_split <- initial_split(churn_data_tbl, prop = 0.8)
+train_test_split
 ```
 
 
