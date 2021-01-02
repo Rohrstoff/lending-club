@@ -1,0 +1,262 @@
+---
+title: "Lending Club Neural Network"
+output: html_notebook
+---
+
+Install and Load Libraries
+
+```{r}
+libraries_used <- c("keras", "lime", "tidyquant", "rsample", "recipes", "yardstick", "corrr")
+
+libraries_missing <- libraries_used[!(libraries_used %in% installed.packages()[,"Package"])]
+if(length(libraries_missing)) install.packages(libraries_missing)
+
+# Load libraries
+library(keras)
+library(lime)
+library(tidyquant)
+library(rsample)
+library(recipes)
+library(yardstick)
+library(corrr)
+library(caret)
+
+set.seed(1)
+```
+
+load dataset
+```{r}
+dataframe <- read.csv("regression_train_loan.csv")
+```
+
+get meta information and output it
+```{r}
+meta_df <- funModeling::df_status( dataframe, print_results = FALSE )
+
+knitr::kable(meta_df)
+```
+get amount and percentage of unique and output the table
+```{r}
+meta_df_percent <- meta_df %>% mutate(uniq_rat = unique / nrow(dataframe))
+meta_df_percent %>% select(variable, unique, uniq_rat) %>% mutate(unique = unique, uniq_rat = scales::percent(uniq_rat)) %>% knitr::kable()
+```
+
+output a table with amount of unique, N/A, and zero values
+```{r}
+meta_df %>% select(variable, p_zeros, p_na, unique) %>% knitr::kable()
+```
+
+remove columns deemed unfit for modeling
+```{r}
+vars_to_remove <- c("annual_inc_joint", "dti_joint", "policy_code", "id", "member_id",
+                    "emp_title", "url", "desc", "title", "open_acc_6m", "open_il_6m", 
+                    "open_il_12m", "open_il_24m", "mths_since_rcnt_il", "total_bal_il", 
+                    "il_util", "open_rv_12m", "open_rv_24m", "max_bal_bc", "all_util",
+                    "total_rev_hi_lim", "inq_fi", "total_cu_tl", "inq_last_12m",
+                    "verification_status_joint", "next_pymnt_d", "sub_grade", "X", "zip_code")
+
+dataframe <- dataframe %>% select(-one_of(vars_to_remove))
+```
+
+convert date attributes
+```{r}
+chr_to_date_vars <-  c("issue_d", "last_pymnt_d", "last_credit_pull_d", "earliest_cr_line")
+convert_date <- function(x){
+  as.Date(paste0("01-", x), format = "%d-%b-%Y")
+}
+
+dataframe <- dataframe %>% mutate_at(.funs = list(convert_date), .vars = chr_to_date_vars)
+```
+
+Output numerical vars
+```{r}
+num_vars <- 
+  dataframe %>% 
+  sapply(is.numeric) %>% 
+  which() %>% 
+  names()
+
+meta_df <- funModeling::df_status(dataframe, print_results = FALSE) %>%
+  select(variable, p_zeros, p_na, unique) %>%
+  filter_(~ variable %in% num_vars) %>%
+  knitr::kable()
+
+```
+
+Correlation plot. First step to get an overview of potential collinearities. Failing to identify multicollinearity could result in misleading interpretations of the results.
+```{r}
+corrplot::corrplot(cor(dataframe[, num_vars], use = "complete.obs"), 
+                   method = "pie", type = "upper",tl.cex = 0.45)
+```
+```{r}
+meta_df <- funModeling::df_status( dataframe, print_results = FALSE )
+meta_df %>% select(variable, p_zeros, p_na, unique) %>% knitr::kable()
+```
+
+Display highly correlated variables. We want to identify collinearities which could affect our regression model. A Cut-off at 0.8 is applied as suggest by Berry & Feldman, 1985: Multiple Regression in Practice (Quantitative Applications in the Social Sciences)
+
+```{r}
+caret::findCorrelation(cor(dataframe[, num_vars], use = "complete.obs"), names = TRUE, cutoff = .8)
+```
+
+Remove highly correlated variables to avoid the interference of collinearity in our model.  Multicollinearity arises when at least two highly correlated predictors are assessed simultaneously in a regression model.
+```{r}
+vars_to_remove <- 
+  c("loan_amnt", "funded_amnt", "funded_amnt_inv", "total_pymnt",
+    "total_pymnt_inv", "out_prncp", "collection_recovery_fee")
+
+dataframe <- dataframe %>% select(-one_of(vars_to_remove))
+
+```
+
+recreate meta table
+```{r}
+meta_df <- funModeling::df_status( dataframe, print_results = FALSE )
+meta_df %>% select(variable, p_zeros, p_na, unique) %>% knitr::kable()
+```
+
+set vars from N/A to zero
+```{r}
+na_to_zero_vars <- c("mths_since_last_delinq", "mths_since_last_record", "mths_since_last_major_derog")
+
+dataframe <- dataframe %>% mutate_at(.vars = na_to_zero_vars, .funs = funs(replace(., is.na(.), 0)))
+```
+
+set vars from N/A to -99
+```{r}
+na_to_negative_ninety_nine <- c("revol_util", "collections_12_mths_ex_med", "tot_coll_amt", "tot_cur_bal")
+
+dataframe <- dataframe %>% mutate_at(.vars = na_to_negative_ninety_nine, .funs = funs(replace(., is.na(.), -99)))
+```
+
+Remove rows where date columns contain N/A values
+```{r}
+dataframe <- dataframe[complete.cases(dataframe), ]
+```
+
+Remove all rows where loan status is "Current" + rename all loan_status fields where the value is not "Fully Paid"
+```{r}
+dataframe <- subset(dataframe, loan_status != "Current") 
+dataframe$loan_status[dataframe$loan_status != "Fully Paid"] <- "DEFAULTED"
+
+```
+
+```{r}
+unique(dataframe$emp_length)
+```
+
+
+Convert "term" column to number
+```{r}
+dataframe$term <- as.numeric(gsub( ".*([0-9]+).*", "\\1", dataframe$term ))
+```
+
+Convert "emp_length" to numeric values
+```{r}
+dataframe$emp_length[dataframe$emp_length == "n/a"] <- 99
+dataframe$emp_length[dataframe$emp_length == "< 1 year"] <- 0
+dataframe$emp_length <- as.numeric(gsub( "([0-9]+).*", "\\1", dataframe$emp_length ))
+```
+
+```{r}
+glimpse(dataframe)
+```
+
+set the training and test data (80% train, 20% test)
+```{r}
+train_test_split <- initial_split(dataframe, prop = 0.8)
+
+train_tbl <- training(train_test_split)
+test_tbl  <- testing(train_test_split) 
+```
+
+```{r}
+recipe_obj <- recipe( loan_status ~ ., data = train_tbl ) %>% 
+  step_date( has_type( match = "date" ) ) %>%
+  step_rm( has_type( match = "date" ) ) %>%
+  #step_discretize( emp_length, options = list(cuts = 12) ) %>%
+  #step_log( all_numeric() ) %>%
+  step_dummy( all_nominal(), -all_outcomes() ) %>%
+  step_normalize( all_numeric(), -all_outcomes() ) %>%
+  step_scale( all_numeric(), -all_outcomes() ) %>%
+  prep()
+```
+
+
+```{r}
+x_train_tbl <- bake(recipe_obj, new_data = train_tbl) %>% select(-loan_status)
+x_test_tbl <- bake(recipe_obj, new_data = test_tbl) %>% select(-loan_status)
+
+glimpse(x_train_tbl)
+```
+
+```{r}
+y_train_vec <- ifelse(pull(train_tbl, loan_status) == "DEFAULTED", 1, 0)
+y_test_vec  <- ifelse(pull(test_tbl, loan_status) == "DEFAULTED", 1, 0)
+```
+
+```{r}
+# Building our Artificial Neural Network
+model_keras <- keras_model_sequential() %>% 
+  
+  # First hidden layer
+  layer_dense(
+    units              = 16, 
+    kernel_initializer = "uniform", 
+    activation         = "relu", 
+    input_shape        = ncol(x_train_tbl)) %>% 
+  
+  # Dropout to prevent overfitting
+  layer_dropout(rate = 0.1) %>%
+  
+  # Second hidden layer
+  layer_dense(
+    units              = 16, 
+    kernel_initializer = "uniform", 
+    activation         = "relu") %>% 
+  
+  # Dropout to prevent overfitting
+  layer_dropout(rate = 0.1) %>%
+  
+  # Output layer
+  layer_dense(
+    units              = 1, 
+    kernel_initializer = "uniform", 
+    activation         = "sigmoid") %>% 
+  
+  # Compile ANN
+  compile(
+    optimizer = 'adam',
+    loss      = 'binary_crossentropy',
+    metrics   = c('accuracy')
+  )
+
+model_keras 
+```
+
+
+```{r}
+# Fit the keras model to the training data
+history <- fit(
+  object           = model_keras, 
+  x                = as.matrix(x_train_tbl), 
+  y                = y_train_vec,
+  batch_size       = 50, 
+  epochs           = 35,
+  validation_split = 0.30
+)
+
+print(history)
+```
+
+```{r}
+plot(history) 
+```
+
+
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.

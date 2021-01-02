@@ -193,29 +193,6 @@ pROC::plot.roc(x = roc_model_logreg, legacy.axes = FALSE, xlim = c(1, 0), asp = 
 legend(x = "bottomright", col = c("green"), lty = 1, cex = 1.0)
 ```
 
-Assignment 2 : Provide a classification model for the default status of customers using neuronal
-networks
-
-https://blogs.rstudio.com/ai/posts/2018-01-11-keras-customer-churn/
-
-```{r}
-# Load libraries
-library(keras)
-library(lime)
-library(tidyquant)
-library(rsample)
-library(recipes)
-library(yardstick)
-library(corrr)
-```
-
-```{r}
-# Split test/training sets
-set.seed(100)
-train_test_split <- initial_split(churn_data_tbl, prop = 0.8)
-train_test_split
-```
-
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
 
