@@ -122,7 +122,7 @@ library(corrplot)
 corrplot::corrplot(cor(train[, num_vars], use = "complete.obs"), 
                    method = "pie", type = "upper",tl.cex = 0.45)
 ```
-Display highly correlated variables. We want to identify collinearities which could affect our regression model. A Cut-off at 0.8 is applied as suggest by Berry & Feldman, 1985: Multiple Regression in Practice (Quantitative Applications in the Social Sciences)
+Display highly correlated variables. We want to identify collinearities which could affect our regression model. A Cut-off at 0.8 is applied as suggested by Berry & Feldman, 1985: Multiple Regression in Practice (Quantitative Applications in the Social Sciences)
 
 ```{r}
 caret::findCorrelation(cor(train[, num_vars], use = "complete.obs"), 
@@ -178,6 +178,29 @@ class(model_logreg)
 
 summary (model_logreg)
 ```
+
+Train multiple linear regression model
+```{r}
+model_lm <- train(int_rate ~ ., data = train, 
+                 method = "lm",
+                 trControl = fitControl,
+                 na.action=na.exclude)
+
+class(model_lm)
+
+summary (model_lm)
+```
+
+
+```{r}
+model_logreg_pred_1 <- 
+  predict.glm(object = model_logreg, newdata = test, type = "response")
+model_pred_t <- function(pred, t) ifelse(pred > t, TRUE, FALSE)
+caret::confusionMatrix(data = model_pred_t(model_logreg_pred_1, 0.5), 
+                       reference = test$default,
+                       positive = "TRUE")
+```
+
 
 
 Interpret Model performance using ROC
