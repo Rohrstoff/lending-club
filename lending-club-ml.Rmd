@@ -120,20 +120,21 @@ Correlation plot. First step to get an overview of potential collinearities. Fai
 ```{r}
 library(corrplot)
 corrplot::corrplot(cor(train[, num_vars], use = "complete.obs"), 
-                   method = "pie", type = "upper",tl.cex = 0.45)
+                   method = "pie", type = "upper",tl.cex = 0.65)
 ```
-Display highly correlated variables. We want to identify collinearities which could affect our regression model. A Cut-off at 0.8 is applied as suggested by Berry & Feldman, 1985: Multiple Regression in Practice (Quantitative Applications in the Social Sciences)
+Display highly correlated variables. We want to identify collinearities which could affect our regression model. A Cut-off at 0.5 is applied.
 
 ```{r}
 caret::findCorrelation(cor(train[, num_vars], use = "complete.obs"), 
-                       names = TRUE, cutoff = .8)
+                       names = TRUE, cutoff = .5)
 ```
 
 Remove highly correlated variables to avoid the interference of collinearity in our model.  Multicollinearity arises when at least two highly correlated predictors are assessed simultaneously in a regression model.
 ```{r}
 vars_to_remove <- 
-  c("loan_amnt", "funded_amnt", "funded_amnt_inv", "installment",
-    "total_pymnt_inv", "out_prncp", "collection_recovery_fee")
+  c("loan_amnt", "funded_amnt", "funded_amnt_inv", "installment", "total_pymnt_inv", 
+    "out_prncp", "collection_recovery_fee", "total_pymnt", "total_rec_prncp", "out_prncp", "total_acc",
+    "mths_since_last_record",  "mths_since_last_major_derog", "recoveries")
 
 train <- train %>% select(-one_of(vars_to_remove))
 
@@ -152,36 +153,43 @@ test <-
   test %>%
   mutate_at(.funs = make.names, .vars = vars_to_mutate)
 ```
+
+Assignment 1: Regression Model for predicting int_rate.
+
 use caret library
 ```{r}
 library(caret)
 ```
 
-Assignment 1: Regression Model for predicting int_rate.
-
-Create model for a logistic regression
+Remove near-zero variance predictors. These predictors can interfere with our model training using cross-validations. We want to remove variables with a high frequency ratio and a high percentage of unique values.
 ```{r}
-attach(test)
+nzv <- nearZeroVar(train, saveMetrics= TRUE)
+nzv[nzv$nzv,][1:12,]
+
+dim(test)
+
+nzv <- nearZeroVar(train)
+train_filtered <- train[, -nzv]
+dim(train_filtered)
+
+
+```
+
+Define the resampling method for model training. We will apply a 10-time cross validation for our regression models. 
+```{r}
 
 fitControl <- trainControl(## 10-fold CV
                            method = "repeatedcv",
-                           number = 10,
+                           number = 2,
                            ## repeated ten times
-                           repeats = 10)
-
-model_logreg <- train(int_rate ~ ., data = train, 
-                 method = "bayesglm",
-                 trControl = fitControl,
-                 na.action=na.exclude)
-
-class(model_logreg)
-
-summary (model_logreg)
+                           repeats = 2)
 ```
 
-Train multiple linear regression model
+Train multiple linear regression model with cross-validation
 ```{r}
-model_lm <- train(int_rate ~ ., data = train, 
+
+
+model_lm <- train(int_rate ~ ., data = train_filtered, 
                  method = "lm",
                  trControl = fitControl,
                  na.action=na.exclude)
@@ -190,13 +198,24 @@ class(model_lm)
 
 summary (model_lm)
 ```
+Train multiple linear regression model with lasso cross-validation
+```{r}
+model_lm_lasso <- train(int_rate ~ ., data = train_filtered, 
+                 method = "lasso",
+                 trControl = fitControl,
+                 na.action=na.exclude)
+
+class(model_lm)
+
+summary (model_lm_lasso)
+```
 
 
 ```{r}
-model_logreg_pred_1 <- 
-  predict.glm(object = model_logreg, newdata = test, type = "response")
+model_lm_pred_1 <- 
+  predict.lm(object = model_lm, newdata = test, type = "response")
 model_pred_t <- function(pred, t) ifelse(pred > t, TRUE, FALSE)
-caret::confusionMatrix(data = model_pred_t(model_logreg_pred_1, 0.5), 
+caret::confusionMatrix(data = model_pred_t(model_lm, 0.5), 
                        reference = test$default,
                        positive = "TRUE")
 ```
@@ -207,10 +226,10 @@ Interpret Model performance using ROC
 ```{r}
 library(pROC)
 
-roc_model_logreg <- pROC::roc(response = int_rate, predictor = model_logreg)
-roc_model_logreg
+roc_model_lm <- pROC::roc(response = int_rate, predictor = model_lm)
+roc_model_lm
 
-pROC::plot.roc(x = roc_model_logreg, legacy.axes = FALSE, xlim = c(1, 0), asp = NA,
+pROC::plot.roc(x = roc_model_lm, legacy.axes = FALSE, xlim = c(1, 0), asp = NA,
                col = "green", print.auc = FALSE, print.auc.y = .4)
 
 legend(x = "bottomright", col = c("green"), lty = 1, cex = 1.0)
