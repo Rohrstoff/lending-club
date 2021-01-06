@@ -3,6 +3,22 @@ title: "Lending Club Neural Network"
 output: html_notebook
 ---
 
+Prepare the correct language settings for the R-Environment. E.g. german console output may lead to issues. Default should be english.
+
+```{r}
+
+Sys.setlocale("LC_ALL","English")
+Sys.setenv(LANG = "en_US.UTF-8")
+Sys.setlocale("LC_MESSAGES", 'en_GB.UTF-8')
+
+## Check if the settings are correct. It should look like:
+## [1] "LC_COLLATE=English_United States.1252;LC_CTYPE=English_United States.1252;LC_MONETARY=English_United States.1252;LC_NUMERIC=C;LC_TIME=English_United States.1252"
+Sys.getlocale()
+
+
+```
+
+
 Install and Load Libraries
 
 ```{r}
