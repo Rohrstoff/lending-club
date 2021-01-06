@@ -99,9 +99,9 @@ vars_to_remove <- c("annual_inc_joint", "dti_joint", "policy_code", "id", "membe
 df_clean <- df %>% select(-one_of(vars_to_remove))
 ```
 
-set the seed for reproductionability
+Convert "term" column to number
 ```{r}
-set.seed(1)
+df_clean <- as.numeric(gsub( ".*([0-9]+).*", "\\1", df_clean ))
 ```
 
 set the training and test data (80% train, 20% test)
