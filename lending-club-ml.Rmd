@@ -56,6 +56,18 @@ convert_date <- function(x){
 
 df <- df %>% mutate_at(.funs = funs(convert_date), .vars = chr_to_date_vars)
 ```
+convert character to numeric
+
+```{r}
+chr_to_num_vars <- 
+  c("annual_inc_joint", "mths_since_last_major_derog", "open_acc_6m",
+    "open_il_6m", "open_il_12m", "open_il_24m", "mths_since_rcnt_il",
+    "total_bal_il", "il_util", "open_rv_12m", "open_rv_24m",
+    "max_bal_bc", "all_util", "total_rev_hi_lim", "total_cu_tl",
+    "inq_last_12m", "dti_joint", "inq_fi", "tot_cur_bal", "tot_coll_amt", "int_rate")
+
+df <- df %>%  mutate_at(.funs = funs(as.numeric), .vars = chr_to_num_vars)
+```
 
 output a table with amount of unique, N/A, and zero values
 ```{r}
@@ -179,10 +191,8 @@ Define the resampling method for model training. We will apply a 10-time cross v
 ```{r}
 
 fitControl <- trainControl(## 10-fold CV
-                           method = "repeatedcv",
-                           number = 2,
-                           ## repeated ten times
-                           repeats = 2)
+                           method = "cv",
+                           number = 5)
 ```
 
 Train multiple linear regression model with cross-validation
@@ -205,7 +215,7 @@ model_lm_lasso <- train(int_rate ~ ., data = train_filtered,
                  trControl = fitControl,
                  na.action=na.exclude)
 
-class(model_lm)
+class(model_lm_lasso)
 
 summary (model_lm_lasso)
 ```
@@ -226,7 +236,7 @@ Interpret Model performance using ROC
 ```{r}
 library(pROC)
 
-roc_model_lm <- pROC::roc(response = int_rate, predictor = model_lm)
+roc_model_lm <- pROC::roc(response = test$int_rate, predictor = model_lm)
 roc_model_lm
 
 pROC::plot.roc(x = roc_model_lm, legacy.axes = FALSE, xlim = c(1, 0), asp = NA,
