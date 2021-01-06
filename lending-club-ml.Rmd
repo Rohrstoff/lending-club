@@ -101,7 +101,14 @@ df_clean <- df %>% select(-one_of(vars_to_remove))
 
 Convert "term" column to number
 ```{r}
-df_clean <- as.numeric(gsub( ".*([0-9]+).*", "\\1", df_clean ))
+df_clean$term <- as.numeric(gsub( ".*([0-9]+).*", "\\1", df_clean$term ))
+```
+
+Convert "emp_length" to numeric values
+```{r}
+dataframe$emp_length[dataframe$emp_length == "n/a"] <- 99
+dataframe$emp_length[dataframe$emp_length == "< 1 year"] <- 0
+dataframe$emp_length <- as.numeric(gsub( "([0-9]+).*", "\\1", dataframe$emp_length ))
 ```
 
 set the training and test data (80% train, 20% test)
