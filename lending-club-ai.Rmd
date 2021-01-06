@@ -6,16 +6,14 @@ output: html_notebook
 Prepare the correct language settings for the R-Environment. E.g. german console output may lead to issues. Default should be english.
 
 ```{r}
-
-Sys.setlocale("LC_ALL","English")
-Sys.setenv(LANG = "en_US.UTF-8")
-Sys.setlocale("LC_MESSAGES", 'en_GB.UTF-8')
-
-## Check if the settings are correct. It should look like:
-## [1] "LC_COLLATE=English_United States.1252;LC_CTYPE=English_United States.1252;LC_MONETARY=English_United States.1252;LC_NUMERIC=C;LC_TIME=English_United States.1252"
-Sys.getlocale()
-
-
+# Sys.setlocale("LC_ALL","English")
+# Sys.setenv(LANG = "en_US.UTF-8")
+# Sys.setlocale("LC_MESSAGES", 'en_GB.UTF-8')
+# 
+# ## Check if the settings are correct. It should look like:
+# ## [1] "LC_COLLATE=English_United States.1252;LC_CTYPE=English_United States.1252;LC_MONETARY=English_United States.1252;LC_NUMERIC=C;LC_TIME=English_United States.1252"
+# Sys.getlocale()
+# 
 ```
 
 
@@ -174,6 +172,12 @@ dataframe$emp_length[dataframe$emp_length == "< 1 year"] <- 0
 dataframe$emp_length <- as.numeric(gsub( "([0-9]+).*", "\\1", dataframe$emp_length ))
 ```
 
+Remove near-zero variance predictors. These predictors can interfere with our model training using cross-validations. We want to remove variables with a high frequency ratio and a high percentage of unique values.
+```{r}
+nzv <- nearZeroVar(dataframe)
+dataframe <- select(dataframe, -nzv)
+```
+
 ```{r}
 glimpse(dataframe)
 ```
@@ -269,10 +273,9 @@ print(history)
 plot(history) 
 ```
 
-
-
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
-
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
-
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+Export the required data to the filesystem
+```{r}
+keras::save_model_hdf5(model_keras, "network.nn")
+write.csv(x_train_tbl, "nn_train.csv", row.names = TRUE)
+write.csv(x_test_tbl, "nn_test.csv", row.names = TRUE)
+```

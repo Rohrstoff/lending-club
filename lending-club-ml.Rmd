@@ -199,27 +199,20 @@ fitControl <- trainControl(## 10-fold CV
 
 Train multiple linear regression model with cross-validation
 ```{r}
-
-
-model_lm <- train(int_rate ~ ., data = train_filtered, 
-                 method = "lm",
+model <- train(int_rate ~ ., data = train_filtered,
+                 method = "bartMachine",
                  trControl = fitControl,
                  na.action=na.exclude)
 
-class(model_lm)
+class(model)
 
-summary (model_lm)
+summary (model)
 ```
-Train multiple linear regression model with lasso cross-validation
+Save the required data to the filesystem
 ```{r}
-model_lm_lasso <- train(int_rate ~ ., data = train_filtered, 
-                 method = "lasso",
-                 trControl = fitControl,
-                 na.action=na.exclude)
-
-class(model_lm_lasso)
-
-summary (model_lm_lasso)
+saveRDS(model_lm, "model.ml")
+write.csv(train_filtered, "ml_train.csv", row.names = TRUE)
+write.csv(test, "ml_test.csv", row.names = TRUE)
 ```
 
 
@@ -228,7 +221,7 @@ model_lm_pred_1 <-
   predict.lm(object = model_lm, newdata = test, type = "response")
 model_pred_t <- function(pred, t) ifelse(pred > t, TRUE, FALSE)
 caret::confusionMatrix(data = model_pred_t(model_lm, 0.5), 
-                       reference = test$default,
+                       reference = test$int_rate,
                        positive = "TRUE")
 ```
 
@@ -246,10 +239,3 @@ pROC::plot.roc(x = roc_model_lm, legacy.axes = FALSE, xlim = c(1, 0), asp = NA,
 
 legend(x = "bottomright", col = c("green"), lty = 1, cex = 1.0)
 ```
-
-
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
-
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
-
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
