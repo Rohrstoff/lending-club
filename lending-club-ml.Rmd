@@ -106,9 +106,9 @@ df_clean$term <- as.numeric(gsub( ".*([0-9]+).*", "\\1", df_clean$term ))
 
 Convert "emp_length" to numeric values
 ```{r}
-dataframe$emp_length[dataframe$emp_length == "n/a"] <- 99
-dataframe$emp_length[dataframe$emp_length == "< 1 year"] <- 0
-dataframe$emp_length <- as.numeric(gsub( "([0-9]+).*", "\\1", dataframe$emp_length ))
+df_clean$emp_length[df_clean$emp_length == "n/a"] <- 99
+df_clean$emp_length[df_clean$emp_length == "< 1 year"] <- 0
+df_clean$emp_length <- as.numeric(gsub( "([0-9]+).*", "\\1", df_clean$emp_length ))
 ```
 
 set the training and test data (80% train, 20% test)
@@ -139,7 +139,7 @@ meta_train %>%
 Correlation plot. First step to get an overview of potential collinearities. Failing to identify multicollinearity could result in misleading interpretations of the results.
 ```{r}
 library(corrplot)
-corrplot::corrplot(cor(train[, num_vars], use = "complete.obs"), 
+corrplot::corrplot(cor(train[, ..num_vars], use = "complete.obs"), 
                    method = "pie", type = "upper",tl.cex = 0.65)
 ```
 Display highly correlated variables. We want to identify collinearities which could affect our regression model. A Cut-off at 0.5 is applied.
