@@ -31,7 +31,7 @@ df <- read.csv("regression_train_loan.csv")
 get unique values of loan_status
 ```{r}
 library( data.table )
-setDT( df )[ , 100 * .N / nrow( df ), by = application_type ]
+setDT( df )[ , 100 * .N / nrow( df ), by = pymnt_plan ]
 ```
 
 
@@ -106,9 +106,9 @@ df_clean$term <- as.numeric(gsub( ".*([0-9]+).*", "\\1", df_clean$term ))
 
 Convert "emp_length" to numeric values
 ```{r}
-dataframe$emp_length[dataframe$emp_length == "n/a"] <- 99
-dataframe$emp_length[dataframe$emp_length == "< 1 year"] <- 0
-dataframe$emp_length <- as.numeric(gsub( "([0-9]+).*", "\\1", dataframe$emp_length ))
+df_clean$emp_length[df_clean$emp_length == "n/a"] <- 99
+df_clean$emp_length[df_clean$emp_length == "< 1 year"] <- 0
+df_clean$emp_length <- as.numeric(gsub( "([0-9]+).*", "\\1", df_clean$emp_length ))
 ```
 
 set the training and test data (80% train, 20% test)
@@ -139,13 +139,13 @@ meta_train %>%
 Correlation plot. First step to get an overview of potential collinearities. Failing to identify multicollinearity could result in misleading interpretations of the results.
 ```{r}
 library(corrplot)
-corrplot::corrplot(cor(train[, num_vars], use = "complete.obs"), 
+corrplot::corrplot(cor(train[, ..num_vars], use = "complete.obs"), 
                    method = "pie", type = "upper",tl.cex = 0.65)
 ```
 Display highly correlated variables. We want to identify collinearities which could affect our regression model. A Cut-off at 0.5 is applied.
 
 ```{r}
-caret::findCorrelation(cor(train[, num_vars], use = "complete.obs"), 
+caret::findCorrelation(cor(train[, ..num_vars], use = "complete.obs"), 
                        names = TRUE, cutoff = .5)
 ```
 
@@ -183,16 +183,10 @@ library(caret)
 
 Remove near-zero variance predictors. These predictors can interfere with our model training using cross-validations. We want to remove variables with a high frequency ratio and a high percentage of unique values.
 ```{r}
-nzv <- nearZeroVar(train, saveMetrics= TRUE)
-nzv[nzv$nzv,][1:12,]
-
-dim(test)
-
 nzv <- nearZeroVar(train)
-train_filtered <- train[, -nzv]
-dim(train_filtered)
+train_filtered <- select(train, -nzv)
 
-
+glimpse(train_filtered)
 ```
 
 Define the resampling method for model training. We will apply a 10-time cross validation for our regression models. 
