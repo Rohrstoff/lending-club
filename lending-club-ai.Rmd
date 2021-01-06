@@ -6,7 +6,7 @@ output: html_notebook
 Install and Load Libraries
 
 ```{r}
-libraries_used <- c("keras", "lime", "tidyquant", "rsample", "recipes", "yardstick", "corrr")
+libraries_used <- c("keras", "lime", "tidyquant", "rsample", "recipes", "yardstick", "corrr", "caret")
 
 libraries_missing <- libraries_used[!(libraries_used %in% installed.packages()[,"Package"])]
 if(length(libraries_missing)) install.packages(libraries_missing)
@@ -53,7 +53,7 @@ vars_to_remove <- c("annual_inc_joint", "dti_joint", "policy_code", "id", "membe
                     "open_il_12m", "open_il_24m", "mths_since_rcnt_il", "total_bal_il", 
                     "il_util", "open_rv_12m", "open_rv_24m", "max_bal_bc", "all_util",
                     "total_rev_hi_lim", "inq_fi", "total_cu_tl", "inq_last_12m",
-                    "verification_status_joint", "next_pymnt_d", "sub_grade", "X", "zip_code")
+                    "verification_status_joint", "next_pymnt_d", "sub_grade", "X", "zip_code", "application_type")
 
 dataframe <- dataframe %>% select(-one_of(vars_to_remove))
 ```

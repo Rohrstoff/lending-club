@@ -30,7 +30,8 @@ df <- read.csv("regression_train_loan.csv")
 
 get unique values of loan_status
 ```{r}
-unique( df$loan_status )
+library( data.table )
+setDT( df )[ , 100 * .N / nrow( df ), by = application_type ]
 ```
 
 
@@ -93,7 +94,7 @@ vars_to_remove <- c("annual_inc_joint", "dti_joint", "policy_code", "id", "membe
                     "open_il_12m", "open_il_24m", "mths_since_rcnt_il", "total_bal_il", 
                     "il_util", "open_rv_12m", "open_rv_24m", "max_bal_bc", "all_util",
                     "total_rev_hi_lim", "inq_fi", "total_cu_tl", "inq_last_12m",
-                    "verification_status_joint", "next_pymnt_d", "sub_grade", "X", "zip_code")
+                    "verification_status_joint", "next_pymnt_d", "sub_grade", "X", "zip_code", "application_type")
 
 df_clean <- df %>% select(-one_of(vars_to_remove))
 ```
@@ -192,7 +193,7 @@ Define the resampling method for model training. We will apply a 10-time cross v
 
 fitControl <- trainControl(## 10-fold CV
                            method = "cv",
-                           number = 5)
+                           number = 10)
 ```
 
 Train multiple linear regression model with cross-validation
