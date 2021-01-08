@@ -104,6 +104,8 @@ Correlation plot. First step to get an overview of potential collinearities. Fai
 corrplot::corrplot(cor(train_frame[, num_vars], use = "complete.obs"), 
                    method = "pie", type = "upper",tl.cex = 0.45)
 ```
+
+Recreate meta table
 ```{r}
 meta_df <- funModeling::df_status( train_frame, print_results = FALSE )
 meta_df %>% select(variable, p_zeros, p_na, unique) %>% knitr::kable()
@@ -181,7 +183,16 @@ test_frame$emp_length[test_frame$emp_length == "< 1 year"] <- 0
 test_frame$emp_length <- as.numeric(gsub( "([0-9]+).*", "\\1", test_frame$emp_length ))
 ```
 
+Data preprocessing, the following steps are executed:
+
 Remove near-zero variance predictors. These predictors can interfere with our model training using cross-validations. We want to remove variables with a high frequency ratio and a high percentage of unique values.
+
+Create dummy variables of nominal predictors.
+
+Normalize and scale all numeric variables
+
+Center all predictors
+
 ```{r}
 recipe_obj <- recipe( loan_status ~ ., data = train_frame ) %>%
   step_nzv(all_predictors()) %>%
@@ -200,7 +211,7 @@ y_train_vec <- ifelse(pull(train_frame, loan_status) == "DEFAULTED", 1, 0)
 y_test_vec <- ifelse(pull(test_frame, loan_status) == "DEFAULTED", 1, 0)
 ```
 
-
+Build the neural network
 ```{r}
 # Building our Artificial Neural Network
 model_keras <- keras_model_sequential() %>% 
@@ -240,7 +251,7 @@ model_keras <- keras_model_sequential() %>%
 model_keras 
 ```
 
-
+fit the neural network with the training data
 ```{r}
 # Fit the keras model to the training data
 history <- fit(
@@ -254,12 +265,12 @@ history <- fit(
 
 print(history)
 ```
-
+plot the results of the training
 ```{r}
 plot(history) 
 ```
 
-Estimates
+Validate the model using the test data (output estimates)
 ```{r}
 # Predicted Class
 yhat_keras_class_vec <- predict_classes(object = model_keras, x = as.matrix(x_test_tbl)) %>%
