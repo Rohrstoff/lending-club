@@ -1,5 +1,5 @@
 ---
-title: "Lending Club Neural Network"
+title: "Assignment 2: Neural Network"
 output:
   html_document:
     df_print: paged
