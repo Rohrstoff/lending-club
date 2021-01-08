@@ -1,8 +1,6 @@
 ---
 title: "Assignment 2: Neural Network"
-output:
-  html_document:
-    df_print: paged
+output: html_notebook
 ---
 
 <h3>Prepare the correct language settings for the R-Environment</h3> 
