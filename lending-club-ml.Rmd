@@ -3,6 +3,14 @@ title: "R Notebook"
 output: html_notebook
 ---
 
+```{r}
+# The assignments gave us the opportunity to apply the methods we got to know during the lectures on real-world data. Working with GitHub for exchanging development progresses and Microsoft Teams for virtual meetups proved to be valuable, even more so under the special circumstances present today. As expected, the data preparation took at least as long as developing the models. Although we applied the methods learned during the courses, we found further RStudio functions that vastly assisted in pre-processing of the data. Without proper pre-processing, especially conversion of date and numeric attributes to their respective data type, any model development is futile. We overlooked some attributes in the beginning which led to weird predictions. Excluding near-zero variance predictors was a step we only learned to apply due to the warning messages of trained models. In the AI assignment we learned to not apply too many hidden layers (we sticked with 2) and 16 neurons per hidden layer are sufficient, in the context of binary cross-entropy.  
+
+# Overall we found libraries during our research that massively helped us in the pre-processing step, such as knitr, and later on recipes. We had difficulties to run models with high numbers of cross-validations, which is something that should be kept in mind for the future. Overall, it was interesting to have a complete perspective on data science process, however we did not feel ready to tackle the assignment purely with the inputs from the lectures. Extensive research was required to properly understand all required pre-processing steps.  
+```
+
+
+
 define used libraries
 ```{r}
 libraries_used <- c("lazyeval", "readr","plyr" ,"dplyr", "readxl", "ggplot2", 
@@ -194,23 +202,23 @@ Define the resampling method for model training. We will apply a 10-time cross v
 
 fitControl <- trainControl(## 10-fold CV
                            method = "cv",
-                           number = 10)
+                           number = 5)
 ```
 
 Train multiple linear regression model with cross-validation
 ```{r}
-model <- train(int_rate ~ ., data = train_filtered,
-                 method = "bartMachine",
+model.cubist <- train(int_rate ~ ., data = train_filtered,
+                 method = "cubist",
                  trControl = fitControl,
                  na.action=na.exclude)
 
-class(model)
+class(model.elastic)
 
-summary (model)
+summary (model.elastic)
 ```
 Save the required data to the filesystem
 ```{r}
-saveRDS(model_lm, "model.ml")
+saveRDS(modellars, "model.ml.lars")
 write.csv(train_filtered, "ml_train.csv", row.names = TRUE)
 write.csv(test, "ml_test.csv", row.names = TRUE)
 ```
