@@ -5,8 +5,8 @@ output:
     df_print: paged
 ---
 
-Prepare the correct language settings for the R-Environment. E.g. german console output may lead to issues. Default should be english.
-
+<h3>Prepare the correct language settings for the R-Environment</h3> 
+<p>E.g. german console output may lead to issues. Default should be english.</p>
 ```{r}
 # Sys.setlocale("LC_ALL","English")
 # Sys.setenv(LANG = "en_US.UTF-8")
@@ -19,8 +19,7 @@ Prepare the correct language settings for the R-Environment. E.g. german console
 ```
 
 
-Install and Load Libraries
-
+<h3>Install and Load Libraries</h3>
 ```{r}
 libraries_used <- c("keras", "lime", "tidyquant", "rsample", "recipes", "yardstick", "corrr", "caret")
 
@@ -40,31 +39,32 @@ library(caret)
 set.seed(1)
 ```
 
-load dataset
+<h3>Load Datasets</h3>
 ```{r}
 train_frame <- read.csv("regression_train_loan.csv")
 test_frame <- read.csv("loan_eval.csv")
 ```
 
-get meta information and output it
+<h3>Get meta information and output it</h3>
 ```{r}
 meta_df <- funModeling::df_status( train_frame, print_results = FALSE )
 
 knitr::kable(meta_df)
 ```
 
-get amount and percentage of unique and output the table
+<h3>Get amount and percentage of unique and output the table</h3>
 ```{r}
 meta_df_percent <- meta_df %>% mutate(uniq_rat = unique / nrow(train_frame))
 meta_df_percent %>% select(variable, unique, uniq_rat) %>% mutate(unique = unique, uniq_rat = scales::percent(uniq_rat)) %>% knitr::kable()
 ```
 
-output a table with amount of unique, N/A, and zero values
+<h3>Output a table with amount of unique, N/A, and zero values</h3>
 ```{r}
 meta_df %>% select(variable, p_zeros, p_na, unique) %>% knitr::kable()
 ```
 
-remove columns deemed unfit for modeling
+<h3>Remove columns deemed unfit for modeling</h3>
+<p>All columns with more than 70% missing values are deemed to be unhelpful in modeling and exploration, as well as certain features</p>
 ```{r}
 vars_to_remove <- c("annual_inc_joint", "dti_joint", "policy_code", "id", "member_id",
                     "emp_title", "url", "desc", "title", "open_acc_6m", "open_il_6m", 
@@ -77,7 +77,7 @@ train_frame <- train_frame %>% select(-one_of(vars_to_remove))
 test_frame <- test_frame %>% select(-one_of(vars_to_remove))
 ```
 
-convert date attributes
+<h3>Convert date attributes</h3>
 ```{r}
 chr_to_date_vars <-  c("issue_d", "last_pymnt_d", "last_credit_pull_d", "earliest_cr_line")
 convert_date <- function(x){
@@ -88,7 +88,7 @@ train_frame <- train_frame %>% mutate_at(.funs = list(convert_date), .vars = chr
 test_frame <- test_frame %>% mutate_at(.funs = list(convert_date), .vars = chr_to_date_vars)
 ```
 
-Output numerical vars
+<h3>Output numerical vars</h3>
 ```{r}
 num_vars <-  train_frame %>%  sapply(is.numeric) %>%  which() %>% names()
 
@@ -99,25 +99,28 @@ meta_df <- funModeling::df_status(train_frame, print_results = FALSE) %>%
 
 ```
 
-Correlation plot. First step to get an overview of potential collinearities. Failing to identify multicollinearity could result in misleading interpretations of the results.
+<h3>Correlation plot</h3> 
+<p>First step to get an overview of potential collinearities. Failing to identify multicollinearity could result in misleading interpretations of the results.</p>
 ```{r}
 corrplot::corrplot(cor(train_frame[, num_vars], use = "complete.obs"), 
                    method = "pie", type = "upper",tl.cex = 0.45)
 ```
 
-Recreate meta table
+<h3>Recreate meta table</h3>
 ```{r}
 meta_df <- funModeling::df_status( train_frame, print_results = FALSE )
 meta_df %>% select(variable, p_zeros, p_na, unique) %>% knitr::kable()
 ```
 
-Display highly correlated variables. We want to identify collinearities which could affect our regression model. A Cut-off at 0.8 is applied as suggest by Berry & Feldman, 1985: Multiple Regression in Practice (Quantitative Applications in the Social Sciences)
+<h3>Display highly correlated variables</h3> 
+<p>We want to identify collinearities which could affect our regression model. A Cut-off at 0.8 is applied as suggest by Berry & Feldman, 1985: Multiple Regression in Practice (Quantitative Applications in the Social Sciences)</p>
 
 ```{r}
 caret::findCorrelation(cor(train_frame[, num_vars], use = "complete.obs"), names = TRUE, cutoff = .8)
 ```
 
-Remove highly correlated variables to avoid the interference of collinearity in our model.  Multicollinearity arises when at least two highly correlated predictors are assessed simultaneously in a regression model.
+<h3>Remove highly correlated variables to avoid the interference of collinearity in our model</h3>
+<p>Multicollinearity arises when at least two highly correlated predictors are assessed simultaneously in a regression model.</p>
 ```{r}
 vars_to_remove <- 
   c("loan_amnt", "funded_amnt", "funded_amnt_inv", "total_pymnt",
@@ -128,13 +131,13 @@ test_frame <- test_frame %>% select(-one_of(vars_to_remove))
 
 ```
 
-recreate meta table
+<h3>Recreate meta table</h3>
 ```{r}
 meta_df <- funModeling::df_status( train_frame, print_results = FALSE )
 meta_df %>% select(variable, p_zeros, p_na, unique) %>% knitr::kable()
 ```
 
-set vars from N/A to zero
+<h3>Set vars from N/A to zero</h3>
 ```{r}
 na_to_zero_vars <- c("mths_since_last_delinq", "mths_since_last_record", "mths_since_last_major_derog")
 
@@ -142,7 +145,7 @@ train_frame <- train_frame %>% mutate_at(.vars = na_to_zero_vars, .funs = funs(r
 test_frame <- test_frame %>% mutate_at(.vars = na_to_zero_vars, .funs = funs(replace(., is.na(.), 0)))
 ```
 
-set vars from N/A to -99
+<h3>Set vars from N/A to -99</h3>
 ```{r}
 na_to_negative_ninety_nine <- c("revol_util", "collections_12_mths_ex_med", "tot_coll_amt", "tot_cur_bal")
 
@@ -150,13 +153,13 @@ train_frame <- train_frame %>% mutate_at(.vars = na_to_negative_ninety_nine, .fu
 test_frame <- test_frame %>% mutate_at(.vars = na_to_negative_ninety_nine, .funs = funs(replace(., is.na(.), -99)))
 ```
 
-Remove rows where date columns contain N/A values
+<h3>Remove rows where date columns contain N/A values</h3>
 ```{r}
 train_frame <- train_frame[complete.cases(train_frame), ]
 test_frame <- test_frame[complete.cases(test_frame), ]
 ```
 
-Remove all rows where loan status is "Current" + rename all loan_status fields where the value is not "Fully Paid"
+<h3>Remove all rows where loan status is "Current" + rename all loan_status fields where the value is not "Fully Paid"</h3>
 ```{r}
 train_frame <- subset(train_frame, loan_status != "Current") 
 train_frame$loan_status[train_frame$loan_status != "Fully Paid"] <- "DEFAULTED"
@@ -165,14 +168,14 @@ test_frame <- subset(test_frame, loan_status != "Current")
 test_frame$loan_status[test_frame$loan_status != "Fully Paid"] <- "DEFAULTED"
 ```
 
-Convert "term" column to number
+<h3>Convert "term" column to number</h3>
 ```{r}
 train_frame$term <- as.numeric(gsub( ".*([0-9]+).*", "\\1", train_frame$term ))
 
 test_frame$term <- as.numeric(gsub( ".*([0-9]+).*", "\\1", test_frame$term ))
 ```
 
-Convert "emp_length" to numeric values
+<h3>Convert "emp_length" to numeric values</h3>
 ```{r}
 train_frame$emp_length[train_frame$emp_length == "n/a"] <- 99
 train_frame$emp_length[train_frame$emp_length == "< 1 year"] <- 0
@@ -183,25 +186,28 @@ test_frame$emp_length[test_frame$emp_length == "< 1 year"] <- 0
 test_frame$emp_length <- as.numeric(gsub( "([0-9]+).*", "\\1", test_frame$emp_length ))
 ```
 
-Data preprocessing, the following steps are executed:
+<h3>Data preprocessing</h3>
 
-Remove near-zero variance predictors. These predictors can interfere with our model training using cross-validations. We want to remove variables with a high frequency ratio and a high percentage of unique values.
+<p>
+The following steps are executed:
 
-Create dummy variables of nominal predictors.
+<ul>
+<li>Remove near-zero variance predictors. These predictors can interfere with our model training using cross-validations. We want to remove variables with a high frequency ratio and a high percentage of unique values.</li>
 
-Normalize and scale all numeric variables
+<li>Convert date predictors into factors/numeric variables and remove the date predictors afterwards</li>
 
-Center all predictors
+<li>Create dummy variables of nominal predictors.</li>
 
+<li>Normalize numeric data to have a standard deviation of one and a mean of zero</li>
+</ul>
+</p>
 ```{r}
 recipe_obj <- recipe( loan_status ~ ., data = train_frame ) %>%
   step_nzv(all_predictors()) %>%
   step_date( has_type( match = "date" ) ) %>%
   step_rm( has_type( match = "date" ) ) %>%
   step_dummy( all_nominal(), -all_outcomes() ) %>%
-  step_normalize( all_numeric(), -all_outcomes() ) %>%
-  step_scale( all_numeric(), -all_outcomes() ) %>%
-  step_center(all_predictors()) %>%
+  step_normalize( all_predictors() ) %>%
   prep()
 
 x_train_tbl <- bake(recipe_obj, new_data = train_frame) %>% select(-loan_status)
@@ -211,7 +217,7 @@ y_train_vec <- ifelse(pull(train_frame, loan_status) == "DEFAULTED", 1, 0)
 y_test_vec <- ifelse(pull(test_frame, loan_status) == "DEFAULTED", 1, 0)
 ```
 
-Build the neural network
+<h3>Build the neural network</h3>
 ```{r}
 # Building our Artificial Neural Network
 model_keras <- keras_model_sequential() %>% 
@@ -251,7 +257,7 @@ model_keras <- keras_model_sequential() %>%
 model_keras 
 ```
 
-fit the neural network with the training data
+<h3>Fit the neural network with the training data</h3>
 ```{r}
 # Fit the keras model to the training data
 history <- fit(
@@ -265,12 +271,12 @@ history <- fit(
 
 print(history)
 ```
-plot the results of the training
+<h3>Plot the results of the training</h3>
 ```{r}
 plot(history) 
 ```
 
-Validate the model using the test data (output estimates)
+<h3>Validate the model using the test data (output estimates)</h3>
 ```{r}
 # Predicted Class
 yhat_keras_class_vec <- predict_classes(object = model_keras, x = as.matrix(x_test_tbl)) %>%
@@ -290,38 +296,29 @@ estimates_keras_tbl <- tibble(
 estimates_keras_tbl
 ```
 
-Confusion Matrix
+<h3>Confusion Matrix</h3>
 ```{r}
 options(yardstick.event_first = FALSE)
 
 estimates_keras_tbl %>% conf_mat(truth, estimate)
 ```
 
-Accuracy
+<h3>Accuracy</h3>
 ```{r}
 estimates_keras_tbl %>% metrics(truth, estimate)
 ```
 
-AUC
+<h3>AUC</h3>
 ```{r}
 estimates_keras_tbl %>% roc_auc(truth, class_prob)
 ```
 
-Precision
-```{r}
-tibble(
-  precision = estimates_keras_tbl %>% precision(truth, estimate),
-  recall    = estimates_keras_tbl %>% recall(truth, estimate)
-)
-```
-
-F1-Statistic
+<h3>F1-Statistic</h3>
 ```{r}
 estimates_keras_tbl %>% f_meas(truth, estimate, beta = 1)
 ```
 
-
-Export the required data to the filesystem
+<h3>Export the required data to the filesystem</h3>
 ```{r}
 keras::save_model_hdf5(model_keras, "network.nn")
 write.csv(x_train_tbl, "nn_train.csv", row.names = TRUE)
