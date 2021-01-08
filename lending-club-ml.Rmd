@@ -168,6 +168,7 @@ train <- train %>% select(-one_of(vars_to_remove))
 
 ```
 
+
 Set proper names for variables
 ```{r}
 vars_to_mutate <-
