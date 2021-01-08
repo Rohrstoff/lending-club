@@ -1,6 +1,8 @@
 ---
 title: "Lending Club Neural Network"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 Prepare the correct language settings for the R-Environment. E.g. german console output may lead to issues. Default should be english.
@@ -40,18 +42,20 @@ set.seed(1)
 
 load dataset
 ```{r}
-dataframe <- read.csv("regression_train_loan.csv")
+train_frame <- read.csv("regression_train_loan.csv")
+test_frame <- read.csv("loan_eval.csv")
 ```
 
 get meta information and output it
 ```{r}
-meta_df <- funModeling::df_status( dataframe, print_results = FALSE )
+meta_df <- funModeling::df_status( train_frame, print_results = FALSE )
 
 knitr::kable(meta_df)
 ```
+
 get amount and percentage of unique and output the table
 ```{r}
-meta_df_percent <- meta_df %>% mutate(uniq_rat = unique / nrow(dataframe))
+meta_df_percent <- meta_df %>% mutate(uniq_rat = unique / nrow(train_frame))
 meta_df_percent %>% select(variable, unique, uniq_rat) %>% mutate(unique = unique, uniq_rat = scales::percent(uniq_rat)) %>% knitr::kable()
 ```
 
@@ -69,7 +73,8 @@ vars_to_remove <- c("annual_inc_joint", "dti_joint", "policy_code", "id", "membe
                     "total_rev_hi_lim", "inq_fi", "total_cu_tl", "inq_last_12m",
                     "verification_status_joint", "next_pymnt_d", "sub_grade", "X", "zip_code", "application_type")
 
-dataframe <- dataframe %>% select(-one_of(vars_to_remove))
+train_frame <- train_frame %>% select(-one_of(vars_to_remove))
+test_frame <- test_frame %>% select(-one_of(vars_to_remove))
 ```
 
 convert date attributes
@@ -79,18 +84,15 @@ convert_date <- function(x){
   as.Date(paste0("01-", x), format = "%d-%b-%Y")
 }
 
-dataframe <- dataframe %>% mutate_at(.funs = list(convert_date), .vars = chr_to_date_vars)
+train_frame <- train_frame %>% mutate_at(.funs = list(convert_date), .vars = chr_to_date_vars)
+test_frame <- test_frame %>% mutate_at(.funs = list(convert_date), .vars = chr_to_date_vars)
 ```
 
 Output numerical vars
 ```{r}
-num_vars <- 
-  dataframe %>% 
-  sapply(is.numeric) %>% 
-  which() %>% 
-  names()
+num_vars <-  train_frame %>%  sapply(is.numeric) %>%  which() %>% names()
 
-meta_df <- funModeling::df_status(dataframe, print_results = FALSE) %>%
+meta_df <- funModeling::df_status(train_frame, print_results = FALSE) %>%
   select(variable, p_zeros, p_na, unique) %>%
   filter_(~ variable %in% num_vars) %>%
   knitr::kable()
@@ -99,18 +101,18 @@ meta_df <- funModeling::df_status(dataframe, print_results = FALSE) %>%
 
 Correlation plot. First step to get an overview of potential collinearities. Failing to identify multicollinearity could result in misleading interpretations of the results.
 ```{r}
-corrplot::corrplot(cor(dataframe[, num_vars], use = "complete.obs"), 
+corrplot::corrplot(cor(train_frame[, num_vars], use = "complete.obs"), 
                    method = "pie", type = "upper",tl.cex = 0.45)
 ```
 ```{r}
-meta_df <- funModeling::df_status( dataframe, print_results = FALSE )
+meta_df <- funModeling::df_status( train_frame, print_results = FALSE )
 meta_df %>% select(variable, p_zeros, p_na, unique) %>% knitr::kable()
 ```
 
 Display highly correlated variables. We want to identify collinearities which could affect our regression model. A Cut-off at 0.8 is applied as suggest by Berry & Feldman, 1985: Multiple Regression in Practice (Quantitative Applications in the Social Sciences)
 
 ```{r}
-caret::findCorrelation(cor(dataframe[, num_vars], use = "complete.obs"), names = TRUE, cutoff = .8)
+caret::findCorrelation(cor(train_frame[, num_vars], use = "complete.obs"), names = TRUE, cutoff = .8)
 ```
 
 Remove highly correlated variables to avoid the interference of collinearity in our model.  Multicollinearity arises when at least two highly correlated predictors are assessed simultaneously in a regression model.
@@ -119,13 +121,14 @@ vars_to_remove <-
   c("loan_amnt", "funded_amnt", "funded_amnt_inv", "total_pymnt",
     "total_pymnt_inv", "out_prncp", "collection_recovery_fee")
 
-dataframe <- dataframe %>% select(-one_of(vars_to_remove))
+train_frame <- train_frame %>% select(-one_of(vars_to_remove))
+test_frame <- test_frame %>% select(-one_of(vars_to_remove))
 
 ```
 
 recreate meta table
 ```{r}
-meta_df <- funModeling::df_status( dataframe, print_results = FALSE )
+meta_df <- funModeling::df_status( train_frame, print_results = FALSE )
 meta_df %>% select(variable, p_zeros, p_na, unique) %>% knitr::kable()
 ```
 
@@ -133,87 +136,70 @@ set vars from N/A to zero
 ```{r}
 na_to_zero_vars <- c("mths_since_last_delinq", "mths_since_last_record", "mths_since_last_major_derog")
 
-dataframe <- dataframe %>% mutate_at(.vars = na_to_zero_vars, .funs = funs(replace(., is.na(.), 0)))
+train_frame <- train_frame %>% mutate_at(.vars = na_to_zero_vars, .funs = funs(replace(., is.na(.), 0)))
+test_frame <- test_frame %>% mutate_at(.vars = na_to_zero_vars, .funs = funs(replace(., is.na(.), 0)))
 ```
 
 set vars from N/A to -99
 ```{r}
 na_to_negative_ninety_nine <- c("revol_util", "collections_12_mths_ex_med", "tot_coll_amt", "tot_cur_bal")
 
-dataframe <- dataframe %>% mutate_at(.vars = na_to_negative_ninety_nine, .funs = funs(replace(., is.na(.), -99)))
+train_frame <- train_frame %>% mutate_at(.vars = na_to_negative_ninety_nine, .funs = funs(replace(., is.na(.), -99)))
+test_frame <- test_frame %>% mutate_at(.vars = na_to_negative_ninety_nine, .funs = funs(replace(., is.na(.), -99)))
 ```
 
 Remove rows where date columns contain N/A values
 ```{r}
-dataframe <- dataframe[complete.cases(dataframe), ]
+train_frame <- train_frame[complete.cases(train_frame), ]
+test_frame <- test_frame[complete.cases(test_frame), ]
 ```
 
 Remove all rows where loan status is "Current" + rename all loan_status fields where the value is not "Fully Paid"
 ```{r}
-dataframe <- subset(dataframe, loan_status != "Current") 
-dataframe$loan_status[dataframe$loan_status != "Fully Paid"] <- "DEFAULTED"
+train_frame <- subset(train_frame, loan_status != "Current") 
+train_frame$loan_status[train_frame$loan_status != "Fully Paid"] <- "DEFAULTED"
 
+test_frame <- subset(test_frame, loan_status != "Current") 
+test_frame$loan_status[test_frame$loan_status != "Fully Paid"] <- "DEFAULTED"
 ```
-
-```{r}
-unique(dataframe$emp_length)
-```
-
 
 Convert "term" column to number
 ```{r}
-dataframe$term <- as.numeric(gsub( ".*([0-9]+).*", "\\1", dataframe$term ))
+train_frame$term <- as.numeric(gsub( ".*([0-9]+).*", "\\1", train_frame$term ))
+
+test_frame$term <- as.numeric(gsub( ".*([0-9]+).*", "\\1", test_frame$term ))
 ```
 
 Convert "emp_length" to numeric values
 ```{r}
-dataframe$emp_length[dataframe$emp_length == "n/a"] <- 99
-dataframe$emp_length[dataframe$emp_length == "< 1 year"] <- 0
-dataframe$emp_length <- as.numeric(gsub( "([0-9]+).*", "\\1", dataframe$emp_length ))
+train_frame$emp_length[train_frame$emp_length == "n/a"] <- 99
+train_frame$emp_length[train_frame$emp_length == "< 1 year"] <- 0
+train_frame$emp_length <- as.numeric(gsub( "([0-9]+).*", "\\1", train_frame$emp_length ))
+
+test_frame$emp_length[test_frame$emp_length == "n/a"] <- 99
+test_frame$emp_length[test_frame$emp_length == "< 1 year"] <- 0
+test_frame$emp_length <- as.numeric(gsub( "([0-9]+).*", "\\1", test_frame$emp_length ))
 ```
 
 Remove near-zero variance predictors. These predictors can interfere with our model training using cross-validations. We want to remove variables with a high frequency ratio and a high percentage of unique values.
 ```{r}
-nzv <- nearZeroVar(dataframe)
-dataframe <- select(dataframe, -nzv)
-```
-
-```{r}
-glimpse(dataframe)
-```
-
-set the training and test data (80% train, 20% test)
-```{r}
-train_test_split <- initial_split(dataframe, prop = 0.8)
-
-train_tbl <- training(train_test_split)
-test_tbl  <- testing(train_test_split) 
-```
-
-```{r}
-recipe_obj <- recipe( loan_status ~ ., data = train_tbl ) %>% 
+recipe_obj <- recipe( loan_status ~ ., data = train_frame ) %>%
+  step_nzv(all_predictors()) %>%
   step_date( has_type( match = "date" ) ) %>%
   step_rm( has_type( match = "date" ) ) %>%
-  #step_discretize( emp_length, options = list(cuts = 12) ) %>%
-  #step_log( all_numeric() ) %>%
   step_dummy( all_nominal(), -all_outcomes() ) %>%
   step_normalize( all_numeric(), -all_outcomes() ) %>%
   step_scale( all_numeric(), -all_outcomes() ) %>%
+  step_center(all_predictors()) %>%
   prep()
+
+x_train_tbl <- bake(recipe_obj, new_data = train_frame) %>% select(-loan_status)
+x_test_tbl <- bake(recipe_obj, new_data = test_frame) %>% select(-loan_status)
+
+y_train_vec <- ifelse(pull(train_frame, loan_status) == "DEFAULTED", 1, 0)
+y_test_vec <- ifelse(pull(test_frame, loan_status) == "DEFAULTED", 1, 0)
 ```
 
-
-```{r}
-x_train_tbl <- bake(recipe_obj, new_data = train_tbl) %>% select(-loan_status)
-x_test_tbl <- bake(recipe_obj, new_data = test_tbl) %>% select(-loan_status)
-
-glimpse(x_train_tbl)
-```
-
-```{r}
-y_train_vec <- ifelse(pull(train_tbl, loan_status) == "DEFAULTED", 1, 0)
-y_test_vec  <- ifelse(pull(test_tbl, loan_status) == "DEFAULTED", 1, 0)
-```
 
 ```{r}
 # Building our Artificial Neural Network
@@ -272,6 +258,57 @@ print(history)
 ```{r}
 plot(history) 
 ```
+
+Estimates
+```{r}
+# Predicted Class
+yhat_keras_class_vec <- predict_classes(object = model_keras, x = as.matrix(x_test_tbl)) %>%
+    as.vector()
+
+# Predicted Class Probability
+yhat_keras_prob_vec  <- predict_proba(object = model_keras, x = as.matrix(x_test_tbl)) %>%
+    as.vector()
+
+# Format test data and predictions for yardstick metrics
+estimates_keras_tbl <- tibble(
+  truth      = as.factor(y_test_vec) %>% forcats::fct_recode(yes = "1", no = "0"),
+  estimate   = as.factor(yhat_keras_class_vec) %>% forcats::fct_recode(yes = "1", no = "0"),
+  class_prob = yhat_keras_prob_vec
+)
+
+estimates_keras_tbl
+```
+
+Confusion Matrix
+```{r}
+options(yardstick.event_first = FALSE)
+
+estimates_keras_tbl %>% conf_mat(truth, estimate)
+```
+
+Accuracy
+```{r}
+estimates_keras_tbl %>% metrics(truth, estimate)
+```
+
+AUC
+```{r}
+estimates_keras_tbl %>% roc_auc(truth, class_prob)
+```
+
+Precision
+```{r}
+tibble(
+  precision = estimates_keras_tbl %>% precision(truth, estimate),
+  recall    = estimates_keras_tbl %>% recall(truth, estimate)
+)
+```
+
+F1-Statistic
+```{r}
+estimates_keras_tbl %>% f_meas(truth, estimate, beta = 1)
+```
+
 
 Export the required data to the filesystem
 ```{r}
