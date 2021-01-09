@@ -12,7 +12,7 @@ output: html_notebook
 ```{r}
 libraries_used <- c("lazyeval", "readr","plyr" ,"dplyr", "readxl", "ggplot2", 
     "funModeling", "scales", "tidyverse", "corrplot", "GGally", "caret",
-    "rpart", "randomForest", "pROC", "gbm", "choroplethr", "choroplethrMaps",
+    "rpart", "randomForest", "gbm", "choroplethr", "choroplethrMaps",
     "microbenchmark", "doParallel", "e1071")
 
 libraries_missing <- libraries_used[!(libraries_used %in% installed.packages()[,"Package"])]
@@ -204,19 +204,22 @@ model <- train(recipe_obj, data = train,
 model
 ```
 
+<h3>Generate predictions and display RMSE, Rsquared and MAE</h3>
+```{r}
+test_results <- data.frame(Class = test$int_rate)
+test_results$predicted.int_rate <- predict(model, test)
+
+postResample(pred = test_results$predicted.int_rate, obs = test$int_rate)
+```
+
+<h3>Show the test set results</h3>
+```{r}
+head(test_results)
+```
+
 <h3>Save the required data to the filesystem</h3>
 ```{r}
 saveRDS(model_ml_lm, "model.lm")
 write.csv(train_filtered, "ml_train.csv", row.names = TRUE)
 write.csv(test, "ml_test.csv", row.names = TRUE)
-```
-
-
-```{r}
-model_lm_pred_1 <- 
-  predict.lm(object = model_lm, newdata = test, type = "response")
-model_pred_t <- function(pred, t) ifelse(pred > t, TRUE, FALSE)
-caret::confusionMatrix(data = model_pred_t(model_lm, 0.5), 
-                       reference = test$int_rate,
-                       positive = "TRUE")
 ```

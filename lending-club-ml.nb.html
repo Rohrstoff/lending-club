@@ -1849,6 +1849,855 @@ Extract meta information and output it
 
 knitr::kable(meta_df)</code></pre>
 <!-- rnb-source-end -->
+
+<!-- rnb-html-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImtuaXRfYXNpcyJdLCJzaXppbmdQb2xpY3kiOltdfX0= -->
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">variable</th>
+<th align="right">q_zeros</th>
+<th align="right">p_zeros</th>
+<th align="right">q_na</th>
+<th align="right">p_na</th>
+<th align="right">q_inf</th>
+<th align="right">p_inf</th>
+<th align="left">type</th>
+<th align="right">unique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">X</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">798641</td>
+</tr>
+<tr class="even">
+<td align="left">id</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">798641</td>
+</tr>
+<tr class="odd">
+<td align="left">member_id</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">798641</td>
+</tr>
+<tr class="even">
+<td align="left">loan_amnt</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">1372</td>
+</tr>
+<tr class="odd">
+<td align="left">funded_amnt</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">1372</td>
+</tr>
+<tr class="even">
+<td align="left">funded_amnt_inv</td>
+<td align="right">202</td>
+<td align="right">0.03</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">9040</td>
+</tr>
+<tr class="odd">
+<td align="left">term</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">int_rate</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">540</td>
+</tr>
+<tr class="odd">
+<td align="left">installment</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">66729</td>
+</tr>
+<tr class="even">
+<td align="left">grade</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">7</td>
+</tr>
+<tr class="odd">
+<td align="left">sub_grade</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">35</td>
+</tr>
+<tr class="even">
+<td align="left">emp_title</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">274363</td>
+</tr>
+<tr class="odd">
+<td align="left">emp_length</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">home_ownership</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td align="left">annual_inc</td>
+<td align="right">2</td>
+<td align="right">0.00</td>
+<td align="right">4</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">45904</td>
+</tr>
+<tr class="even">
+<td align="left">verification_status</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="left">issue_d</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">103</td>
+</tr>
+<tr class="even">
+<td align="left">loan_status</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="left">pymnt_plan</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">url</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">798641</td>
+</tr>
+<tr class="odd">
+<td align="left">desc</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">112107</td>
+</tr>
+<tr class="even">
+<td align="left">purpose</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">14</td>
+</tr>
+<tr class="odd">
+<td align="left">title</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">57719</td>
+</tr>
+<tr class="even">
+<td align="left">zip_code</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">931</td>
+</tr>
+<tr class="odd">
+<td align="left">addr_state</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">51</td>
+</tr>
+<tr class="even">
+<td align="left">dti</td>
+<td align="right">403</td>
+<td align="right">0.05</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">4079</td>
+</tr>
+<tr class="odd">
+<td align="left">delinq_2yrs</td>
+<td align="right">645151</td>
+<td align="right">80.78</td>
+<td align="right">25</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">29</td>
+</tr>
+<tr class="even">
+<td align="left">earliest_cr_line</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">695</td>
+</tr>
+<tr class="odd">
+<td align="left">inq_last_6mths</td>
+<td align="right">448047</td>
+<td align="right">56.10</td>
+<td align="right">25</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">25</td>
+</tr>
+<tr class="even">
+<td align="left">mths_since_last_delinq</td>
+<td align="right">1526</td>
+<td align="right">0.19</td>
+<td align="right">408818</td>
+<td align="right">51.19</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">154</td>
+</tr>
+<tr class="odd">
+<td align="left">mths_since_last_record</td>
+<td align="right">1144</td>
+<td align="right">0.14</td>
+<td align="right">675190</td>
+<td align="right">84.54</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">123</td>
+</tr>
+<tr class="even">
+<td align="left">open_acc</td>
+<td align="right">6</td>
+<td align="right">0.00</td>
+<td align="right">25</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">74</td>
+</tr>
+<tr class="odd">
+<td align="left">pub_rec</td>
+<td align="right">676301</td>
+<td align="right">84.68</td>
+<td align="right">25</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">29</td>
+</tr>
+<tr class="even">
+<td align="left">revol_bal</td>
+<td align="right">3075</td>
+<td align="right">0.39</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">71446</td>
+</tr>
+<tr class="odd">
+<td align="left">revol_util</td>
+<td align="right">3210</td>
+<td align="right">0.40</td>
+<td align="right">454</td>
+<td align="right">0.06</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">1337</td>
+</tr>
+<tr class="even">
+<td align="left">total_acc</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">25</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">134</td>
+</tr>
+<tr class="odd">
+<td align="left">initial_list_status</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">out_prncp</td>
+<td align="right">230216</td>
+<td align="right">28.83</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">229320</td>
+</tr>
+<tr class="odd">
+<td align="left">out_prncp_inv</td>
+<td align="right">230216</td>
+<td align="right">28.83</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">245733</td>
+</tr>
+<tr class="even">
+<td align="left">total_pymnt</td>
+<td align="right">15911</td>
+<td align="right">1.99</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">465319</td>
+</tr>
+<tr class="odd">
+<td align="left">total_pymnt_inv</td>
+<td align="right">16155</td>
+<td align="right">2.02</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">466355</td>
+</tr>
+<tr class="even">
+<td align="left">total_rec_prncp</td>
+<td align="right">16251</td>
+<td align="right">2.03</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">241597</td>
+</tr>
+<tr class="odd">
+<td align="left">total_rec_int</td>
+<td align="right">16311</td>
+<td align="right">2.04</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">306708</td>
+</tr>
+<tr class="even">
+<td align="left">total_rec_late_fee</td>
+<td align="right">787382</td>
+<td align="right">98.59</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">5699</td>
+</tr>
+<tr class="odd">
+<td align="left">recoveries</td>
+<td align="right">776435</td>
+<td align="right">97.22</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">20856</td>
+</tr>
+<tr class="even">
+<td align="left">collection_recovery_fee</td>
+<td align="right">777490</td>
+<td align="right">97.35</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">18726</td>
+</tr>
+<tr class="odd">
+<td align="left">last_pymnt_d</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">99</td>
+</tr>
+<tr class="even">
+<td align="left">last_pymnt_amnt</td>
+<td align="right">15822</td>
+<td align="right">1.98</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">215014</td>
+</tr>
+<tr class="odd">
+<td align="left">next_pymnt_d</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">100</td>
+</tr>
+<tr class="even">
+<td align="left">last_credit_pull_d</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">103</td>
+</tr>
+<tr class="odd">
+<td align="left">collections_12_mths_ex_med</td>
+<td align="right">787941</td>
+<td align="right">98.66</td>
+<td align="right">126</td>
+<td align="right">0.02</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">mths_since_last_major_derog</td>
+<td align="right">143</td>
+<td align="right">0.02</td>
+<td align="right">599107</td>
+<td align="right">75.02</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">167</td>
+</tr>
+<tr class="odd">
+<td align="left">policy_code</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">application_type</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">annual_inc_joint</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">798181</td>
+<td align="right">99.94</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">284</td>
+</tr>
+<tr class="even">
+<td align="left">dti_joint</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">798183</td>
+<td align="right">99.94</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">407</td>
+</tr>
+<tr class="odd">
+<td align="left">verification_status_joint</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="left">acc_now_delinq</td>
+<td align="right">794889</td>
+<td align="right">99.53</td>
+<td align="right">25</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">8</td>
+</tr>
+<tr class="odd">
+<td align="left">tot_coll_amt</td>
+<td align="right">630586</td>
+<td align="right">78.96</td>
+<td align="right">63276</td>
+<td align="right">7.92</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">9850</td>
+</tr>
+<tr class="even">
+<td align="left">tot_cur_bal</td>
+<td align="right">114</td>
+<td align="right">0.01</td>
+<td align="right">63276</td>
+<td align="right">7.92</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">311133</td>
+</tr>
+<tr class="odd">
+<td align="left">open_acc_6m</td>
+<td align="right">7398</td>
+<td align="right">0.93</td>
+<td align="right">779525</td>
+<td align="right">97.61</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">13</td>
+</tr>
+<tr class="even">
+<td align="left">open_il_6m</td>
+<td align="right">2098</td>
+<td align="right">0.26</td>
+<td align="right">779525</td>
+<td align="right">97.61</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">31</td>
+</tr>
+<tr class="odd">
+<td align="left">open_il_12m</td>
+<td align="right">9696</td>
+<td align="right">1.21</td>
+<td align="right">779525</td>
+<td align="right">97.61</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">open_il_24m</td>
+<td align="right">4930</td>
+<td align="right">0.62</td>
+<td align="right">779525</td>
+<td align="right">97.61</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">17</td>
+</tr>
+<tr class="odd">
+<td align="left">mths_since_rcnt_il</td>
+<td align="right">12</td>
+<td align="right">0.00</td>
+<td align="right">780030</td>
+<td align="right">97.67</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">200</td>
+</tr>
+<tr class="even">
+<td align="left">total_bal_il</td>
+<td align="right">2047</td>
+<td align="right">0.26</td>
+<td align="right">779525</td>
+<td align="right">97.61</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">15365</td>
+</tr>
+<tr class="odd">
+<td align="left">il_util</td>
+<td align="right">122</td>
+<td align="right">0.02</td>
+<td align="right">782007</td>
+<td align="right">97.92</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">1258</td>
+</tr>
+<tr class="even">
+<td align="left">open_rv_12m</td>
+<td align="right">6333</td>
+<td align="right">0.79</td>
+<td align="right">779525</td>
+<td align="right">97.61</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">17</td>
+</tr>
+<tr class="odd">
+<td align="left">open_rv_24m</td>
+<td align="right">2543</td>
+<td align="right">0.32</td>
+<td align="right">779525</td>
+<td align="right">97.61</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">28</td>
+</tr>
+<tr class="even">
+<td align="left">max_bal_bc</td>
+<td align="right">370</td>
+<td align="right">0.05</td>
+<td align="right">779525</td>
+<td align="right">97.61</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">10100</td>
+</tr>
+<tr class="odd">
+<td align="left">all_util</td>
+<td align="right">14</td>
+<td align="right">0.00</td>
+<td align="right">779525</td>
+<td align="right">97.61</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">1119</td>
+</tr>
+<tr class="even">
+<td align="left">total_rev_hi_lim</td>
+<td align="right">260</td>
+<td align="right">0.03</td>
+<td align="right">63276</td>
+<td align="right">7.92</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">19717</td>
+</tr>
+<tr class="odd">
+<td align="left">inq_fi</td>
+<td align="right">10231</td>
+<td align="right">1.28</td>
+<td align="right">779525</td>
+<td align="right">97.61</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">17</td>
+</tr>
+<tr class="even">
+<td align="left">total_cu_tl</td>
+<td align="right">10277</td>
+<td align="right">1.29</td>
+<td align="right">779525</td>
+<td align="right">97.61</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">33</td>
+</tr>
+<tr class="odd">
+<td align="left">inq_last_12m</td>
+<td align="right">3563</td>
+<td align="right">0.45</td>
+<td align="right">779525</td>
+<td align="right">97.61</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">29</td>
+</tr>
+</tbody>
+</table>
+
+
+<!-- rnb-html-end -->
+
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <h3>
@@ -1860,6 +2709,399 @@ Get amount and percentage of unique
 <pre class="r"><code>meta_df_p &lt;- meta_df %&gt;% mutate(uniq_rat = unique / nrow(df))
 meta_df_p %&gt;% select(variable, unique, uniq_rat) %&gt;% mutate(unique = unique, uniq_rat = scales::percent(uniq_rat)) %&gt;% knitr::kable()</code></pre>
 <!-- rnb-source-end -->
+
+<!-- rnb-html-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImtuaXRfYXNpcyJdLCJzaXppbmdQb2xpY3kiOltdfX0= -->
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">variable</th>
+<th align="right">unique</th>
+<th align="left">uniq_rat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">X</td>
+<td align="right">798641</td>
+<td align="left">100.00000%</td>
+</tr>
+<tr class="even">
+<td align="left">id</td>
+<td align="right">798641</td>
+<td align="left">100.00000%</td>
+</tr>
+<tr class="odd">
+<td align="left">member_id</td>
+<td align="right">798641</td>
+<td align="left">100.00000%</td>
+</tr>
+<tr class="even">
+<td align="left">loan_amnt</td>
+<td align="right">1372</td>
+<td align="left">0.17179%</td>
+</tr>
+<tr class="odd">
+<td align="left">funded_amnt</td>
+<td align="right">1372</td>
+<td align="left">0.17179%</td>
+</tr>
+<tr class="even">
+<td align="left">funded_amnt_inv</td>
+<td align="right">9040</td>
+<td align="left">1.13192%</td>
+</tr>
+<tr class="odd">
+<td align="left">term</td>
+<td align="right">2</td>
+<td align="left">0.00025%</td>
+</tr>
+<tr class="even">
+<td align="left">int_rate</td>
+<td align="right">540</td>
+<td align="left">0.06761%</td>
+</tr>
+<tr class="odd">
+<td align="left">installment</td>
+<td align="right">66729</td>
+<td align="left">8.35532%</td>
+</tr>
+<tr class="even">
+<td align="left">grade</td>
+<td align="right">7</td>
+<td align="left">0.00088%</td>
+</tr>
+<tr class="odd">
+<td align="left">sub_grade</td>
+<td align="right">35</td>
+<td align="left">0.00438%</td>
+</tr>
+<tr class="even">
+<td align="left">emp_title</td>
+<td align="right">274363</td>
+<td align="left">34.35373%</td>
+</tr>
+<tr class="odd">
+<td align="left">emp_length</td>
+<td align="right">12</td>
+<td align="left">0.00150%</td>
+</tr>
+<tr class="even">
+<td align="left">home_ownership</td>
+<td align="right">6</td>
+<td align="left">0.00075%</td>
+</tr>
+<tr class="odd">
+<td align="left">annual_inc</td>
+<td align="right">45904</td>
+<td align="left">5.74776%</td>
+</tr>
+<tr class="even">
+<td align="left">verification_status</td>
+<td align="right">3</td>
+<td align="left">0.00038%</td>
+</tr>
+<tr class="odd">
+<td align="left">issue_d</td>
+<td align="right">103</td>
+<td align="left">0.01290%</td>
+</tr>
+<tr class="even">
+<td align="left">loan_status</td>
+<td align="right">10</td>
+<td align="left">0.00125%</td>
+</tr>
+<tr class="odd">
+<td align="left">pymnt_plan</td>
+<td align="right">2</td>
+<td align="left">0.00025%</td>
+</tr>
+<tr class="even">
+<td align="left">url</td>
+<td align="right">798641</td>
+<td align="left">100.00000%</td>
+</tr>
+<tr class="odd">
+<td align="left">desc</td>
+<td align="right">112107</td>
+<td align="left">14.03722%</td>
+</tr>
+<tr class="even">
+<td align="left">purpose</td>
+<td align="right">14</td>
+<td align="left">0.00175%</td>
+</tr>
+<tr class="odd">
+<td align="left">title</td>
+<td align="right">57719</td>
+<td align="left">7.22715%</td>
+</tr>
+<tr class="even">
+<td align="left">zip_code</td>
+<td align="right">931</td>
+<td align="left">0.11657%</td>
+</tr>
+<tr class="odd">
+<td align="left">addr_state</td>
+<td align="right">51</td>
+<td align="left">0.00639%</td>
+</tr>
+<tr class="even">
+<td align="left">dti</td>
+<td align="right">4079</td>
+<td align="left">0.51074%</td>
+</tr>
+<tr class="odd">
+<td align="left">delinq_2yrs</td>
+<td align="right">29</td>
+<td align="left">0.00363%</td>
+</tr>
+<tr class="even">
+<td align="left">earliest_cr_line</td>
+<td align="right">695</td>
+<td align="left">0.08702%</td>
+</tr>
+<tr class="odd">
+<td align="left">inq_last_6mths</td>
+<td align="right">25</td>
+<td align="left">0.00313%</td>
+</tr>
+<tr class="even">
+<td align="left">mths_since_last_delinq</td>
+<td align="right">154</td>
+<td align="left">0.01928%</td>
+</tr>
+<tr class="odd">
+<td align="left">mths_since_last_record</td>
+<td align="right">123</td>
+<td align="left">0.01540%</td>
+</tr>
+<tr class="even">
+<td align="left">open_acc</td>
+<td align="right">74</td>
+<td align="left">0.00927%</td>
+</tr>
+<tr class="odd">
+<td align="left">pub_rec</td>
+<td align="right">29</td>
+<td align="left">0.00363%</td>
+</tr>
+<tr class="even">
+<td align="left">revol_bal</td>
+<td align="right">71446</td>
+<td align="left">8.94595%</td>
+</tr>
+<tr class="odd">
+<td align="left">revol_util</td>
+<td align="right">1337</td>
+<td align="left">0.16741%</td>
+</tr>
+<tr class="even">
+<td align="left">total_acc</td>
+<td align="right">134</td>
+<td align="left">0.01678%</td>
+</tr>
+<tr class="odd">
+<td align="left">initial_list_status</td>
+<td align="right">2</td>
+<td align="left">0.00025%</td>
+</tr>
+<tr class="even">
+<td align="left">out_prncp</td>
+<td align="right">229320</td>
+<td align="left">28.71378%</td>
+</tr>
+<tr class="odd">
+<td align="left">out_prncp_inv</td>
+<td align="right">245733</td>
+<td align="left">30.76889%</td>
+</tr>
+<tr class="even">
+<td align="left">total_pymnt</td>
+<td align="right">465319</td>
+<td align="left">58.26385%</td>
+</tr>
+<tr class="odd">
+<td align="left">total_pymnt_inv</td>
+<td align="right">466355</td>
+<td align="left">58.39357%</td>
+</tr>
+<tr class="even">
+<td align="left">total_rec_prncp</td>
+<td align="right">241597</td>
+<td align="left">30.25101%</td>
+</tr>
+<tr class="odd">
+<td align="left">total_rec_int</td>
+<td align="right">306708</td>
+<td align="left">38.40374%</td>
+</tr>
+<tr class="even">
+<td align="left">total_rec_late_fee</td>
+<td align="right">5699</td>
+<td align="left">0.71359%</td>
+</tr>
+<tr class="odd">
+<td align="left">recoveries</td>
+<td align="right">20856</td>
+<td align="left">2.61144%</td>
+</tr>
+<tr class="even">
+<td align="left">collection_recovery_fee</td>
+<td align="right">18726</td>
+<td align="left">2.34473%</td>
+</tr>
+<tr class="odd">
+<td align="left">last_pymnt_d</td>
+<td align="right">99</td>
+<td align="left">0.01240%</td>
+</tr>
+<tr class="even">
+<td align="left">last_pymnt_amnt</td>
+<td align="right">215014</td>
+<td align="left">26.92248%</td>
+</tr>
+<tr class="odd">
+<td align="left">next_pymnt_d</td>
+<td align="right">100</td>
+<td align="left">0.01252%</td>
+</tr>
+<tr class="even">
+<td align="left">last_credit_pull_d</td>
+<td align="right">103</td>
+<td align="left">0.01290%</td>
+</tr>
+<tr class="odd">
+<td align="left">collections_12_mths_ex_med</td>
+<td align="right">12</td>
+<td align="left">0.00150%</td>
+</tr>
+<tr class="even">
+<td align="left">mths_since_last_major_derog</td>
+<td align="right">167</td>
+<td align="left">0.02091%</td>
+</tr>
+<tr class="odd">
+<td align="left">policy_code</td>
+<td align="right">1</td>
+<td align="left">0.00013%</td>
+</tr>
+<tr class="even">
+<td align="left">application_type</td>
+<td align="right">2</td>
+<td align="left">0.00025%</td>
+</tr>
+<tr class="odd">
+<td align="left">annual_inc_joint</td>
+<td align="right">284</td>
+<td align="left">0.03556%</td>
+</tr>
+<tr class="even">
+<td align="left">dti_joint</td>
+<td align="right">407</td>
+<td align="left">0.05096%</td>
+</tr>
+<tr class="odd">
+<td align="left">verification_status_joint</td>
+<td align="right">4</td>
+<td align="left">0.00050%</td>
+</tr>
+<tr class="even">
+<td align="left">acc_now_delinq</td>
+<td align="right">8</td>
+<td align="left">0.00100%</td>
+</tr>
+<tr class="odd">
+<td align="left">tot_coll_amt</td>
+<td align="right">9850</td>
+<td align="left">1.23335%</td>
+</tr>
+<tr class="even">
+<td align="left">tot_cur_bal</td>
+<td align="right">311133</td>
+<td align="left">38.95780%</td>
+</tr>
+<tr class="odd">
+<td align="left">open_acc_6m</td>
+<td align="right">13</td>
+<td align="left">0.00163%</td>
+</tr>
+<tr class="even">
+<td align="left">open_il_6m</td>
+<td align="right">31</td>
+<td align="left">0.00388%</td>
+</tr>
+<tr class="odd">
+<td align="left">open_il_12m</td>
+<td align="right">12</td>
+<td align="left">0.00150%</td>
+</tr>
+<tr class="even">
+<td align="left">open_il_24m</td>
+<td align="right">17</td>
+<td align="left">0.00213%</td>
+</tr>
+<tr class="odd">
+<td align="left">mths_since_rcnt_il</td>
+<td align="right">200</td>
+<td align="left">0.02504%</td>
+</tr>
+<tr class="even">
+<td align="left">total_bal_il</td>
+<td align="right">15365</td>
+<td align="left">1.92389%</td>
+</tr>
+<tr class="odd">
+<td align="left">il_util</td>
+<td align="right">1258</td>
+<td align="left">0.15752%</td>
+</tr>
+<tr class="even">
+<td align="left">open_rv_12m</td>
+<td align="right">17</td>
+<td align="left">0.00213%</td>
+</tr>
+<tr class="odd">
+<td align="left">open_rv_24m</td>
+<td align="right">28</td>
+<td align="left">0.00351%</td>
+</tr>
+<tr class="even">
+<td align="left">max_bal_bc</td>
+<td align="right">10100</td>
+<td align="left">1.26465%</td>
+</tr>
+<tr class="odd">
+<td align="left">all_util</td>
+<td align="right">1119</td>
+<td align="left">0.14011%</td>
+</tr>
+<tr class="even">
+<td align="left">total_rev_hi_lim</td>
+<td align="right">19717</td>
+<td align="left">2.46882%</td>
+</tr>
+<tr class="odd">
+<td align="left">inq_fi</td>
+<td align="right">17</td>
+<td align="left">0.00213%</td>
+</tr>
+<tr class="even">
+<td align="left">total_cu_tl</td>
+<td align="right">33</td>
+<td align="left">0.00413%</td>
+</tr>
+<tr class="odd">
+<td align="left">inq_last_12m</td>
+<td align="right">29</td>
+<td align="left">0.00363%</td>
+</tr>
+</tbody>
+</table>
+
+
+<!-- rnb-html-end -->
+
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <h3>
@@ -1902,6 +3144,475 @@ Output a table with amount of unique, N/A, and zero values
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWV0YV9kZiAlPiUgc2VsZWN0KHZhcmlhYmxlLCBwX3plcm9zLCBwX25hLCB1bmlxdWUpICU+JSBrbml0cjo6a2FibGUoKVxuYGBgIn0= -->
 <pre class="r"><code>meta_df %&gt;% select(variable, p_zeros, p_na, unique) %&gt;% knitr::kable()</code></pre>
 <!-- rnb-source-end -->
+
+<!-- rnb-html-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImtuaXRfYXNpcyJdLCJzaXppbmdQb2xpY3kiOltdfX0= -->
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">variable</th>
+<th align="right">p_zeros</th>
+<th align="right">p_na</th>
+<th align="right">unique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">X</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">798641</td>
+</tr>
+<tr class="even">
+<td align="left">id</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">798641</td>
+</tr>
+<tr class="odd">
+<td align="left">member_id</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">798641</td>
+</tr>
+<tr class="even">
+<td align="left">loan_amnt</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1372</td>
+</tr>
+<tr class="odd">
+<td align="left">funded_amnt</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1372</td>
+</tr>
+<tr class="even">
+<td align="left">funded_amnt_inv</td>
+<td align="right">0.03</td>
+<td align="right">0.00</td>
+<td align="right">9040</td>
+</tr>
+<tr class="odd">
+<td align="left">term</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">int_rate</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">540</td>
+</tr>
+<tr class="odd">
+<td align="left">installment</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">66729</td>
+</tr>
+<tr class="even">
+<td align="left">grade</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">7</td>
+</tr>
+<tr class="odd">
+<td align="left">sub_grade</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">35</td>
+</tr>
+<tr class="even">
+<td align="left">emp_title</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">274363</td>
+</tr>
+<tr class="odd">
+<td align="left">emp_length</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">home_ownership</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td align="left">annual_inc</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">45904</td>
+</tr>
+<tr class="even">
+<td align="left">verification_status</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="left">issue_d</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">103</td>
+</tr>
+<tr class="even">
+<td align="left">loan_status</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="left">pymnt_plan</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">url</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">798641</td>
+</tr>
+<tr class="odd">
+<td align="left">desc</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">112107</td>
+</tr>
+<tr class="even">
+<td align="left">purpose</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">14</td>
+</tr>
+<tr class="odd">
+<td align="left">title</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">57719</td>
+</tr>
+<tr class="even">
+<td align="left">zip_code</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">931</td>
+</tr>
+<tr class="odd">
+<td align="left">addr_state</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">51</td>
+</tr>
+<tr class="even">
+<td align="left">dti</td>
+<td align="right">0.05</td>
+<td align="right">0.00</td>
+<td align="right">4079</td>
+</tr>
+<tr class="odd">
+<td align="left">delinq_2yrs</td>
+<td align="right">80.78</td>
+<td align="right">0.00</td>
+<td align="right">29</td>
+</tr>
+<tr class="even">
+<td align="left">earliest_cr_line</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">695</td>
+</tr>
+<tr class="odd">
+<td align="left">inq_last_6mths</td>
+<td align="right">56.10</td>
+<td align="right">0.00</td>
+<td align="right">25</td>
+</tr>
+<tr class="even">
+<td align="left">mths_since_last_delinq</td>
+<td align="right">0.19</td>
+<td align="right">51.19</td>
+<td align="right">154</td>
+</tr>
+<tr class="odd">
+<td align="left">mths_since_last_record</td>
+<td align="right">0.14</td>
+<td align="right">84.54</td>
+<td align="right">123</td>
+</tr>
+<tr class="even">
+<td align="left">open_acc</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">74</td>
+</tr>
+<tr class="odd">
+<td align="left">pub_rec</td>
+<td align="right">84.68</td>
+<td align="right">0.00</td>
+<td align="right">29</td>
+</tr>
+<tr class="even">
+<td align="left">revol_bal</td>
+<td align="right">0.39</td>
+<td align="right">0.00</td>
+<td align="right">71446</td>
+</tr>
+<tr class="odd">
+<td align="left">revol_util</td>
+<td align="right">0.40</td>
+<td align="right">0.06</td>
+<td align="right">1337</td>
+</tr>
+<tr class="even">
+<td align="left">total_acc</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">134</td>
+</tr>
+<tr class="odd">
+<td align="left">initial_list_status</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">out_prncp</td>
+<td align="right">28.83</td>
+<td align="right">0.00</td>
+<td align="right">229320</td>
+</tr>
+<tr class="odd">
+<td align="left">out_prncp_inv</td>
+<td align="right">28.83</td>
+<td align="right">0.00</td>
+<td align="right">245733</td>
+</tr>
+<tr class="even">
+<td align="left">total_pymnt</td>
+<td align="right">1.99</td>
+<td align="right">0.00</td>
+<td align="right">465319</td>
+</tr>
+<tr class="odd">
+<td align="left">total_pymnt_inv</td>
+<td align="right">2.02</td>
+<td align="right">0.00</td>
+<td align="right">466355</td>
+</tr>
+<tr class="even">
+<td align="left">total_rec_prncp</td>
+<td align="right">2.03</td>
+<td align="right">0.00</td>
+<td align="right">241597</td>
+</tr>
+<tr class="odd">
+<td align="left">total_rec_int</td>
+<td align="right">2.04</td>
+<td align="right">0.00</td>
+<td align="right">306708</td>
+</tr>
+<tr class="even">
+<td align="left">total_rec_late_fee</td>
+<td align="right">98.59</td>
+<td align="right">0.00</td>
+<td align="right">5699</td>
+</tr>
+<tr class="odd">
+<td align="left">recoveries</td>
+<td align="right">97.22</td>
+<td align="right">0.00</td>
+<td align="right">20856</td>
+</tr>
+<tr class="even">
+<td align="left">collection_recovery_fee</td>
+<td align="right">97.35</td>
+<td align="right">0.00</td>
+<td align="right">18726</td>
+</tr>
+<tr class="odd">
+<td align="left">last_pymnt_d</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">99</td>
+</tr>
+<tr class="even">
+<td align="left">last_pymnt_amnt</td>
+<td align="right">1.98</td>
+<td align="right">0.00</td>
+<td align="right">215014</td>
+</tr>
+<tr class="odd">
+<td align="left">next_pymnt_d</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">100</td>
+</tr>
+<tr class="even">
+<td align="left">last_credit_pull_d</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">103</td>
+</tr>
+<tr class="odd">
+<td align="left">collections_12_mths_ex_med</td>
+<td align="right">98.66</td>
+<td align="right">0.02</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">mths_since_last_major_derog</td>
+<td align="right">0.02</td>
+<td align="right">75.02</td>
+<td align="right">167</td>
+</tr>
+<tr class="odd">
+<td align="left">policy_code</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">application_type</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">annual_inc_joint</td>
+<td align="right">0.00</td>
+<td align="right">99.94</td>
+<td align="right">284</td>
+</tr>
+<tr class="even">
+<td align="left">dti_joint</td>
+<td align="right">0.00</td>
+<td align="right">99.94</td>
+<td align="right">407</td>
+</tr>
+<tr class="odd">
+<td align="left">verification_status_joint</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="left">acc_now_delinq</td>
+<td align="right">99.53</td>
+<td align="right">0.00</td>
+<td align="right">8</td>
+</tr>
+<tr class="odd">
+<td align="left">tot_coll_amt</td>
+<td align="right">78.96</td>
+<td align="right">7.92</td>
+<td align="right">9850</td>
+</tr>
+<tr class="even">
+<td align="left">tot_cur_bal</td>
+<td align="right">0.01</td>
+<td align="right">7.92</td>
+<td align="right">311133</td>
+</tr>
+<tr class="odd">
+<td align="left">open_acc_6m</td>
+<td align="right">0.93</td>
+<td align="right">97.61</td>
+<td align="right">13</td>
+</tr>
+<tr class="even">
+<td align="left">open_il_6m</td>
+<td align="right">0.26</td>
+<td align="right">97.61</td>
+<td align="right">31</td>
+</tr>
+<tr class="odd">
+<td align="left">open_il_12m</td>
+<td align="right">1.21</td>
+<td align="right">97.61</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">open_il_24m</td>
+<td align="right">0.62</td>
+<td align="right">97.61</td>
+<td align="right">17</td>
+</tr>
+<tr class="odd">
+<td align="left">mths_since_rcnt_il</td>
+<td align="right">0.00</td>
+<td align="right">97.67</td>
+<td align="right">200</td>
+</tr>
+<tr class="even">
+<td align="left">total_bal_il</td>
+<td align="right">0.26</td>
+<td align="right">97.61</td>
+<td align="right">15365</td>
+</tr>
+<tr class="odd">
+<td align="left">il_util</td>
+<td align="right">0.02</td>
+<td align="right">97.92</td>
+<td align="right">1258</td>
+</tr>
+<tr class="even">
+<td align="left">open_rv_12m</td>
+<td align="right">0.79</td>
+<td align="right">97.61</td>
+<td align="right">17</td>
+</tr>
+<tr class="odd">
+<td align="left">open_rv_24m</td>
+<td align="right">0.32</td>
+<td align="right">97.61</td>
+<td align="right">28</td>
+</tr>
+<tr class="even">
+<td align="left">max_bal_bc</td>
+<td align="right">0.05</td>
+<td align="right">97.61</td>
+<td align="right">10100</td>
+</tr>
+<tr class="odd">
+<td align="left">all_util</td>
+<td align="right">0.00</td>
+<td align="right">97.61</td>
+<td align="right">1119</td>
+</tr>
+<tr class="even">
+<td align="left">total_rev_hi_lim</td>
+<td align="right">0.03</td>
+<td align="right">7.92</td>
+<td align="right">19717</td>
+</tr>
+<tr class="odd">
+<td align="left">inq_fi</td>
+<td align="right">1.28</td>
+<td align="right">97.61</td>
+<td align="right">17</td>
+</tr>
+<tr class="even">
+<td align="left">total_cu_tl</td>
+<td align="right">1.29</td>
+<td align="right">97.61</td>
+<td align="right">33</td>
+</tr>
+<tr class="odd">
+<td align="left">inq_last_12m</td>
+<td align="right">0.45</td>
+<td align="right">97.61</td>
+<td align="right">29</td>
+</tr>
+</tbody>
+</table>
+
+
+<!-- rnb-html-end -->
+
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <h3>
@@ -1953,7 +3664,7 @@ Output numerical vars
 </h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnVtX3ZhcnMgPC0gXG4gIGRmICU+JSBcbiAgc2FwcGx5KGlzLm51bWVyaWMpICU+JSBcbiAgd2hpY2goKSAlPiUgXG4gIG5hbWVzKClcblxubWV0YV9kZiA8LSBmdW5Nb2RlbGluZzo6ZGZfc3RhdHVzKGRmLCBwcmludF9yZXN1bHRzID0gRkFMU0UpXG5cbm1ldGFfZGYgJT4lXG4gIHNlbGVjdCh2YXJpYWJsZSwgcF96ZXJvcywgcF9uYSwgdW5pcXVlKSAlPiVcbiAgZmlsdGVyXyh+IHZhcmlhYmxlICVpbiUgbnVtX3ZhcnMpICU+JVxuICBrbml0cjo6a2FibGUoKVxuXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnVtX3ZhcnMgPC0gXG4gIGRmICU+JSBcbiAgc2FwcGx5KGlzLm51bWVyaWMpICU+JSBcbiAgd2hpY2goKSAlPiUgXG4gIG5hbWVzKClcblxubWV0YV9kZiA8LSBmdW5Nb2RlbGluZzo6ZGZfc3RhdHVzKGRmLCBwcmludF9yZXN1bHRzID0gRkFMU0UpXG5cbm1ldGFfZGYgJT4lXG4gIHNlbGVjdCh2YXJpYWJsZSwgcF96ZXJvcywgcF9uYSwgdW5pcXVlKSAlPiVcbiAgZmlsdGVyXyh+IHZhcmlhYmxlICVpbiUgbnVtX3ZhcnMpICU+JVxuICBrbml0cjo6a2FibGUoKVxuYGBgIn0= -->
 <pre class="r"><code>num_vars &lt;- 
   df %&gt;% 
   sapply(is.numeric) %&gt;% 
@@ -1965,9 +3676,196 @@ meta_df &lt;- funModeling::df_status(df, print_results = FALSE)
 meta_df %&gt;%
   select(variable, p_zeros, p_na, unique) %&gt;%
   filter_(~ variable %in% num_vars) %&gt;%
-  knitr::kable()
-</code></pre>
+  knitr::kable()</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYGZpbHRlcl8oKWAgaXMgZGVwcmVjYXRlZCBhcyBvZiBkcGx5ciAwLjcuMC5cblBsZWFzZSB1c2UgYGZpbHRlcigpYCBpbnN0ZWFkLlxuU2VlIHZpZ25ldHRlKCdwcm9ncmFtbWluZycpIGZvciBtb3JlIGhlbHBcblRoaXMgd2FybmluZyBpcyBkaXNwbGF5ZWQgb25jZSBldmVyeSA4IGhvdXJzLlxuQ2FsbCBgbGlmZWN5Y2xlOjpsYXN0X3dhcm5pbmdzKClgIHRvIHNlZSB3aGVyZSB0aGlzIHdhcm5pbmcgd2FzIGdlbmVyYXRlZC5cbiJ9 -->
+<pre><code>`filter_()` is deprecated as of dplyr 0.7.0.
+Please use `filter()` instead.
+See vignette(&#39;programming&#39;) for more help
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_warnings()` to see where this warning was generated.</code></pre>
+<!-- rnb-output-end -->
+
+<!-- rnb-html-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImtuaXRfYXNpcyJdLCJzaXppbmdQb2xpY3kiOltdfX0= -->
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">variable</th>
+<th align="right">p_zeros</th>
+<th align="right">p_na</th>
+<th align="right">unique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">loan_amnt</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1372</td>
+</tr>
+<tr class="even">
+<td align="left">funded_amnt</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1372</td>
+</tr>
+<tr class="odd">
+<td align="left">funded_amnt_inv</td>
+<td align="right">0.03</td>
+<td align="right">0.00</td>
+<td align="right">9040</td>
+</tr>
+<tr class="even">
+<td align="left">term</td>
+<td align="right">30.00</td>
+<td align="right">0.00</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">int_rate</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">540</td>
+</tr>
+<tr class="even">
+<td align="left">installment</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">66729</td>
+</tr>
+<tr class="odd">
+<td align="left">emp_length</td>
+<td align="right">7.95</td>
+<td align="right">0.00</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">annual_inc</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">45904</td>
+</tr>
+<tr class="odd">
+<td align="left">dti</td>
+<td align="right">0.05</td>
+<td align="right">0.00</td>
+<td align="right">4079</td>
+</tr>
+<tr class="even">
+<td align="left">mths_since_last_delinq</td>
+<td align="right">0.19</td>
+<td align="right">51.19</td>
+<td align="right">154</td>
+</tr>
+<tr class="odd">
+<td align="left">mths_since_last_record</td>
+<td align="right">0.14</td>
+<td align="right">84.54</td>
+<td align="right">123</td>
+</tr>
+<tr class="even">
+<td align="left">open_acc</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">74</td>
+</tr>
+<tr class="odd">
+<td align="left">pub_rec</td>
+<td align="right">84.68</td>
+<td align="right">0.00</td>
+<td align="right">29</td>
+</tr>
+<tr class="even">
+<td align="left">revol_bal</td>
+<td align="right">0.39</td>
+<td align="right">0.00</td>
+<td align="right">71446</td>
+</tr>
+<tr class="odd">
+<td align="left">revol_util</td>
+<td align="right">0.40</td>
+<td align="right">0.06</td>
+<td align="right">1337</td>
+</tr>
+<tr class="even">
+<td align="left">total_acc</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">134</td>
+</tr>
+<tr class="odd">
+<td align="left">out_prncp</td>
+<td align="right">28.83</td>
+<td align="right">0.00</td>
+<td align="right">229320</td>
+</tr>
+<tr class="even">
+<td align="left">out_prncp_inv</td>
+<td align="right">28.83</td>
+<td align="right">0.00</td>
+<td align="right">245733</td>
+</tr>
+<tr class="odd">
+<td align="left">total_pymnt</td>
+<td align="right">1.99</td>
+<td align="right">0.00</td>
+<td align="right">465319</td>
+</tr>
+<tr class="even">
+<td align="left">total_pymnt_inv</td>
+<td align="right">2.02</td>
+<td align="right">0.00</td>
+<td align="right">466355</td>
+</tr>
+<tr class="odd">
+<td align="left">total_rec_prncp</td>
+<td align="right">2.03</td>
+<td align="right">0.00</td>
+<td align="right">241597</td>
+</tr>
+<tr class="even">
+<td align="left">recoveries</td>
+<td align="right">97.22</td>
+<td align="right">0.00</td>
+<td align="right">20856</td>
+</tr>
+<tr class="odd">
+<td align="left">collection_recovery_fee</td>
+<td align="right">97.35</td>
+<td align="right">0.00</td>
+<td align="right">18726</td>
+</tr>
+<tr class="even">
+<td align="left">collections_12_mths_ex_med</td>
+<td align="right">98.66</td>
+<td align="right">0.02</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="left">acc_now_delinq</td>
+<td align="right">99.53</td>
+<td align="right">0.00</td>
+<td align="right">8</td>
+</tr>
+<tr class="even">
+<td align="left">tot_coll_amt</td>
+<td align="right">78.96</td>
+<td align="right">7.92</td>
+<td align="right">9850</td>
+</tr>
+<tr class="odd">
+<td align="left">tot_cur_bal</td>
+<td align="right">0.01</td>
+<td align="right">7.92</td>
+<td align="right">311133</td>
+</tr>
+</tbody>
+</table>
+
+
+<!-- rnb-html-end -->
+
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <h3>
@@ -1982,6 +3880,9 @@ First step to get an overview of potential collinearities. Failing to identify m
 <pre class="r"><code>corrplot::corrplot(cor(df[, num_vars], use = &quot;complete.obs&quot;), 
                    method = &quot;pie&quot;, type = &quot;upper&quot;,tl.cex = 0.65)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-plot-begin eyJoZWlnaHQiOjQzMi42MzI5LCJ3aWR0aCI6NzAwLCJzaXplX2JlaGF2aW9yIjowLCJjb25kaXRpb25zIjpbXX0= -->
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAArwAAAGwCAMAAAB8TkaXAAAC9FBMVEUAAAAAADoAAGYAOjoAOpAAZrYFMGEGMmQHNWgJOGwKOnAMPXMNQHcOQnsQRX8RSIITS4YUTYoVUI4XU5EYVZUaWJkbW50cXqEeYKQfY6ghZqwiaK0kaq4mba8ob7ApcbErc7MtdrQueLUwerYyfLczf7g1gbk3g7s5hbw6AAA6ADo6AGY6ZmY6iL06kNs8ir4+jL8/jsBBkcJDk8NHlsRLmMVPm8dTnchXoMpbostfpcxjp85mAABmADpmOpBmtv9nqs9qAR9rrNBuAiBvr9JyAyBzsdN2BCF3tNR5BiJ7ttZ9ByJ/udeBCCODu9iFCSOHvtqICiSLwNuMDCWPw92QDSWQOgCQOmaQ2/+Sxd6UDiaWx9+XDyaZyOCbECecyuCfEiify+GizeKjEyilz+OnFCmp0OSqFSms0uWuFiqv0+ayGCuy1eezGyy1Hy611+i2ZgC2kDq225C2//+3IzC42Om5JjK7KjO82uq9LjW+MTe+vr6/2+rANTjCODrC3evEPDzF3+zGQD3HQz/I4O3JR0HLS0PL4u7NTkTPUkbP5O/QVUjR5fDSWUnUXUvU5vHWYE3W6PHXZFDY6fLZZ1Laa1XbkDrbtrbb6vPb///cbljdclrd7PTfdV3f7fTgeGDifGLi7vXjf2Xk7/blg2jmhmrm8ffoim3pjXDp8vfrkXLr8/jslHXt9fnumHjvm3rv9vrxn33yooDy9/r0pYP0qIb0+fv1q4n1rY31sJD2s5T2tpf2+vz3uJv3u574vqL4wKX5w6n5xqz5+/36ybD6y7P6zrf70br70737/f381sH82cT928j93cr938394dD94tP95Nb95tn96Nv96t797OH9/v7+7eT+7+f+8en+8+z+9e/+9vL++PX++vf+/Pr+/v3/AAD/ADr/AGb/OgD/Ojr/Omb/OpD/ZgD/Zjr/Zmb/ZpD/Zrb/kDr/kGb/kJD/kLb/kNv/tmb/tpD/ttv/tv//25D/29v/2////7b//9v///+KI3gVAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAgAElEQVR4nO2deWAdx5bW6zEZw3vsa9gJO+8xCYR9CROWsEPY37xgICxmX5IZNkMbjCFgCAYDAo8CIiAWg7KQgMFsJvAQBoIDBGPHqywrjiPFIxGkwZpI5x/q1HLOqe7q7qt7r9TV99b3Xq6P63b3LUk/l6rr63NKQVZWT6W67kBW1rDK8Gb1Vhne6dTOitG9rvsxkjK806rdjzXCq133YiRleKdVO/fsfz1WhndqtaWnDQ+77sRIyvBm9VYZ3qzeKsM7tdpaWV/L04asPmrn3vZ6vmHL6qUyvFn9VV5tyMrqTBneqdVatoezeqqez3dRGd6p1YOuOzCyMrxTqzxtyOqr8rQhq7/65LOuezCqMrzTqp38MHpWVmfK8E63MJ+it8rwTrcyvFm9VYY3q7fK8Gb1VhnerN4qw5vVQ+2sQ9+fb8jwTq22Vnc/yg+jZ/VT2x/23CDO8B6oOi8RJlKG88ibNZAY2m5LhImsyzznzRpQDzyy3ZYIm4CUYaEM74FIINtt0q749Fx0JGswaWgSuz2agEE4w3vASqYkboY3a6/q+BlwudqQi45kDaREsh0nYLgVyvAeiFIBpgJvfrYhq02CkWRWG4wyvFlt4pluYltBZHizBleX8O6sVtY6MrxZzdLQ8BpDl9OGtcqTFRnerL4oj7xZe1TwLNnGZucPc/WaWKEM7wErhRs2C+/G5trKZrcdGVEZ3gOWeSQyBXh37uH/uu3IiMrwHozYlk3AlXXwbq9meLPalZYta6cNaysP1/K0IatVKcLbf2V4D0Y8Wej0GfAdMWNJ5FmhEZThPWB1PQavraz6jnTXiTEpw3vA6hpegG33O6DfyZeoDO8BKDApOl5twJFXz3k7z8EfhzK8B6JuE95ZO12v0o1VGd4DEftq3SIsPh3Dni87ZHgPRjRZ6DaHjT/dPmCWwC+DEZThbdBOYtnqY1UKs5gRleFt0u5HK+vjvNzH1ag75XXeidfWGH++CcDLFkle5510rU3YyCtXmfM670Rr3AtLacGbpw1Ze1D38AqLJE8bJlxjHpwSgFcob5w90Rrf4MSOQLfegFj8E6Uk+moVZ3gbNDbI2BHYb2+gbWk6uvj3oKervhneBo3PDWM29puS9qXprXLdhhRyQodShnfytNX0+Fpp8c/8ckmv8vVgyvDWKqhzM6o4z3y/M849ndHxtLL4l8Kd49DK8B6IOM98nzPOBZ0DzWQzvJOtcfx8Oc/8wDLO42sI0RKnfbUrMrytGsvgxHnm+5xx3gxiZS6RQg2UoZXhbVWqv1mjq2ICxFhRtOhEONUvsFUZ3laNaeT1A+L4fkfHVsW4s/EFMJo2bOGfzjfpp0WR4R1A45nz7qya/VJFNA5VHthkEJsnBLv3P4O1h70dc60yvK0aD7y7H7thjqLR1fzAZnSd188lzDrEJ9/28ZhXBA9WGd6K9uU5hI31DUcaRyMq8sBmK4g0l8CRV7/kkXeydHDPIXQgnkts33MvvX0sJ8Mb0fifQ2A+xkpK/a1f/eptAgVWx6cMb2/VsDzb69XbwZXhrWo/lrWMxvswesM18K3mjyhVoOqwcOUIyvBWxEPWuAev8cLbcG9mRt7o28Tptqid03ntvyGV4a1o/5J1DiwNqPbygtONh5HGftWAyvBWVMqPSXTa0LgqVlvXLz7I0l1cz9ZXMrzj0UCz4/0aecV4KRapa6YNjRtn9ysbKMNb1RA3bINNGfcDXn0lMV7ueegsd6RXT0dmeCsa6oats/IzpRlCy9AZ2b41WHfwX3E/nIsMb1UPIlGjwh91dH9WuQ/bWNel6sfwmB9RmUv4RTVPda9qQGV4qxptnTeeO0Y3SuNelyqbaRQOlhNczh7O04Y+StzpDD5toJPELVPU3dpfeMX1RFifwyZGa589XK0B1QOMM7xW8k6H6yC1VESik4L7pOjjA3IftrE+XVAy08TD6PXT1obbRfqKx/vc8f4ow+skHscZfJ2XTup4pwlxxzXIfVZ013f7G4S/9jE+d7xfyvAejPguLhbtQWLgHmQMd/yFoEZ3fS+TOrbnjvdPGV6voeZ4/iT3O/qhbJMSuwFFoj1InCTC2A2blZ/GB6BGd31PfZiNKMPrFL1VaQOaTrKrTeavUR75tioW7UXiNozC+A0bfXAF1Oiu774x+ds0VobXSabdDpwsSSfZUdAm2ERHsNgN2zC3buI2TIRidba0UOt6M0CxCD+X8F9xDx5bz/A6xW5VWm9a+CTzozZ8jPQ0T90SQcv0uG3aMPCR8mtP/3n2DG9V+5AsGf+cJiIrrq1/kpFPorB12kC2XvRI/Cg/LNNXnMqGs03K8HqNZ7ZX96RiZB69h7GNp8fxGzaxHs2hwJyckeiKsDk47Eh+tqFXqhmyoPk2nB5UaEE/5trV3LC5K4X/CmgCKk4SRMfWeeW/DYI3viK8+1H4IFpfFh4yvF7xOx1o/FEyFGUISydFryZuiXiUbLtJHHidN/i30XhopehZWhu/1CvD61V7pzMIvJVjyg95N7t2wWSAbplESk7zDZsoPyLCwZcLykXPMrw907DTBgtI9FHDwSVHSX/LJJ+XaJ0er/Hv/bXKs+hyBlI3cFc2qhjmyzhoZXi9Sg/hjPgDDE5ieoKZrBjro8/eMoQC7rq1rm2+wHb9iBu938Mu5ZG3zyqPnfU/QPk0ee192gA/9b08t0Vw16yK4XBLfsSqf9CR+skPEEUXK+o7n+GdLMkHcvmHX86PGAjeqAXCnMZmxzVPP0bmvEE/m6cNweSn0eNISxneklrrigVPkz8oN9ZbZNXdgIQFwuyHA2JlZB786cfBn3qP534kblCgMrxeNANgbynuMsn5KT1V1kJKy25A4vTwMwfMzmkcT8XH8IxbTr4JXvkvrw9FezO8TvJxnIidVXeSj1rWpep3A/KPJ1YHbhP7PdWoc7FE4faZbHPWZw+ewYkqw+skZqDNz30FFZFieULRUbJ2NyB7qVb2afE3Om2IPie5Ks/3/zhi5Ul6qwyv14AP4QTpao6f0kM0tYsIsbv4OD/l95s7F31OUv7e9/C2lydpvl1MTBnevartTqbhOcpaeCO1QKrRKKL1hGh5kjXxL6/xdjExZXgDlRZIm6eKlZWFtlGyHt56g64+Tb0814iuolUy09qfqByqYlAnyvAGslZWc42Flmr6LVevj9qOLBcIKd+bNcBLj95ET5ddCKcNeeTtkwaAV9z5x0fe5qs3HNk2dJowdm/Wfrp/9Kbticp+KcMbqPSbObra0DKnbSmbK6LyED4IvPEctkFO32p8MMdrxMT8g1WGN9Agt0cDzGkHutOJPQPc6O+1dK4R3ub9BunIERPzD1gZ3kB7vbdfi08bqj/1iD3c9gxwQ+cGmmCIKLLfYPzqPJcInmVPVBnekmrHPnKCg8X/6ppu9E4nZg8P/Axw4/MyQYHd9g3fxPpJaSml7Jb0wHbL8Hq1PNtAo1C4+O/nv0Pbw0KD4xMdZJtE67xi75TS3WgP3bYMr1O4uhmZ90XLLvv57wCpDjX2cKwfrbPOvcLLj94MBG9+nrdnEj+m+NhXM711EstWA+fQB7/CZYXcKrz1pUTK6xbRWlV8qRE9jrSU4XVqW+wsjYHuRoiKS4t5Z/Qi0boNYhTk82L/dMpz64pzQW/X1KpqntWUV8UyvJOm8AEyGvAqD7dEf94xy7X2Id7Y6ZGUYlnLnZaeG2tV1SwSV+YnGd7+Kv6bN2amMXDi2ZboEB7bpCWafcNFFGQ5hUhKsfyXI5ae47WqGh2HyqpYhrdvCsowWTXcgpXHtMZJbvsKlrwyFVEol1Mwlxp416py93bu1dpz9TsLZnh7IZ4ixn90JVTcW+Q4jHULKC6i4KKWB8fjcwlxzsCOQ/z0VJXhdYolKwRLujRmiZ8qOw6R+/0gTSwGhbghC92Q9VIkZgixTIroXCKcjw94w1Z3eqLK8HoNlUnhHYeacgrVkySH4X2SXy7g3HWR0B5QJNYdmhLbouTFlsrkc5Itp6elDO9eFfxUyXHgtQjxuzYcbyunh480Dv4gQcu/lLZTo8/zpv4YQ1QZ3opqiuI1ZlVE8yLlIB1b5y3dPlVKOMRMDJlSzGFr6rssLl1dWx4wcz45ZXi9gh8W/2b2Ea/KSrer2U2r1l9oH+Kij8K3uM9RJOU5fKmW53nzI5G9VF32VuXnL3+ig/90B96Me5/hbVGGt5cSPzb6dRw83egHKrl+JPIU+Fd8aW+2st3BUXwUjP7iHrGR41gCZrxcZZ429EiD/rDi62dylKRnCtj1rRvTBxtZ5acPc1LL6X3YZjiqDG9J+ue4Wo7s35oW7QN4xYMGhEpkM24JHy88RNclwi3pq/S1mRR0qXgCpuhxNin6J/Erfi0S8cpB6DxES4cGxR8r9WfEwF0yKcRko3SkXLaIzBDaTYqWEqfU42xS9F3xhfpOF+1bPnwPJsXAH5RNiqysfVSGN2tobf/YP9jp52d4s4bVzlPfLsOb1UudUV+XR97uVWTVC79BKpD7rn3zK3nakIAK/+PhMNL4hj0SXoofec1dCZ73jbCsln2jUrcouu0bZ+nI85YJDI9S4zxdHs5S9JgKQhs9q4LQRkf4mm9S49vceFfdddEH6gMIQoxe4CNBHSJJYDK8CajQROkfyyH90zKhjHz4hoI33tDRSy+Beukl16jUF0x0TV1TcO0aXun550E9bxqXl/V3V7/o8NYt3XLrlo5u39bR7dvYODsLatYcef68vpZ+0eHRo6COmsb5eVDz84a5s2dBnTWNjz0G6rHHODTRs8+CevZZDk105AioI0dM+Oab+vL6pYC339aRftHh3bu6d/qlgA8+0JF+EWEBL7wA6oUXzOmQ4d1/7fkxkk99UCC7FtTCYiwiG76h4QUDLyC8L+mfqvqCJhf/0/ACjlIWXv3+889j47L57lp4zfsGXhNZePX7s7N45Hkcj8HCq8OjR7FxXkfzat7ACwjvWSQWEN7HFIV45LOA8D5r4AXLsYYXEN4jBl5zeQOviSy8pncGXhNZeF2o4QWE9wUP77cnZXj3RXv2+WkZvjAjiwG1UJUIwzcMvPBGodk18L6kEN4vmP+Ka4YJpLd4Hgy8z6sCZwzYuAzFLRfeKm676DYUs2BmGzBbnHeN56E4Cgbeo6qYB3vReSjOuvBs8RhYeB9TFKriWXDwirA4Ag5eVbzpLv9m8baL3obirgvvFh+4SCNLYfECOHj1PwMMvwMpw7svQnjXzFNg5nX7/orcTRpbHqysbOLupvYtzhXbK7xGIbwwHLz6vyq8iuAFhhcsvPqDPbw2ZGKfjcF7ZAR4FU4cCvwGqc+TMrz7Ig3vFpL7cHsddu9/tr2Kr/Yt13LP5IXpA8xb5ZH3ECEbRhV4US+ZaYORhRfl4DXzBgMvysGLsvCiHLwoCy/KwWuwMfCiHLyos4Ul1yDrwwZ47dBr4EVZeFEOXpSFF+XgNaGB13XE/Jnh3WdpeDceAmxtwsbKyoefaWD5CS7fgs9JGbr1WxLeKrKKGpWB17Br57yA7Ep4wdLr57xIr53zAs15UXbOi/JzXq1ZMHNeAJrzah0FM+cFZNfOebX0nJfYVRyaia6f6frQzHnt7wgz59Vyc14AmvMCzXmB57xAc16tF/xqwxdIKQGTUl9GFI28G5tmnBXwUksNvP52WhHH+EOXjeZ+za02gHkplP2Rmhs2pJdWG8xqmVltAFpt0KFbbdARrTYAvpjVBgBabQB8MasNYF7MagPgCw+3FBpi3W0a+NDcsCG97oYN6fWrDQC02gC02gC82gC02gDmpcBvkPqOpJSASakvI4rmvNt6mP3koYSXWgJ4aUpcgF0rU37VzK6PBY164gBundfwaxoNu6bx2jVe5zX8YrS8TOu8twy/GN2+zeu8hl+Mzht+7Tqv4RejecOvXec1/BZ2nuu79JhbNAMwt2sgQoyOGH7tOq/hF6O3Db92nfcurfN+wOu8H9A6r+E3w5u6CrC/YaFkPchGPjI8qdoYPXJsjWE/D+jT1XcipQRMSn3ZB22bZ6o/jOwQLNWt/5q48BukvjMpJWBS6ksKKryP78Y2mjZIe/glbuQjA3vY/uIexB62R55X56U9bBvn1by0h21jyR5204bQHnbTBm4c1h5WfuT9LqSUgEmpL6NprTK+yoq6se3ZWeS1gXDYwDts4Bw2YQ8bh02xw1ayh/0NW7s9bB22kj1sHbayPWwctpI97G/YAnv42fHbwxnefVXEXxsYXpHyIk0KYQ+/UbGHlbeHvxCzh58f1B62zzaU7eGjVXtYgbSHFYdsD4tw3PbwdyWlBExKfRlJayv37CKCc9b03zWwaytYgdTG/rgmrw0GtIcrDtuw9nDMYRvSHh67w/bCC+SwfTdSSsCk1JeRpEdeB6+xz7bWsbI4rvtuPLSxPazFaxsMXk2Sc9j2xx72DlvFHjZveYftIO3hDO++iuE1r+i16Vdca9i0sTuu2WuDWnvYfKMOyB7Wd2019vBjbA9T1GAPq3HZw9+dlBIwKfVlJCG8qzjCWh63zAi7ZcqP2tge1uK1QeL2sHDYqvYw+FB5exiUm/PCiPbw9yClBExKfRlJGt7dj3Bu65y1tZUP75s5L04PTGzU4rWF9rCdNJiFBcNuaA87x988jH5A9jC4SYOwh4E9YR/6h9HBvIzFHs7w9kHl1VvK84nYw9KLOyB7OJ6uVLaHbTROe/h7klICJqW+7KsG89qgWzcrReF3RX0vUkrApNSXtFSUh7lpTsD83qSUgEmpL2mpyAmY7LBlePdF43CFo9lvgyZgRh22SUvA/D6klIBJqS/DaEyucEQ5AVMkYD5KMsDsfln5Sk/bX1Sf+0rT93Ef1Xd4x+IK4xqxadGHb9MT6jkBkx22Erwvfi3+33zrnnoaznRVsqzv8I7FFbYGhz19w5f2zwmYwmH7viT8Nuz8rK/45Ev8A//aiSYH3hFcYbqI34wVlaTD1lUC5vcj4UxHELv75adh65FXhvrZjaxJgHdkV5jghY0Hm/7KRU7AZIft+5MQGDnc6ulvV+xOAryju8IM7zavXRSQEzChFd6dp57Ic970VADkBEwP7w8gleDNc959VLMr3PRut6ZsOsLvhfqBpHzD1jOVn9Z5jRvfA2+7vs0D4g3wo+RNgLLtyp6xPvK6a3zXDKKu8SadfqvciB/5lv/0t0xYSHNaByYsXfO2saTtNZeqXRL2MHnG+ppXfWMZXrFUtvvlPG3oXp82vBdkZb72moLXXjON772n4L33ILBdb6gbCm7c0NHNm5qemzdD21V4xtfVdQXXr+vo3Xf16foFT1I3zUlsKQeN6q23FLz1lvl0FwbmtA+Da2p0jSVdwNKSvubSUtglYQ+zZ3xVXVVw9aqH9weRDDA7TxmT4sUnskmRghrdtiArE+EFA+97CC8YeNl2vWHMMAOviW6Gtusye8bXzfsGXtNo4XUnsaUsGy2xYOB9y4WBOW3ghWvhNb0lreE1jUthl4Q9zJ7xVXMOwfuDSSkBk1JfuhS6bcaX27h/j4w4LwnvawZeTW/xnh56MXxPOlc3nFN8o7jpGm9K52oZyHa77o68XrzrGt8FPMk03mRXTjY6YhFZCqU5TaG85m3XeLtYco1LskvCYWPb7ao756qD94eQUgImpb50KT3yWl9uYx3IiPNv1sDrfsBleGFgeCEGL8TghQq8b0l4geGFGLwwBLyQ4e2LNLzOl9sEWg72b8rEtgBeo/ek7XrDhRZe1E1puy67yMGLsvCiHLzmJLaUZaOdNfiR14bSnKZQXpMsaQMvakl2SdjD7BlfdZGH9zFSSsCk1JcuhSOvMdfa4FWOXf1TtfS6OS+An/Oi7JwX5ee8QHNeoDkvys15gea89iS2lGUjrjAAzXndGCzNaR8G1/SWtJnzAs95gea8wHNe8HNeFM15fygpJWBS6kuX2jFPma2sPIzDK7My8X7Nwov0+tUGb7veQHrdaoOOaLUBaLXBe8bXkV6/2gDgVhvcSWwpB41mnuJWG1wYmNM+DK7pLenCLDTwagPQagPwaoPzjHGhQaw2ZHh7qwKCjJ/X3DovkkvrvGy73rjh13lv3uR1XrJdhWd8/Tqt8xrWxEkYWUs5bMRZr21ULsS3hTltw9I1rSWN0dISr/NSl4Q9zJ7x1atinfeHkVICJqW+JKtuLa6Ohd8A9cNJKQGTUl96oAJkViacjOda3nHRq3ykIo/rHD+ScL6UDFk6/WwsWXKBGxfo6idUENpI5G/ykW/y6eywLZIXJz5IfEUZ3nTFz/BWbbZSSyGzMk+eBHWynGt5545uuXNHR6++CurVV837Pu2ygHPn9BX0C3DaJRtbwekm6/KsCo2vhQVQCwum0YRqQUcnToA6ccJ8kAnL+Zt8pE/FBOmwLS7qRv0SfJD4irTUjyClBExKfelcVZut3CKzMuGk/vadPHkyzLW8Y26qDLy68VU74rHHdc4sDlt4zUnngY2t4HSfdQnS+FoAy6ELFRh4AeE9oSgs5W/ykT4VE6TDtmiixfCDxFekpX4kKSVgUupLV6IUNkpq27h/z2a9kfHmJBPbNLtm5A3S1e648E7xKlgT41VpE5xz0TngzDX2BuTplHUpvYMF16hBpLA4AQ5exaHM3+QjKZtNmhSLLlqUHyS+Ivyy1Y8ipQRMSn3pSpTCRuMs2mzrrsUab+6NCrz6+3eyAV4YDV6IwQsMLxC8NieUQpm/yUdmeCdPnMJG8G66rDcy3twbMivzpGs7KX2zOy608KJelR7XORc5eFHn2diSp1PWpTS+Flzk4DWhIRZ1AjiU+Zt8JKViSodt0UWL8oPEV4R/qB9NSgmYlPrSlaLw2qw3Mt6c2Guzc16tkxD4ZhY/N+cFZBekx2Xp9XNeoDkv0JzXn+6zLkEaXxZEP+c1oZnoArIrwiB/k4/0qZggHTZL72L4QeIr0lI/hpQSMCn1pSsxvP5JMrTZTNYbGW/u0EJkZeJqA+BL4JvdQfz8agOYF+lx4UID0GqDSbtkYys43WddgjS+FhDEhQUQoVliAPPCYZC/yUf6VEyQDhsuNACtNgCtNoBYbcjwToAKEFmZSO5JqPhmd+7QOq/h14TscZ0z/JrQpl1iZI2t0uk261K8j9GCQVGEGJ0w0IoQI5G/yUfaVEwTssO2aPgtfZD4ikA9TkoJmJT6koDaCqEWANXExwIi4UQ1qh9HSgmYlPrSA3Vo03Yl/LLVjycZYEStMh2qJzr6aWR4h1VRysq8bhvjO2CqaH3eOTrynDrnR/Nj1Ch2wGR/93H1OIf+yGfUM77xGWp8Tj0XmsIYcaJoW33eo6bUqht5S/ByAia8+Mgr21/K2cMdKKwxKSqeRoueymMgyMr0uZRQtwOmulWtzzs3B2puTkHgGR87BurYMd4Bc17ZOy6lzB3X44/j/NPQ6cMCnnkG1DPPmEYfFvDcc6Cee27o+rx+J04H75MkBEakvneW9m661d1HpyZZ/akO3viObZRLCXvZAXNOvz+n5iDwjI8BwnuM/F0V+ruP25snpNOHmlhAYg2yPtTwAsL7nKtVtuf6vH4nTgfvTyAhMKWiI51puuElY3hrZeWhs4LXHbychmn84aa9MimXsr7EqXk/KHE6B7Z1Ttpux8DDW/Z3AV2Gx8Hd+SsKVfEMWGKf4VAVz4GF97nhSpz6OsFHXZVIAW9YaG/rkW9U6un9+vm0KMNrjOFPPoNv06Oq84QtvD4N0/rDTXtlUi7lXurzzrmwCm+9vxvCq/YZXtsR/FrVTySVRt4tfbe21VXhhgyvLZCqB1cE03rC99wbNhnI+sNN2w1SLuVe6vPOuXBOesbHXHgs7u8+boE18FJExJbhtZPeoerz0k6cbtrwk0hleB95xZQ57UQZXlseUo/A+BzDphh5PbzWH26Cl3IpYS/1eS29bs4LQHNerWNQ4+8q7xQU3jcQE13wobJzXqR32B0wfZ3gKLylWmUZ3k5E8OppLVrBzhMO4bX+cHWvTKANMimXEqg+L7TX551DeufmIPCMjyG9xwy8MX/XDrfK1Of1ES4xgBKrDSZ6Duml1YY91+f1dYIdvD+ZVFkq09OGXKusbypAZGW6XEq7zjtwfd45wy9GwjM+ZvjFKObvchKSTEfCwVas89roOcOvXecdoj6vrRPs4P0pJAOMqFWGJkW+YeubuvW9Dk74taqfSkoJmJT60lcVckDE8Aq4B2/4KYgLpbxHd+SNSqNIwAySOpcpusmnR4uh3qJGGuLZTBOZnst0zZjD5jrnRt4Mbw8VNys+NTNlUiGzMtWVKwquXIFgX8sLF3SoXwI7i4uhikZOwBQG3fKyMmFQNjVaDDVq5bGZJjI9/eVrHDbfOQfvTyOlBExKfUlQUXjtgjAryMq8ojS8YOA1LoOF13yjL0BgZ3ExVNHICZjLbNAtm0YDL5dNjRZDjVp5bKb5SFy+xmHznXPw/nRSSsCk1JfOZC002mHwwQr5aAivMNjs3i1rK+t4DK87iMS2K85MuyK3BrzgwgvSEeBiqKKRc9iWgTwOCmXlyWgx1FsxK4/9CIrkNaMmBXUuw5u4nIVGOwze4zplGl5psG1s4q5ZOPLe422yyvDCwPDCaPBCDN6qlTckvCDh/RmklIBJqS9diSw03ufKJ65peKXBtvbQORXe2jCSWZlXXNsVua/lBRdekHYWF0MVjZyAuewiB68JZdnUaDFUCqWVx2YaRfKaUYeNOufg/ZmklIBJqS9diSw0B29p5BUGG4+8UXjNnNc0uTkvAM15gea8QHNe1I2wkRMwLV5uzmvDoGxqtBiqDwMrj800HwXXjDpsvnMO3p9NSgmYlPrSmbyF5uCtznm9wWbnvGjFBfDKrMwrSK9fbfD7Wl5Aev1qg7ezuBiqaOQETGHQ+TAomxothhq18thME5mefM2ow+Y7l+Htl4KVhFA48lbXH4zbxVmZV67QOi/va12SRegAACAASURBVHnB8IuRsLO4GKpo5ARMYdDZECNRNjVaDDVq5bGZJjI9+ZpRh812zsH7c0kpAZNSXxKRgTeeialH3pXNygkFwIRnZZonLq1SAialvvRV3di2ByX8CjO80yD/vIzPyrxoG4UTLHeWXKBkyQW14Gcdx2NZmZyAKfIij9KRs2rWN85S46u+RiVuhvku+Ej5T+dcS9HIRx5WhzkB8xeQUgImpb70QTTljRvHMitTXbyo4OLF0AkWO0ty2Vwf6fD4cVDHj+PpIiuTEzBFXqQPC5idBTU7O4uNNsRGUR0YN8PEl2BbTHaCRSMfefgwqMOHKQHzF5FSAialvvRBtWnFVsFemQgvXAydYLGzJKdV+gjhBYT3uAqyMvlInxepONTE6siNvD4MqgP7zTCDbTHZCRaNfORhQHgP+zSgDG9PZJIwrR3sXu26mE/OtKLcTXQxqk6xhveigVfTK5xgsbMkl80VVXePg4dXJLZxDpvIi/ShKmbd6bPAoawOTPsJyp0F2UwTjXzkYbDwHnbw/hJSSsCk1Jc0ZJMwrR3sXm2am0/OtKLcze1VWxLVKBh57QLERekEi50lGUlRddfAa/Ie6+G171NoiQWGFwheGBu8v4yUEjAp9SURmSRMApZeKTnTijKIakqgFhdd00XpBIudJTmtUlTdPe7C4zIrk48UeZEUGmJRDl4TyurAtBmm3BaTnWDRyEcexj8UTxueJaUETEp9SUM2CTOAdxVNYUrOtOLE41X7aI+Rhxd/6Jbei6ETLHaW5LRKUXXX0nscgqxMPlLkRfrQTHQB2RVhUB3Yb4YZbIvJTrBo5CMPY6AO+xu2DG8/ZJMwJbzWFKbkTCtOPNYjMt3FFSIrExca/GoDOcFiZ0lOqxRVd48jvccNvJyVyUeKvEgfmiUGMC8cBtWB/WaYwbaY7ASLRj7y8GHA1TIP768kGWBEob0ui+ZkeMeqAmRW5sWLfp1XOMFiZ0kumyuq7h43/GIksjL5SJEXaUOMZg20IsRIVAe2m2FyZNd5yQkWjXzkYcOvg/dXkwwwIntY/6Wr5OEM757VWMK3Mx9s/4RfVgleUbdBT5m+Jo+8k6bCrwuU7ay3+SmIY2KDzFvuJFGOVGxhOUORSOqkDTS5wKpyoW2kDYn500WuZTQrU2Z60nM9oH4tqVSrDHa/4ZsyvL2Xnv1+KjyMQmZlsp0lioyaaqbmbZFByeVI3RaW+P7MDKgZE4mkTt5AUxRY9WEB19Q15baC508XuZY1WZk+01Pkb2qZqmdWCIyE98wTec7bfwW1oEBkZQZ2ligyytVMb3EGJZcjFSVOZ3Q4M4MrGCKpkzfQFAVWDbxg4DWN10IzTeRa3oVoVqbP9BT5m+CWfK1K8O58/SsZ3p5rzSVmipFXJLaxIyDqNHI101uu8RaIio6ixOmMCRXMyLw43oNQFFilsLjmomvSjxDpanddWJPYJlLg8Iuph/fFp/NqQ8+1te7Sg/YKr7HIbkEdvMDw6v/q4QWGFwheGCO8v5EU3rDtPGW+hKf34Xs6gDK849CGT8wswXuI4UV9IIuMcjXTWy5y8KLelCVOZ1w4I5M6eQNNUWCVQgMv6po000Su5V0X1mRlivxN/AMrDjtVl8ryyNtvbfmNiiW8wmxjO0sUGeVqprdMdMvNeQH8nBdciVNL7wwESZ28gaYosOpDnPOi/JwXaM4LPOeFhqxMkb8JVXhFob0Mb++1tvLhfUzM3Cl7be6GjewsUWSUq5mKDEouRypKnM4gvTMzECR18gaaosCqDwuz0MCrDUCrDcCrDU1ZmSJ/U0v9FlJKwKTUl4lSEWZlsp0lioxyNVORQcnlSEWJ0xnDL0YiqZM30BQFVm2I0bVrvM5Lny5yLVuyMkX+JqjfSkoJmJT6MlEqACYnKzPDO13q1NIdp/CLUUdIKQGTUl8mVYXMytTxkm30pjBGQX3eJRfdMZV6TcjlfYPTI0dGy/vGnGB1y3069uyyP9InYCpXZtiNvL+DlBIwKfXlIPVptLZIfYZafK9MlC+cU7/1oMzKXFrSGC4tAbApHLi2/n1TO8dU6gVZ3lecHj0yWt436gRzJV91+bKCy5exkRMwTaVWrJ5S4FegfhcpJWBS6ssBqlxit/0EyWXgAwt4ayT3ylwy33ILL9XSFa6tf99ULVNYtQxkeV9xevRIHwblfaNOMH/6ZaXhBQsv+ARMX2Y4w5uMqAYvldjFrS/texiVsirXuD6OK1q2TntlWhlb2B7n9hCyp9t2JwEv/p7Hb/mSLEcqjC96n4udygqp4vTokdEKqVEz7Rb4Sr6XXXRZ5rBRmWEH7+8hpQRMSn3Zf1ENXiqxi1tf2vfMJphBVuX9deudodzeVrRXppW1hW0FXwevOd22+09NFF4geCEGL0h4fx8pJWBS6sv+iypBUpXSbRpczSaYQValrcxr38WR12Zmur0yjawtbI+j3duw5aEoIimzMpdc05KspStcW3qfK/XK8r7i9OiR0fK+USeYP/2yiy7LBEwqM5zhTUZVeHHrS3p3NcyqlDX1sMr0pq2GbvbKtLK2sM0flvDadn+uzMq0zLk5L8rNeYHnvEAzWeA5L9CcF3jOWz0yWt436gTzp1t6/ZwX3JzXRDTnfYGUEjAp9WX/xfD6ErtrNOddc3NekVVpKvPad/Edk4Hp9soEf9KH9z+zx0l4XbtTIbIycaWAVhsAaLUBaLXBvs+VekGW9xWnR4+MlveNOsH86bjQwKsNLgHTlxl28P5hUkrApNSXyZKYNoDMylxaooVarqUrXFv7Pka2Uq9d56XyvuL06JHR8r5RJ5g//fJlXuelBExbZtjBe5SUEjAp9aUjNWZU1rzbfI6RgLfXwq8gw5tFY7AK7Sxs/Kp73yU+YsSpmjp4n6KrEIR45Ot8zdcpepOfrIiWOOVcS2G7RTfQNBkfTikBk1JfOtL4zLYayQmEyMpkO0ujq+CrX8X3feKjTNXU5L6v4P33IaiQqq7asIDXXwf1unodXKj0C2dyBh8kqplyrmXUdislYB4npQRMSn3pRmM022okF81EVibZWZpdDS9YeF3io0zV1OxqeMHAyxVSDcdg4DVHWnhdyJmcgW8mqplyrmXUdislYGZ4k9K4zbaN+/fcQf74ddcW89oOKeEIaHYRXk0v547JbLf39dCL4fuyQiqFxetgQ43s6+6k1zkZrqZKJJkYcdutnMN2gpQSMCn15UA1brNtY533yrTHrz20bTGvrQSvnZ3WwuuYel9WSKWQiR0HvBCH9yWSAUbUKtv+Ymf5l1MM77jNtk13kD3+Ie5NiG1xr83Bi9Lwuh+Cgxd1W6Zqvu/C92WFVAoNsSgHrwk5k7OmxCk5cHHbrZyAWYKXEzB3nnoatj73lei3eN+V4R2T2aab3F6Z5ng78m5C2WsTZhvbWWalwc95UW7OCy5V09Jr57woO+d1oZnoAtCc14ScyRn4ZqKaqXfgamy3UgLmSRICI2qVbT3yih6HOxp6M7xjMtuwOLo9yB+/7tqqXpu7YSM7CxcaaLUBgFYbfKrm+0ivXW3gCqk+NEsMYF445EzO4INENVPOtYzabqUEzJdJ5VplYEffTjS18HaiIszKZDvrq1+ldV6b+IiRSNV8/323zisrpNoQo9cNtCLEyGZylj5IVDPlXMuo7RYkYJ4iITAleM/o0bcTZXil9slsI3VqlQ0p7HcjvGdyfd5pUwHGzwI/tlEjiHS1SGNwUhg1NYZRpTF6pLjSaVIF3jNd3a5leDuTM9tcVqZIljwtNtCkGcKT6kl35Jya87MOG2J0genjVM3oZpci0zO6AyY3nlaneQfMv0oq3bB1OO5meDuTzMoUyZKnT+Mwh43CCX7ySVBPPomNc3Og5iyyLgTOzwSZqhnd7FJkekZ3wORG348ovGKpbPtLnY27Gd7OJLMyl4GSJU8DwctO8JOA8D6J8OrIjbw2nAPOzwSZqhnd7FJkekZ3wORG3w8H7wzJAMO1yl7MVSL7Lbtl5oMVs7iLXobzlcW71jOu2SuT3C4oToOda56WTvCT4OGdA9uqkaWQU9xktlt0v0CRLBfdRJAbqR8O3llSSsCk1JeeassYEtv4xMNDcojJmaANNWHjQbBX5qFaePV/p6UTXIIXGF7YV3ixHw7eOVJKwKTUl57KWsHoaGxtWofYO3b2bVxHM+Zb3V6Zy67JwYs6LZ1gN2tw8KIcvCbk/EyZqhnd7FJkekZ3wORG6keGd7IVjLzWIRbwug010TO+X7dXprdq7VwTLDPCCX7SsmvnvIDsAoecnwkyVTO62aXI9IzugMmNvh8O3ldJKQGTUl/6qtKcd+WhhNc6ydYzrtsrUyRLnkZqTp8OnWDHrl1iAPPCIedngkzVjG52KTI9oztgcqPvh4N3npQSMCn1pdfa2wPt4BZy/UqqSJY8bbjBiJ1gceScgVaEGNn8TBFiFN3sUmR6RnfA5EbbjwzvNKgCb4tt3K3nuwdhZ9XfJ6UETEp9mVIVEGRlLpJFFs2LFGmVvFdmtMSpaFyO5FrGbbdFtQgV2w3UWVJKwKTUl4lU+3SikFmZi4v6b/qlJi9SpFXyXpnREqei0Rt4wTWjtht+OphPF7YbZHinVQPAK7MyF82PxMALkbxIkVbJe2UGJU6VsuWeRKM38IJrRm03/nRhu2mpBVJKwKTUl4mRXXlwiRh2FcKolKTpJBPb8Hc2/kgW43mRIjONtxuMVokUjeSByGtGnQv+dOFcYBfV66SUgEmpLxMju+br4DWxbQ+TNMlrGwBe6BjeN0kpAZNSXyZG1m1z8G6ytRYmaXrJrMxF17YYz4sUaZW8V2a0xKloJANPXjNqu/GnC9sN/8jwTo/cyLuKWe84yNLIGyRpstcmzDbLj5vzQiUvUqRV8l6Z0RKnotEbeME1o7Ybf7qw3bTU26SUgEmpLxMjO8/d/QjrjeATZjTnDZM0nQqZlbmI/PjVhmpepEir5L0yoyVORWM01zJqu/GnC9tNS50jpQRMSn2ZGO3NbSvCrMzFRb/SGs2LFGmVvFdmtMSpaIzmWkZtN/50YbtleKdIe3PbOvXP2oVdVOdJKQGTUl+yCgi2fK3JtRymEYK3nRcHwdvVI/n0C6SUgEmpL1lFkJV5Qp3wc4kFteCil9XLKggxOqvO+sazoj7vm56+gevzir0yj6gjnIC5SGJgRMGyjpThPUhRdVQ5sRAlU2VW5okTpjgj0rmwoEnTLwW8/LKpXqMoxCPPngUN71kEDUOlX4asz8t7ZR45YjYcVg3wchZmV8rwHqTa4eWszBNg4dXhgvkdb+AFC6/yoYHXvG3hdeEg9XkjnrEPNbxg4dWX19LAexEwMv+9I2V490vkBX/yGa7rmifWGV56dH29Bl7NLsKrJwHFAtif00LxMkYa2JfBhhrPl4uzYOevGtmz7sizw5U4pbA4AhbeIw7eD0gETKnmUxfK8O6XyAvWr+YFi/oRvN5A3r3/mYT3UAivZvIElOHVoYdX//cyE3sw8PqCrBneCRZ5wTv3sCiqydJkeK1pbJIzyyPvIYIX5eBFWXhRDl4TGmJRDl4TDlefl0IDr/5nQtOGu6Q88k6DyAuGjQebUB55V1393tLIK4xiS+8JnIpaet2cF5BdEZqJLgDNeU04ZH1eH5o5L5hRvjB/LpMyvNMg9oK30Z0ozXmNaWyTMyW8IivzBNJ7wsKL9PrVBjAvHJolBjAvHA5Zn5f3yjyC9OJLgf2KwZtv2LICFSBzLU8Yfu06r+EXo5cNtCLE6KyBVoQYDVWfl/fKPGL4dfDeIeWlsulVc1pmpz5wjbBfaonEwLiCZR0qw5umChBZmfjnZfC+WSQBc0EFoY14A814WqVSS0FUapzna4K6TUoJmJT6Mk0qb7D5Kdhd470KmZWpLl9WuC97TQImGnAL1j42ocLZMW+gGU+r1GOospvG+yhonJ/HYg0Z3qyISvDaTYUiRrF5yPey0vDC5dA34wRMNOCQWJBeHG+gGU+rXDILxksiChrn9ZHzat7De4uUEjAp9WVS1ey1uZ2I1ksjr0hsu+yeALscz2EzHoYyS2kUyj0Io5lpSy5c4kg2zrsLzTt4b5JSAialvkyqmr02A68eeRvhhTZ4geGFccELGd6sZq+tAd5DDC/qcjwBkww46cWJDTSjaZVLLlziSDbOu8jDe4OUEjAp9WVS1ea17XwYg1eYbZbey6FvxgmY3oALvDixgWY0rdKCuiSioNHSS3Pe66SUgEmpL5OqRq/NpmnurKxWVhs4K/My0utXG6oJmN6AC7w4sYFmNK0Slxf8aoONgsZ5pHee4L1GSgmYlPqSxSrCrMzLl2mdN5aAaQ24khcnNtCMplUuLS0FUalx3vCb4c2KqC9eG/ZGXSWlBExKfcmKqoAxZGVCEDkzDYJzmk6/QkoJmJT6khVVEWRlvq3e9ky9LZxg2eiic+qcD6OleDkBU3jGvIHmrJplezjDmwXoA5eCslFckczKFKavD2saz53TkX6BmlK8nIApPGPeQHN2Fjdfo+d5/zcpJWBS6ss0aGe1ErTDy1mZwvT1YaXRLO7COdNo4YVIKd5l8AmYwjPmDTRndSRG3suklIBJqS/ToLWVdbtWRgHD275XpvDNKIw3nnPRuZpqpsvgc9iE7cZ7EM6Cnf3OZnizSHrAdS7FKpTyLwfYK/Ng4QWG93+RUgImpb5MgzSzzh9ehXL+ZftemcL0pTDeeM5F52pK8S67cFl6xryB5qyLPLzvk1ICJqW+TIPkyFvKvxxkr0xh+vqwptHS6+e8UCnFa+ldDj1j3kDT0jvr57z/k5QSMCn1ZRq0s+KfiVxZLeVfDrJXpjB9fVjTiAsNQKsN1VK8nIApPGPeQHMW6Z3N8GaNpgJkVqYwfW1Y23jO8GtXd2OleDkBU3jGvIHmrOHXwfs/SA4YUWVv+4tKPT3mr3kwZXi7V9p7ZWIX1H8nOWA4dXjnqadh63Od1G/I8PZIBZSyMt1wrP+8ZN9XLrSN73DjVWq84a4k6p4K240bT8kEzDK8omjD1iOv6HG4k6E3w9u5Pm0/xKkQWZnWdrP5meqSgkuXjBd3yYbY+I6Cd94xJ+HjNFev6uiGuqHgxg0AWfdU2G7ceOoUqFOnyGF7j2SfeCiVy8HRtwNleLsWWW3tklmZzrlQyhELBt5LLtSN72h4wcB7VeGzYAZe4zxYeMHXPRW2GzeeAoT3lIf3EskCU4L3jB59O1CGtxOt8RaZa36zIFv2dOP+PawFZVeBV+X+mWFiG9tuDl6LrAsLzS7Cq+ktrrpHxa4WN1x0Q5aOFM4FN57CCCcODt7/RorBe6aj4iMZ3i5kl3opfc3Klj3dWMfMILLaxP6ZIbxsu11yDy9qeClEeBXDCwQv7AFeHZ6KwHtGqa8N4D3Tze1ahrcbWZOtDK/ZN3Nj043IxmWzbf40mZXJttsl966B14WFL6Pr4EVZeFE3ZN1TYbtx4ykXeXj/K6lyw9bZuJvh7UZu5PW5l1Zu5PXwWqutOvI6s43hBYssznkpLOxKg5vzmtDOeVF+zgs05wWe8wLNeQHZdfD+F1JlqWz7S52VOc3wdqI13iJzxz8/5ua8Hl7jspXmvCIr02UXo2eMCw12tYHCwiw0uNWGq0ivXW1Aemm1AWi1AXi1AWi1AcxLgR9chddV2XvxCXjRLNnl1YbpVmzfzLAtyMrE0N9RXbrk1nl9iNE777zjG69edeu8mlxe56W6p8J248ZThl8H738mpQRMSn2ZVjmH7Vvb4e3MYbtISgmYlPqSNbiKICtTKdEIgzXGszJlo0jAzPBmjU8yK1NJe/iSs4eVtIevkj18Yw/28Cm2h/8TKSVgUurLdGlQVzie4yazMr0nHNrD75A9bBy20ezh/0hKCZiU+jJV2oMrHJN02C7F7OF3xmEPE7xfJaUETEp9mXwN4wrrkde+Y6v7Ogl4L5kHc6xJ4cOx2MP62FMZ3iyroVxhhNe8Y6r7+ksF9jCwPQxkD6uR7WFgh+0/kFICJqW+TLyGcoURXnvGvfhemTX2sI3GZA//e1JKwKTUl4nXUK4wwWuq+3rJrMyYPQzjtYczvFnDuMIM77bIFCqM12aXyg7AHn6HlBIwKfVlOtXuCsdUBFmZ+24P/ztSSsCk1JcpU5sr3JiXecD28L8lpQRMSn3JGkZFfVYmjcxcuPSCdIrvuOiuusuNyy6akwmYGd6sqPZe9FSe5I3ialamUp//vAm5cKmPdHjnjn7vzh0wW70rt+s71z2dmwM1N0cmxb8hpQRMSn2ZTg1R9DTw5+qyMj+P8H7ewAu+cKmPEF6zImzgNY0WXtNo4NWNczzy/mtSSsCk1JfpVEPRU7vosPZQz4Ex3FxbWXVu2xo/ol6TlYng4n9K1H6kCIo7LrxT3HXRXVk6cg6s3TGX4c1qUFPR03vOkdt4qMOdlYd2lRgPkSNvLCvTw/v5EeAFhvdfkVICJqW+TKcaip5ao233Y7vUu/txxFyuy8o04DK8qAscWXhRFl7UXVn3dM5FHt5/SXLAiFplQKmYB60Mb9dqKHpqR17jrA0Ar4rBiw4cFy71kZnzotycF2jOi3JzXkB26+DlBEz8S67bMKVqKnpqjbadDz+rwCuq/oNPxQyyMpVjF2ThUh+Z1QYd+tUGoNUGAFptAPNS4Geof0Gqpr7D1tfkkTerLGe0bTc++lvgrVU1K9OvlNnVXSpcaiMT3rlD67x3aZ2X657OGX4dvP+cVK1VtvsN35ThzSIF5ttGbfFTowNx2P4ZyQIj4T3zRJ7zZo2sopSVGd8WE+h9oEaINYqTGuDd+fpXMrxZI8uabYodttHsYWFS/FNSpVbZi0/n1Yap00iu8ABZmcJhG9oenvP28Fuk8g3bzlO5Ys7UaVRXOKa4w1ZnD0PMHvbbYpbs4TK84VJZHnmnTKO5wjVZmeN12IQ9/E9IDhiuVQYZ3qnTaK5wa1bmmO3hN0gpAZNSX6ZKo7nCrVmZwmEbhz38GiklYFLqy1RpNFe4NStTOXoVjMUezvBmCY3mCrdnZVp6x2UP/2NSSsCk1Jcsq4Fc4ZgKmZWphEkxsj38j0gpAZNSX6ZeA7jCB5+ViRfO8GYdnIowAVOpJXDDrbHVBnHY5mUC5j8kpQRMSn2ZYg1ltzVIZmXC0pL+Y2nJTnSNrdbusM3Pg5qfJ3j/ASklYFLqy/RqKLutSTIrE5aM37AkbLX2BMx53Tiv5jO8WW1qsNs27t/Dlk1b+9S27WGvTKUKnDHgj3mJnYlWk2IerMM27+D9e6SUgEmpL9OrBrttY928tfHQ1D61a7p72ytzaHiB4f27pJSASakv06sGu03zuoELDJu8EeYe98pccm1LbKu1OmzzLvLw/h1SSsCk1JfpVYPdpv9qmTS1T90K8J72ygRL75Kw1dodNksvzXkzvFl1arDbcKag31p5aGqf2rbB98p0qw26xa82AK02QJPDNo/0zhO8f5uUEjAp9SVrQA2yV6ZLqrD0LS3ROu8dWudtcdjmDb8O3r9FSgmYlPqSJRXz0rrYKxMvl+HN6kRFORWTQwiiSqMI/yYpJWBS6kvWfqgQe2UCPKoe9XMJu+8lR8IpxuhdCe/fIKUETEp9yRpRUVtOZmU++iioRx99FDn2+14GO2B6p9juhamwxH+B11B/neSAEbXKdKieOJgvsKQM76RLZmU+ChZexfteBjtgeqeY98Ksg1ckYL74yCvbX/pKF19ahrc3KhnFZmnN5l+aVv02jrwm3sKlNSeZ2KZnAgjvo4q3DpSbCJLZxtsJOnj/Gqmc+k6FczpQhrc3Co3i+8bUMPmXtnXDPBBhY830t/nTJLw46A4F718hWWBE0ZGuUochw9sjhUaxs5NxtLWt+m2Kt80AbSWzMh+1Uor3vZQ7YJJTzHthVuEtF9rbeuQbO6o5kuHtj0KjeGWdsjRtq4XXP95Q2mLbZ2U6eIH3vQx2wPROMe+F6eD9y6TKyLul79a2PpfnvFlNKhnFZs5r8y9Nq4XXxmtyzhtkZdqBF3jfy2AHTO8U816YDt6/RKrUKtt65BXY/XInQ2+Gd9JV1GVl2n0vORJOMUZ2L8wIvChxw4Z/ZHiz9kVjsYf/IimyVKanDd3U9c/wTo+KMCuTzbSowyYaQf0FkgNG1CpDkyLfsE2h9Cy1ZIt9Omr6GmotmhsfZGWymRZ12ESjlvrzpJSASakvU6gKvC1FTAe+akxBViabaVGHTTRChjeLxQ6Zg5eNs7WVddew7oqYulNa7TVTEtUevLbiD14TC75BVib7EVGTQjTimerPkVICJqW+TIuEQ2bhFcbZp6u+wZc1tee022vbXOyULmlf/efKrMw9wvtnSSkBk1JfpkWBQ8a2mGneMfDaN12Sj1G7vWZKolpxs3n1nyuzMtlMizpsohH/yPBmOQmHzI28bJw9kCNvCG+LvSaKndIlRcYxlLIy2UyLOmyiUUv9GVJKwKTUl6kRO2Q853XG2c7KKs95Q3hb7DVTEtWKL2lfnYKsTDbTog6baNRSf5qUEjAp9SVrJLWWRC3CrEw206IOm2gE9adIKQGTUl+yImqsaSqFJVGbDx7BYcvwZiWjoj4rM8zPdOGfJKUETEp9yTowhVmZM2rGzyUWCV5RtBfUnyClBExKfZl87dENxrd2P2KnQp4WKzzSpk9oPiGzMmdmQM3MzCDHi4saav0SFO2FDG8W7NUN3sLyTnbVrHyd1ZHhpdwgmNEUuJF30QCxKIxiB+8fJ6UETEp9mVTtyQ3m3Mnd/4sbAZkLuBbaD1OfhrE82l50bR3/Hx5MTvE9AS8ntml2zUR3BopFsEAsyrqneLj6Y6SUgEmpLxOqvbnBMnfSwbvlB1naDxNH3nvh0c4JXntQOZicYl4IrsALGd6smPbmBsvcSQvvGk0QaFc2N22QRzsnmLdlo4OdU/ywMm04RPCiHLyoRVm0F/9Qz1RRjgAABC5JREFUf5SUEjAp9WVCtVc3mM0GhG/3I57wVuHlo+1Fd+9/62r5YOcUr/NTPkFWJlh6Z9ycF2jOC2LO+0dIKQGTUl8mVXtyg2XupIFPPFvD8K6sVo7GA//fR5uwsVo6mJziDyW8nJU5g/TOWHiRXr/aAGK14Q+RUgImpb5kHZgKmZWpyZ1xjZrcRagU7c3wZg2qqsnbZPtW3hvEUN6rPfwHSA4YUWhv+4uqm7INGd5pVxFmZXLd00VZ4vT3kyrZwztPPQ1ncvZw1tjl1xeq1p5XkJXJdU+911YDb6luQ0fF9jK8Ey0Bb42CrEyue+q9Ngfv7yVVapVhwRGsmtOBMrw9kn0E3Rh2YjtMm6aJ7+1+jEYEWc7WUzP+mh156dB7MaNYlo4ku8LB+7tJlVplOP3tht0Mb49k98a0+12K7TCNMWeXijcebt1/6HN/rKdm/TUHrz9Uem0iK7Me3t9JqsC789QTec6b1SqzN6Zhs7Qd5iefeZPu/3zrOmUOGU/N+msOXjo04rUdknVPyWuLwFsqtJfnvFkDyO6Nafe7FNth2i1czci7e/9bdh98izvcemoWcwlv3Gs7FNY99V6bg/e3k/INW9YwsntjWsNObIdpfWI3H16HNRqUradm/DUJb8lrk1mZXPfUe20O3t9GqiyV7X45TxuyDlJi2hBmZXLdU+u11cErCu1lkyJrz6p10gaw2AS8Azlsv5mUEjAp9SWrWxWlrEzfqMPfREoJmJT6ktWtwqzMoD5vhjdrP/VpJWDVu8PycL/ka/YYDOvz/gZSSsCk1JesEUS+WiynswFecbjMyizV5/31pJSASakvWSNobWXdLpdhYFVJ/PRH4pPvIpfTvyES28olTn8dKSVgUupL1gjSI6g1KmgorSR+umZrMotcTq8Mb1Y30hC6JE9PYyXx08mYzDIdzktkZZbr8/4aUkrApNSXrBEUH3mDxE8rZzI3wOs2hQcx5/1VpJSASakvWSNoh+a3vI9FOfHTyJrMMpfTX8I82lsyijO8Wb1QEWRlBvV5fwUpJWBS6kvWeFRjD7e6xg328C8npQRMSn3JSkVFmJUJ6peSUgImpb5kjVNNjhtJ1poUNoZ5TtJnZUKGN+tg1ei4kergJa/NwfuLSSkBk1JfssaoGsfNZQLd90+yPzDPsPslCS+Z2IZ/V7+QlBIwKfUla4yqcdweWHhFHVRb4m/3/mcZ3qxEVOO4uZHXpwptb5p2Y7qV4T0k4P35pJSASakvWWNUjeN2fxXz3hneVZMxvxkbeQ+JOe/PI4XAuCTMjpThnVDVOG67H2HFEYb3vnnEzJhu5dWGQ2K14eeQAmB2nuom89Ipw5tVVVFe543De0Z9XR55s/ZVMWtt8L0y8e8qEB32za/kaUNWb5XhzeqtMrxZ/RMWLIMMb1aPleHN6q26hff/A1/Xh6dgRnnyAAAAAElFTkSuQmCC" /></p>
+<!-- rnb-plot-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <h3>
@@ -1996,6 +3897,10 @@ We want to identify collinearities which could affect our regression model. A Cu
 <pre class="r"><code>caret::findCorrelation(cor(df[, num_vars], use = &quot;complete.obs&quot;), 
                        names = TRUE, cutoff = .5)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiZnVuZGVkX2FtbnRcIiAgICAgXCJsb2FuX2FtbnRcIiAgICAgICBcImZ1bmRlZF9hbW50X2ludlwiIFwiaW5zdGFsbG1lbnRcIiAgICAgXCJvdXRfcHJuY3BcIiAgICAgICBcInRvdGFsX3B5bW50X2ludlwiIFwidG90YWxfcHltbnRcIiAgICAgXCJvcGVuX2FjY1wiICAgICAgIFxuWzldIFwicmVjb3Zlcmllc1wiICAgICBcbiJ9 -->
+<pre><code>[1] &quot;funded_amnt&quot;     &quot;loan_amnt&quot;       &quot;funded_amnt_inv&quot; &quot;installment&quot;     &quot;out_prncp&quot;       &quot;total_pymnt_inv&quot; &quot;total_pymnt&quot;     &quot;open_acc&quot;       
+[9] &quot;recoveries&quot;     </code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <h3>
@@ -2036,6 +3941,294 @@ Recreate meta table
 <pre class="r"><code>meta_df &lt;- funModeling::df_status(df, print_results = FALSE)
 knitr::kable( meta_df )</code></pre>
 <!-- rnb-source-end -->
+
+<!-- rnb-html-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImtuaXRfYXNpcyJdLCJzaXppbmdQb2xpY3kiOltdfX0= -->
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">variable</th>
+<th align="right">q_zeros</th>
+<th align="right">p_zeros</th>
+<th align="right">q_na</th>
+<th align="right">p_na</th>
+<th align="right">q_inf</th>
+<th align="right">p_inf</th>
+<th align="left">type</th>
+<th align="right">unique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">term</td>
+<td align="right">224925</td>
+<td align="right">30.60</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">int_rate</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">199</td>
+</tr>
+<tr class="odd">
+<td align="left">grade</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="left">emp_length</td>
+<td align="right">56781</td>
+<td align="right">7.73</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="left">home_ownership</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td align="left">annual_inc</td>
+<td align="right">2</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">42902</td>
+</tr>
+<tr class="odd">
+<td align="left">verification_status</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="left">loan_status</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">8</td>
+</tr>
+<tr class="odd">
+<td align="left">pymnt_plan</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">purpose</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">14</td>
+</tr>
+<tr class="odd">
+<td align="left">addr_state</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">51</td>
+</tr>
+<tr class="even">
+<td align="left">dti</td>
+<td align="right">186</td>
+<td align="right">0.03</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">4079</td>
+</tr>
+<tr class="odd">
+<td align="left">earliest_cr_line</td>
+<td align="right">78</td>
+<td align="right">0.01</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">Date</td>
+<td align="right">691</td>
+</tr>
+<tr class="even">
+<td align="left">open_acc</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">73</td>
+</tr>
+<tr class="odd">
+<td align="left">pub_rec</td>
+<td align="right">615612</td>
+<td align="right">83.75</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">29</td>
+</tr>
+<tr class="even">
+<td align="left">revol_bal</td>
+<td align="right">1636</td>
+<td align="right">0.22</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">69850</td>
+</tr>
+<tr class="odd">
+<td align="left">revol_util</td>
+<td align="right">2074</td>
+<td align="right">0.28</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">1248</td>
+</tr>
+<tr class="even">
+<td align="left">initial_list_status</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">character</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">out_prncp_inv</td>
+<td align="right">170255</td>
+<td align="right">23.16</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">242665</td>
+</tr>
+<tr class="even">
+<td align="left">collection_recovery_fee</td>
+<td align="right">720460</td>
+<td align="right">98.02</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">14349</td>
+</tr>
+<tr class="odd">
+<td align="left">collections_12_mths_ex_med</td>
+<td align="right">724445</td>
+<td align="right">98.56</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">acc_now_delinq</td>
+<td align="right">731295</td>
+<td align="right">99.49</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">integer</td>
+<td align="right">8</td>
+</tr>
+<tr class="odd">
+<td align="left">tot_coll_amt</td>
+<td align="right">630268</td>
+<td align="right">85.75</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">9848</td>
+</tr>
+<tr class="even">
+<td align="left">tot_cur_bal</td>
+<td align="right">102</td>
+<td align="right">0.01</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">numeric</td>
+<td align="right">311024</td>
+</tr>
+</tbody>
+</table>
+
+
+<!-- rnb-html-end -->
+
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <h3>
@@ -2083,6 +4276,28 @@ Normalize numeric data to have a standard deviation of one and a mean of zero
 
 recipe_obj</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRGF0YSBSZWNpcGVcblxuSW5wdXRzOlxuIn0= -->
+<pre><code>Data Recipe
+
+Inputs:</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MiwibmNvbCI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUJtMVF5MDdETUJEY0puR3JXQUpWNHNBSGNHNmtCdmdDK0FERXFWZlhjY0dxYTBlT1UvajZ3anEyVVdOeHNQYmhuWjJaZlgvZFBkSWRCWUFTS2lpZ0pKakM4dVZ0Mno2M0FGV0IxUUovYWgrL2Nlb09FMnlXTnlIaTV4Um5nMHNsemtJTm1LMm4zOUJkbWRGeGN4S3hySHNyT3NtZHNSbWFjTVdHQlA1YmVXQmhGQzc0cnNudmM3aG1KNUZ6Vjlhb1JFd2Z6c3hLdGxkK2FnYXRyZmxxRXZ3ZmcrVlBwb3AyekxIbVlCRVNsTTNXclV6dnBORzRyUEJYSXhsNFliUEdldFNldk52d3oxRWZOKzJUWjRnS0lDcUthcTV6ejFrbFpTVGRTK2dQcVpObG90aGVxRmpjb3N2SlpOTmJxVjJ5Z3QyaGNjYXhORWU1VWFrVHpuNzVCUU51ZGlzdUFnQUEifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["role"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["#variables"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"outcome","2":"1"},{"1":"predictor","2":"23"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5PcGVyYXRpb25zOlxuXG5TcGFyc2UsIHVuYmFsYW5jZWQgdmFyaWFibGUgZmlsdGVyIG9uIGFsbF9wcmVkaWN0b3JzKClcbkRhdGUgZmVhdHVyZXMgZnJvbSBoYXNfdHlwZShtYXRjaCA9IFwiZGF0ZVwiKVxuRGVsZXRlIHRlcm1zIGhhc190eXBlKG1hdGNoID0gXCJkYXRlXCIpXG5EdW1teSB2YXJpYWJsZXMgZnJvbSBhbGxfbm9taW5hbCgpLCAtYWxsX291dGNvbWVzKClcbkNlbnRlcmluZyBhbmQgc2NhbGluZyBmb3IgYWxsX3ByZWRpY3RvcnMoKVxuIn0= -->
+<pre><code>
+Operations:
+
+Sparse, unbalanced variable filter on all_predictors()
+Date features from has_type(match = &quot;date&quot;)
+Delete terms has_type(match = &quot;date&quot;)
+Dummy variables from all_nominal(), -all_outcomes()
+Centering and scaling for all_predictors()</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <h3>
@@ -2103,14 +4318,100 @@ Train linear regression model
 </h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubW9kZWwgPC0gdHJhaW4ocmVjaXBlX29iaiwgZGF0YSA9IHRyYWluLFxuICAgICAgICAgICAgICAgbWV0aG9kID0gXCJsbVwiLFxuICAgICAgICAgICAgICAgdHVuZUxlbmd0aCA9IDEwLFxuICAgICAgICAgICAgICAgdHJDb250cm9sID0gZml0Q29udHJvbClcblxubW9kZWxcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubW9kZWwgPC0gdHJhaW4ocmVjaXBlX29iaiwgZGF0YSA9IHRyYWluLFxuICAgICAgICAgICAgICAgbWV0aG9kID0gXCJsbVwiLFxuICAgICAgICAgICAgICAgdHVuZUxlbmd0aCA9IDEwLFxuICAgICAgICAgICAgICAgdHJDb250cm9sID0gZml0Q29udHJvbClcbmBgYCJ9 -->
 <pre class="r"><code>model &lt;- train(recipe_obj, data = train,
                method = &quot;lm&quot;,
                tuneLength = 10,
-               trControl = fitControl)
-
-model</code></pre>
+               trControl = fitControl)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUHJlcGFyaW5nIHJlY2lwZVxuKyBGb2xkMDE6IGludGVyY2VwdD1UUlVFIFxuLSBGb2xkMDE6IGludGVyY2VwdD1UUlVFIFxuKyBGb2xkMDI6IGludGVyY2VwdD1UUlVFIFxuLSBGb2xkMDI6IGludGVyY2VwdD1UUlVFIFxuKyBGb2xkMDM6IGludGVyY2VwdD1UUlVFIFxuLSBGb2xkMDM6IGludGVyY2VwdD1UUlVFIFxuKyBGb2xkMDQ6IGludGVyY2VwdD1UUlVFIFxuLSBGb2xkMDQ6IGludGVyY2VwdD1UUlVFIFxuKyBGb2xkMDU6IGludGVyY2VwdD1UUlVFIFxuLSBGb2xkMDU6IGludGVyY2VwdD1UUlVFIFxuKyBGb2xkMDY6IGludGVyY2VwdD1UUlVFIFxuLSBGb2xkMDY6IGludGVyY2VwdD1UUlVFIFxuKyBGb2xkMDc6IGludGVyY2VwdD1UUlVFIFxuIn0= -->
+<pre><code>Preparing recipe
++ Fold01: intercept=TRUE 
+- Fold01: intercept=TRUE 
++ Fold02: intercept=TRUE 
+- Fold02: intercept=TRUE 
++ Fold03: intercept=TRUE 
+- Fold03: intercept=TRUE 
++ Fold04: intercept=TRUE 
+- Fold04: intercept=TRUE 
++ Fold05: intercept=TRUE 
+- Fold05: intercept=TRUE 
++ Fold06: intercept=TRUE 
+- Fold06: intercept=TRUE 
++ Fold07: intercept=TRUE </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiVGhlcmUgYXJlIG5ldyBsZXZlbHMgaW4gYSBmYWN0b3I6IEFOWVRoZXJlIGFyZSBuZXcgbGV2ZWxzIGluIGEgZmFjdG9yOiBBTllcbiJ9 -->
+<pre><code>There are new levels in a factor: ANYThere are new levels in a factor: ANY</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiLSBGb2xkMDc6IGludGVyY2VwdD1UUlVFIFxuKyBGb2xkMDg6IGludGVyY2VwdD1UUlVFIFxuLSBGb2xkMDg6IGludGVyY2VwdD1UUlVFIFxuKyBGb2xkMDk6IGludGVyY2VwdD1UUlVFIFxuIn0= -->
+<pre><code>- Fold07: intercept=TRUE 
++ Fold08: intercept=TRUE 
+- Fold08: intercept=TRUE 
++ Fold09: intercept=TRUE </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiVGhlcmUgYXJlIG5ldyBsZXZlbHMgaW4gYSBmYWN0b3I6IGVkdWNhdGlvbmFsVGhlcmUgYXJlIG5ldyBsZXZlbHMgaW4gYSBmYWN0b3I6IElBVGhlcmUgYXJlIG5ldyBsZXZlbHMgaW4gYSBmYWN0b3I6IGVkdWNhdGlvbmFsVGhlcmUgYXJlIG5ldyBsZXZlbHMgaW4gYSBmYWN0b3I6IElBXG4ifQ== -->
+<pre><code>There are new levels in a factor: educationalThere are new levels in a factor: IAThere are new levels in a factor: educationalThere are new levels in a factor: IA</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiLSBGb2xkMDk6IGludGVyY2VwdD1UUlVFIFxuKyBGb2xkMTA6IGludGVyY2VwdD1UUlVFIFxuLSBGb2xkMTA6IGludGVyY2VwdD1UUlVFIFxuQWdncmVnYXRpbmcgcmVzdWx0c1xuRml0dGluZyBmaW5hbCBtb2RlbCBvbiBmdWxsIHRyYWluaW5nIHNldFxuIn0= -->
+<pre><code>- Fold09: intercept=TRUE 
++ Fold10: intercept=TRUE 
+- Fold10: intercept=TRUE 
+Aggregating results
+Fitting final model on full training set</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubW9kZWxcbmBgYCJ9 -->
+<pre class="r"><code>model</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTGluZWFyIFJlZ3Jlc3Npb24gXG5cbjU4ODAxNSBzYW1wbGVzXG4gICAgMjMgcHJlZGljdG9yXG5cblJlY2lwZSBzdGVwczogbnp2LCBkYXRlLCBybSwgZHVtbXksIG5vcm1hbGl6ZSBcblJlc2FtcGxpbmc6IENyb3NzLVZhbGlkYXRlZCAoMTAgZm9sZCkgXG5TdW1tYXJ5IG9mIHNhbXBsZSBzaXplczogNTI5MjE0LCA1MjkyMTMsIDUyOTIxNCwgNTI5MjEyLCA1MjkyMTMsIDUyOTIxNCwgLi4uIFxuUmVzYW1wbGluZyByZXN1bHRzOlxuXG4gIFJNU0UgICAgICBSc3F1YXJlZCAgIE1BRSAgICAgIFxuICAxLjE1NjEwNSAgMC45MzEyMTUzICAwLjk0NTg2NDlcblxuVHVuaW5nIHBhcmFtZXRlciAnaW50ZXJjZXB0JyB3YXMgaGVsZCBjb25zdGFudCBhdCBhIHZhbHVlIG9mIFRSVUVcbiJ9 -->
+<pre><code>Linear Regression 
+
+588015 samples
+    23 predictor
+
+Recipe steps: nzv, date, rm, dummy, normalize 
+Resampling: Cross-Validated (10 fold) 
+Summary of sample sizes: 529214, 529213, 529214, 529212, 529213, 529214, ... 
+Resampling results:
+
+  RMSE      Rsquared   MAE      
+  1.156105  0.9312153  0.9458649
+
+Tuning parameter &#39;intercept&#39; was held constant at a value of TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<h3>
+Generate predictions and display RMSE, Rsquared and MAE
+</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdF9yZXN1bHRzIDwtIGRhdGEuZnJhbWUoQ2xhc3MgPSB0ZXN0JGludF9yYXRlKVxudGVzdF9yZXN1bHRzJHByZWRpY3RlZC5pbnRfcmF0ZSA8LSBwcmVkaWN0KG1vZGVsLCB0ZXN0KVxuXG5wb3N0UmVzYW1wbGUocHJlZCA9IHRlc3RfcmVzdWx0cyRwcmVkaWN0ZWQuaW50X3JhdGUsIG9icyA9IHRlc3QkaW50X3JhdGUpXG5gYGAifQ== -->
+<pre class="r"><code>test_results &lt;- data.frame(Class = test$int_rate)
+test_results$predicted.int_rate &lt;- predict(model, test)
+
+postResample(pred = test_results$predicted.int_rate, obs = test$int_rate)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBSTVNFICBSc3F1YXJlZCAgICAgICBNQUUgXG4xLjE1MjYwMjMgMC45MzE1NDM5IDAuOTQyMDcxOCBcbiJ9 -->
+<pre><code>     RMSE  Rsquared       MAE 
+1.1526023 0.9315439 0.9420718 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<h3>
+Show the test set results
+</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGVhZCh0ZXN0X3Jlc3VsdHMpXG5gYGAifQ== -->
+<pre class="r"><code>head(test_results)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUJndHlpVERtaXVCaVlHQmdabUJoWUdKZ1pnVXlHZGljQXd5TlRJMFlHRmlZZ0R4R29Bd25pSzRBcWhJR01rQ0NmQ0JsRGhKeU93SmZ0OG83S0o0QmdiTU9hdTdyUktvZWVqaElmRDNVSDZQeHpjSElBV1FjZzRPNjVFd2dtQVhYSjIvY3c4eFF4ZXVnWUtEWnV1N3pXUWZWckxxek95Zk1jNUFSVG5obXQ2REN3Y2lqOTQzdCsyd0h0U0Nyd0E0REh6U0hzT1lsNXFZV0F4a0NZTWRBQloxekVvdUxvUnloZ3FMVWxNemtrdFFVdmN5OGt2aWl4SkpVTkRNNGkvTEw5V0RtOElMTWFRQTdsWUVOM2JKa3NMa1F5MkNDWENtSkpZbDZhVVZBL1VEZVB6UXQ3UGtGSlpuNWVVQk5US0RnWWtYVHpGaUVKc0JmbWdkeVNZcHVja1pwWHJhdUVjZ0NzRFFFODBKcE5pUTJFOFJLcHY5UW8xaWhSckdsNXFWbjVxWEMzSjZUbUpTYUErWHdBWDBNOXJCZVFSRXdVR0ErQVlvVzY1WGtseVRDMUhFbDUrZkFSTUIrWS9nSEFNTkVRY2NtQWdBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Class"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["predicted.int_rate"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"6.03","2":"7.800339","_rn_":"1"},{"1":"8.90","2":"8.094067","_rn_":"2"},{"1":"11.14","2":"10.707999","_rn_":"3"},{"1":"6.24","2":"7.018924","_rn_":"4"},{"1":"18.25","2":"18.283416","_rn_":"5"},{"1":"11.55","2":"11.160601","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <h3>
@@ -2124,20 +4425,8 @@ write.csv(train_filtered, &quot;ml_train.csv&quot;, row.names = TRUE)
 write.csv(test, &quot;ml_test.csv&quot;, row.names = TRUE)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubW9kZWxfbG1fcHJlZF8xIDwtIFxuICBwcmVkaWN0LmxtKG9iamVjdCA9IG1vZGVsX2xtLCBuZXdkYXRhID0gdGVzdCwgdHlwZSA9IFwicmVzcG9uc2VcIilcbm1vZGVsX3ByZWRfdCA8LSBmdW5jdGlvbihwcmVkLCB0KSBpZmVsc2UocHJlZCA+IHQsIFRSVUUsIEZBTFNFKVxuY2FyZXQ6OmNvbmZ1c2lvbk1hdHJpeChkYXRhID0gbW9kZWxfcHJlZF90KG1vZGVsX2xtLCAwLjUpLCBcbiAgICAgICAgICAgICAgICAgICAgICAgcmVmZXJlbmNlID0gdGVzdCRpbnRfcmF0ZSxcbiAgICAgICAgICAgICAgICAgICAgICAgcG9zaXRpdmUgPSBcIlRSVUVcIilcbmBgYCJ9 -->
-<pre class="r"><code>model_lm_pred_1 &lt;- 
-  predict.lm(object = model_lm, newdata = test, type = &quot;response&quot;)
-model_pred_t &lt;- function(pred, t) ifelse(pred &gt; t, TRUE, FALSE)
-caret::confusionMatrix(data = model_pred_t(model_lm, 0.5), 
-                       reference = test$int_rate,
-                       positive = &quot;TRUE&quot;)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFzc2lnbm1lbnQgMTogTWFjaGluZSBMZWFybmluZyBNb2RlbCINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCjxoMT5MZXNzb25zIGxlYXJuZWQ8L2gxPg0KPHA+VGhlIGFzc2lnbm1lbnRzIGdhdmUgdXMgdGhlIG9wcG9ydHVuaXR5IHRvIGFwcGx5IHRoZSBtZXRob2RzIHdlIGdvdCB0byBrbm93IGR1cmluZyB0aGUgbGVjdHVyZXMgb24gcmVhbC13b3JsZCBkYXRhLiBXb3JraW5nIHdpdGggR2l0SHViIGZvciBleGNoYW5naW5nIGRldmVsb3BtZW50IHByb2dyZXNzZXMgYW5kIE1pY3Jvc29mdCBUZWFtcyBmb3IgdmlydHVhbCBtZWV0dXBzIHByb3ZlZCB0byBiZSB2YWx1YWJsZSwgZXZlbiBtb3JlIHNvIHVuZGVyIHRoZSBzcGVjaWFsIGNpcmN1bXN0YW5jZXMgcHJlc2VudCB0b2RheS4gQXMgZXhwZWN0ZWQsIHRoZSBkYXRhIHByZXBhcmF0aW9uIHRvb2sgYXQgbGVhc3QgYXMgbG9uZyBhcyBkZXZlbG9waW5nIHRoZSBtb2RlbHMuIEFsdGhvdWdoIHdlIGFwcGxpZWQgdGhlIG1ldGhvZHMgbGVhcm5lZCBkdXJpbmcgdGhlIGNvdXJzZXMsIHdlIGZvdW5kIGZ1cnRoZXIgUlN0dWRpbyBmdW5jdGlvbnMgdGhhdCB2YXN0bHkgYXNzaXN0ZWQgaW4gcHJlLXByb2Nlc3Npbmcgb2YgdGhlIGRhdGEuIFdpdGhvdXQgcHJvcGVyIHByZS1wcm9jZXNzaW5nLCBlc3BlY2lhbGx5IGNvbnZlcnNpb24gb2YgZGF0ZSBhbmQgbnVtZXJpYyBhdHRyaWJ1dGVzIHRvIHRoZWlyIHJlc3BlY3RpdmUgZGF0YSB0eXBlLCBhbnkgbW9kZWwgZGV2ZWxvcG1lbnQgaXMgZnV0aWxlLiBXZSBvdmVybG9va2VkIHNvbWUgYXR0cmlidXRlcyBpbiB0aGUgYmVnaW5uaW5nIHdoaWNoIGxlZCB0byB3ZWlyZCBwcmVkaWN0aW9ucy4gRXhjbHVkaW5nIG5lYXItemVybyB2YXJpYW5jZSBwcmVkaWN0b3JzIHdhcyBhIHN0ZXAgd2Ugb25seSBsZWFybmVkIHRvIGFwcGx5IGR1ZSB0byB0aGUgd2FybmluZyBtZXNzYWdlcyBvZiB0cmFpbmVkIG1vZGVscy4gSW4gdGhlIEFJIGFzc2lnbm1lbnQgd2UgbGVhcm5lZCB0byBub3QgYXBwbHkgdG9vIG1hbnkgaGlkZGVuIGxheWVycyAod2Ugc3RpY2tlZCB3aXRoIDIpIGFuZCAxNiBuZXVyb25zIHBlciBoaWRkZW4gbGF5ZXIgYXJlIHN1ZmZpY2llbnQsIGluIHRoZSBjb250ZXh0IG9mIGJpbmFyeSBjcm9zcy1lbnRyb3B5LjwvcD4NCg0KPHA+T3ZlcmFsbCB3ZSBmb3VuZCBsaWJyYXJpZXMgZHVyaW5nIG91ciByZXNlYXJjaCB0aGF0IG1hc3NpdmVseSBoZWxwZWQgdXMgaW4gdGhlIHByZS1wcm9jZXNzaW5nIHN0ZXAsIHN1Y2ggYXMga25pdHIsIGFuZCBsYXRlciBvbiByZWNpcGVzLiBXZSBoYWQgZGlmZmljdWx0aWVzIHRvIHJ1biBtb2RlbHMgd2l0aCBoaWdoIG51bWJlcnMgb2YgY3Jvc3MtdmFsaWRhdGlvbnMsIHdoaWNoIGlzIHNvbWV0aGluZyB0aGF0IHNob3VsZCBiZSBrZXB0IGluIG1pbmQgZm9yIHRoZSBmdXR1cmUuIE92ZXJhbGwsIGl0IHdhcyBpbnRlcmVzdGluZyB0byBoYXZlIGEgY29tcGxldGUgcGVyc3BlY3RpdmUgb24gZGF0YSBzY2llbmNlIHByb2Nlc3MsIGhvd2V2ZXIgd2UgZGlkIG5vdCBmZWVsIHJlYWR5IHRvIHRhY2tsZSB0aGUgYXNzaWdubWVudCBwdXJlbHkgd2l0aCB0aGUgaW5wdXRzIGZyb20gdGhlIGxlY3R1cmVzLiBFeHRlbnNpdmUgcmVzZWFyY2ggd2FzIHJlcXVpcmVkIHRvIHByb3Blcmx5IHVuZGVyc3RhbmQgYWxsIHJlcXVpcmVkIHByZS1wcm9jZXNzaW5nIHN0ZXBzLjwvcD4NCg0KPGgzPkRlZmluZSwgaW5zdGFsbCBhbmQgaW1wb3J0IHVzZWQgbGlicmFyaWVzPC9oMz4NCmBgYHtyfQ0KbGlicmFyaWVzX3VzZWQgPC0gYygibGF6eWV2YWwiLCAicmVhZHIiLCJwbHlyIiAsImRwbHlyIiwgInJlYWR4bCIsICJnZ3Bsb3QyIiwgDQogICAgImZ1bk1vZGVsaW5nIiwgInNjYWxlcyIsICJ0aWR5dmVyc2UiLCAiY29ycnBsb3QiLCAiR0dhbGx5IiwgImNhcmV0IiwNCiAgICAicnBhcnQiLCAicmFuZG9tRm9yZXN0IiwgInBST0MiLCAiZ2JtIiwgImNob3JvcGxldGhyIiwgImNob3JvcGxldGhyTWFwcyIsDQogICAgIm1pY3JvYmVuY2htYXJrIiwgImRvUGFyYWxsZWwiLCAiZTEwNzEiKQ0KDQpsaWJyYXJpZXNfbWlzc2luZyA8LSBsaWJyYXJpZXNfdXNlZFshKGxpYnJhcmllc191c2VkICVpbiUgaW5zdGFsbGVkLnBhY2thZ2VzKClbLCJQYWNrYWdlIl0pXQ0KaWYobGVuZ3RoKGxpYnJhcmllc19taXNzaW5nKSkgaW5zdGFsbC5wYWNrYWdlcyhsaWJyYXJpZXNfbWlzc2luZykNCg0KbGlicmFyeShkcGx5cikNCmxpYnJhcnkocmVjaXBlcykNCmxpYnJhcnkoY2FyZXQpDQpsaWJyYXJ5KGNvcnJwbG90KQ0KDQpzZXQuc2VlZCgxKQ0KYGBgDQoNCjxoMz5Mb2FkIERhdGFzZXQ8L2gzPg0KYGBge3J9DQpkZiA8LSByZWFkLmNzdigicmVncmVzc2lvbl90cmFpbl9sb2FuLmNzdiIpDQpgYGANCg0KPGgzPkV4dHJhY3QgbWV0YSBpbmZvcm1hdGlvbiBhbmQgb3V0cHV0IGl0PC9oMz4NCmBgYHtyfQ0KbWV0YV9kZiA8LSBmdW5Nb2RlbGluZzo6ZGZfc3RhdHVzKCBkZiwgcHJpbnRfcmVzdWx0cyA9IEZBTFNFICkNCg0Ka25pdHI6OmthYmxlKG1ldGFfZGYpDQpgYGANCg0KPGgzPkdldCBhbW91bnQgYW5kIHBlcmNlbnRhZ2Ugb2YgdW5pcXVlPC9oMz4NCmBgYHtyfQ0KbWV0YV9kZl9wIDwtIG1ldGFfZGYgJT4lIG11dGF0ZSh1bmlxX3JhdCA9IHVuaXF1ZSAvIG5yb3coZGYpKQ0KbWV0YV9kZl9wICU+JSBzZWxlY3QodmFyaWFibGUsIHVuaXF1ZSwgdW5pcV9yYXQpICU+JSBtdXRhdGUodW5pcXVlID0gdW5pcXVlLCB1bmlxX3JhdCA9IHNjYWxlczo6cGVyY2VudCh1bmlxX3JhdCkpICU+JSBrbml0cjo6a2FibGUoKQ0KYGBgDQoNCjxoMz5Db252ZXJ0IERhdGUgYXR0cmlidXRlczwvaDM+DQpgYGB7cn0NCmNocl90b19kYXRlX3ZhcnMgPC0gIGMoImlzc3VlX2QiLCAibGFzdF9weW1udF9kIiwgImxhc3RfY3JlZGl0X3B1bGxfZCIsICJuZXh0X3B5bW50X2QiLCAiZWFybGllc3RfY3JfbGluZSIsICJuZXh0X3B5bW50X2QiKQ0KY29udmVydF9kYXRlIDwtIGZ1bmN0aW9uKHgpew0KICBhcy5EYXRlKHBhc3RlMCgiMDEtIiwgeCksIGZvcm1hdCA9ICIlZC0lYi0lWSIpDQp9DQoNCmRmIDwtIGRmICU+JSBtdXRhdGVfYXQoLmZ1bnMgPSBmdW5zKGNvbnZlcnRfZGF0ZSksIC52YXJzID0gY2hyX3RvX2RhdGVfdmFycykNCmBgYA0KDQo8aDM+Q29udmVydCBOdW1lcmljIGF0dHJpYnV0ZXM8L2gzPg0KYGBge3J9DQpjaHJfdG9fbnVtX3ZhcnMgPC0gDQogIGMoImFubnVhbF9pbmNfam9pbnQiLCAibXRoc19zaW5jZV9sYXN0X21ham9yX2Rlcm9nIiwgIm9wZW5fYWNjXzZtIiwNCiAgICAib3Blbl9pbF82bSIsICJvcGVuX2lsXzEybSIsICJvcGVuX2lsXzI0bSIsICJtdGhzX3NpbmNlX3JjbnRfaWwiLA0KICAgICJ0b3RhbF9iYWxfaWwiLCAiaWxfdXRpbCIsICJvcGVuX3J2XzEybSIsICJvcGVuX3J2XzI0bSIsDQogICAgIm1heF9iYWxfYmMiLCAiYWxsX3V0aWwiLCAidG90YWxfcmV2X2hpX2xpbSIsICJ0b3RhbF9jdV90bCIsDQogICAgImlucV9sYXN0XzEybSIsICJkdGlfam9pbnQiLCAiaW5xX2ZpIiwgInRvdF9jdXJfYmFsIiwgInRvdF9jb2xsX2FtdCIsICJpbnRfcmF0ZSIpDQoNCmRmIDwtIGRmICU+JSAgbXV0YXRlX2F0KC5mdW5zID0gZnVucyhhcy5udW1lcmljKSwgLnZhcnMgPSBjaHJfdG9fbnVtX3ZhcnMpDQpgYGANCg0KPGgzPk91dHB1dCBhIHRhYmxlIHdpdGggYW1vdW50IG9mIHVuaXF1ZSwgTi9BLCBhbmQgemVybyB2YWx1ZXM8L2gzPg0KYGBge3J9DQptZXRhX2RmICU+JSBzZWxlY3QodmFyaWFibGUsIHBfemVyb3MsIHBfbmEsIHVuaXF1ZSkgJT4lIGtuaXRyOjprYWJsZSgpDQpgYGANCg0KPGgzPlJlbW92ZSBjb2x1bW5zIGRlZW1lZCB1bmZpdCBmb3IgbW9kZWxpbmc8L2gzPg0KPHA+QWxsIGNvbHVtbnMgd2l0aCBtb3JlIHRoYW4gNzAlIG1pc3NpbmcgdmFsdWVzIGFyZSBkZWVtZWQgdG8gYmUgdW5oZWxwZnVsIGluIG1vZGVsaW5nIGFuZCBleHBsb3JhdGlvbiwgYXMgd2VsbCBhcyBjZXJ0YWluIGZlYXR1cmVzPC9wPg0KYGBge3J9DQp2YXJzX3RvX3JlbW92ZSA8LSBjKCJhbm51YWxfaW5jX2pvaW50IiwgImR0aV9qb2ludCIsICJwb2xpY3lfY29kZSIsICJpZCIsICJtZW1iZXJfaWQiLA0KICAgICAgICAgICAgICAgICAgICAiZW1wX3RpdGxlIiwgInVybCIsICJkZXNjIiwgInRpdGxlIiwgIm9wZW5fYWNjXzZtIiwgIm9wZW5faWxfNm0iLCANCiAgICAgICAgICAgICAgICAgICAgIm9wZW5faWxfMTJtIiwgIm9wZW5faWxfMjRtIiwgIm10aHNfc2luY2VfcmNudF9pbCIsICJ0b3RhbF9iYWxfaWwiLCANCiAgICAgICAgICAgICAgICAgICAgImlsX3V0aWwiLCAib3Blbl9ydl8xMm0iLCAib3Blbl9ydl8yNG0iLCAibWF4X2JhbF9iYyIsICJhbGxfdXRpbCIsDQogICAgICAgICAgICAgICAgICAgICJ0b3RhbF9yZXZfaGlfbGltIiwgImlucV9maSIsICJ0b3RhbF9jdV90bCIsICJpbnFfbGFzdF8xMm0iLA0KICAgICAgICAgICAgICAgICAgICAidmVyaWZpY2F0aW9uX3N0YXR1c19qb2ludCIsICJuZXh0X3B5bW50X2QiLCAic3ViX2dyYWRlIiwgIlgiLCAiemlwX2NvZGUiLCAiYXBwbGljYXRpb25fdHlwZSIsDQogICAgICAgICAgICAgICAgICAgICJtdGhzX3NpbmNlX2xhc3RfbWFqb3JfZGVyb2ciLCAibGFzdF9weW1udF9kIiwgImxhc3RfY3JlZGl0X3B1bGxfZCIsICJpc3N1ZV9kIiwgImRlbGlucV8yeXJzIiwgImlucV9sYXN0XzZtdGhzIiwgInRvdGFsX3JlY19pbnQiLA0KICAgICAgICAgICAgICAgICAgICAidG90YWxfcmVjX2xhdGVfZmVlIiwgImxhc3RfcHltbnRfYW1udCIpDQoNCmRmIDwtIGRmICU+JSBzZWxlY3QoLW9uZV9vZih2YXJzX3RvX3JlbW92ZSkpDQpgYGANCg0KPGgzPkNvbnZlcnQgInRlcm0iIGNvbHVtbiB0byBudW1iZXI8L2gzPg0KYGBge3J9DQpkZiR0ZXJtIDwtIGFzLm51bWVyaWMoZ3N1YiggIi4qKFswLTldKykuKiIsICJcXDEiLCBkZiR0ZXJtICkpDQpgYGANCg0KPGgzPkNvbnZlcnQgImVtcF9sZW5ndGgiIHRvIG51bWVyaWMgdmFsdWVzPC9oMz4NCmBgYHtyfQ0KZGYkZW1wX2xlbmd0aFtkZiRlbXBfbGVuZ3RoID09ICJuL2EiXSA8LSA5OQ0KZGYkZW1wX2xlbmd0aFtkZiRlbXBfbGVuZ3RoID09ICI8IDEgeWVhciJdIDwtIDANCmRmJGVtcF9sZW5ndGggPC0gYXMubnVtZXJpYyhnc3ViKCAiKFswLTldKykuKiIsICJcXDEiLCBkZiRlbXBfbGVuZ3RoICkpDQpgYGANCg0KPGgzPk91dHB1dCBudW1lcmljYWwgdmFyczwvaDM+DQpgYGB7cn0NCm51bV92YXJzIDwtIA0KICBkZiAlPiUgDQogIHNhcHBseShpcy5udW1lcmljKSAlPiUgDQogIHdoaWNoKCkgJT4lIA0KICBuYW1lcygpDQoNCm1ldGFfZGYgPC0gZnVuTW9kZWxpbmc6OmRmX3N0YXR1cyhkZiwgcHJpbnRfcmVzdWx0cyA9IEZBTFNFKQ0KDQptZXRhX2RmICU+JQ0KICBzZWxlY3QodmFyaWFibGUsIHBfemVyb3MsIHBfbmEsIHVuaXF1ZSkgJT4lDQogIGZpbHRlcl8ofiB2YXJpYWJsZSAlaW4lIG51bV92YXJzKSAlPiUNCiAga25pdHI6OmthYmxlKCkNCg0KYGBgDQoNCjxoMz5Db3JyZWxhdGlvbiBwbG90PC9oMz4gDQo8cD5GaXJzdCBzdGVwIHRvIGdldCBhbiBvdmVydmlldyBvZiBwb3RlbnRpYWwgY29sbGluZWFyaXRpZXMuIEZhaWxpbmcgdG8gaWRlbnRpZnkgbXVsdGljb2xsaW5lYXJpdHkgY291bGQgcmVzdWx0IGluIG1pc2xlYWRpbmcgaW50ZXJwcmV0YXRpb25zIG9mIHRoZSByZXN1bHRzLjwvcD4NCmBgYHtyfQ0KY29ycnBsb3Q6OmNvcnJwbG90KGNvcihkZlssIG51bV92YXJzXSwgdXNlID0gImNvbXBsZXRlLm9icyIpLCANCiAgICAgICAgICAgICAgICAgICBtZXRob2QgPSAicGllIiwgdHlwZSA9ICJ1cHBlciIsdGwuY2V4ID0gMC42NSkNCmBgYA0KDQo8aDM+RGlzcGxheSBoaWdobHkgY29ycmVsYXRlZCB2YXJpYWJsZXM8L2gzPg0KPHA+V2Ugd2FudCB0byBpZGVudGlmeSBjb2xsaW5lYXJpdGllcyB3aGljaCBjb3VsZCBhZmZlY3Qgb3VyIHJlZ3Jlc3Npb24gbW9kZWwuIEEgQ3V0LW9mZiBhdCAwLjUgaXMgYXBwbGllZC48L3A+DQoNCmBgYHtyfQ0KY2FyZXQ6OmZpbmRDb3JyZWxhdGlvbihjb3IoZGZbLCBudW1fdmFyc10sIHVzZSA9ICJjb21wbGV0ZS5vYnMiKSwgDQogICAgICAgICAgICAgICAgICAgICAgIG5hbWVzID0gVFJVRSwgY3V0b2ZmID0gLjUpDQpgYGANCg0KPGgzPlJlbW92ZSBoaWdobHkgY29ycmVsYXRlZCB2YXJpYWJsZXMgdG8gYXZvaWQgdGhlIGludGVyZmVyZW5jZSBvZiBjb2xsaW5lYXJpdHkgaW4gb3VyIG1vZGVsPC9oMz4NCjxwPk11bHRpY29sbGluZWFyaXR5IGFyaXNlcyB3aGVuIGF0IGxlYXN0IHR3byBoaWdobHkgY29ycmVsYXRlZCBwcmVkaWN0b3JzIGFyZSBhc3Nlc3NlZCBzaW11bHRhbmVvdXNseSBpbiBhIHJlZ3Jlc3Npb24gbW9kZWwuPC9wPg0KYGBge3J9DQp2YXJzX3RvX3JlbW92ZSA8LSANCiAgYygibG9hbl9hbW50IiwgImZ1bmRlZF9hbW50IiwgImZ1bmRlZF9hbW50X2ludiIsICJpbnN0YWxsbWVudCIsICJ0b3RhbF9weW1udF9pbnYiLCANCiAgICAib3V0X3BybmNwIiwgInRvdGFsX3B5bW50IiwgInRvdGFsX3JlY19wcm5jcCIsICJ0b3RhbF9hY2MiLA0KICAgICJtdGhzX3NpbmNlX2xhc3RfcmVjb3JkIiwgICJtdGhzX3NpbmNlX2xhc3RfZGVsaW5xIiwgInJlY292ZXJpZXMiKQ0KDQpkZiA8LSBkZiAlPiUgc2VsZWN0KC1vbmVfb2YodmFyc190b19yZW1vdmUpKQ0KDQpgYGANCg0KPGgzPlJlbW92ZSByb3dzIHdoZXJlIGRhdGUgY29sdW1ucyBjb250YWluIE4vQSB2YWx1ZXMgKDI1IHJlY3MpPC9oMz4NCmBgYHtyfQ0KZGYgPC0gZGZbY29tcGxldGUuY2FzZXMoZGYpLCBdDQpgYGANCg0KPGgzPlJlY3JlYXRlIG1ldGEgdGFibGU8L2gzPg0KYGBge3J9DQptZXRhX2RmIDwtIGZ1bk1vZGVsaW5nOjpkZl9zdGF0dXMoZGYsIHByaW50X3Jlc3VsdHMgPSBGQUxTRSkNCmtuaXRyOjprYWJsZSggbWV0YV9kZiApDQpgYGANCg0KPGgzPlNldCB0aGUgdHJhaW5pbmcgYW5kIHRlc3QgZGF0YSAoODAlIHRyYWluLCAyMCUgdGVzdCk8L2gzPg0KYGBge3J9DQp0cmFpbl9pbmRleCA8LSBjYXJldDo6Y3JlYXRlRGF0YVBhcnRpdGlvbih5ID0gZGYkaW50X3JhdGUsIHRpbWVzID0gMSwgcCA9IC44LCBsaXN0ID0gRkFMU0UpDQoNCnRyYWluIDwtIGRmW3RyYWluX2luZGV4LCBdDQp0ZXN0IDwtIGRmWy10cmFpbl9pbmRleCwgXQ0KYGBgDQoNCg0KPGgzPkRhdGEgcHJlcHJvY2Vzc2luZzwvaDM+DQoNCjxwPg0KVGhlIGZvbGxvd2luZyBzdGVwcyBhcmUgZXhlY3V0ZWQ6DQoNCjx1bD4NCjxsaT5SZW1vdmUgbmVhci16ZXJvIHZhcmlhbmNlIHByZWRpY3RvcnMuIFRoZXNlIHByZWRpY3RvcnMgY2FuIGludGVyZmVyZSB3aXRoIG91ciBtb2RlbCB0cmFpbmluZyB1c2luZyBjcm9zcy12YWxpZGF0aW9ucy4gV2Ugd2FudCB0byByZW1vdmUgdmFyaWFibGVzIHdpdGggYSBoaWdoIGZyZXF1ZW5jeSByYXRpbyBhbmQgYSBoaWdoIHBlcmNlbnRhZ2Ugb2YgdW5pcXVlIHZhbHVlcy48L2xpPg0KDQo8bGk+Q29udmVydCBkYXRlIHByZWRpY3RvcnMgaW50byBmYWN0b3JzL251bWVyaWMgdmFyaWFibGVzIGFuZCByZW1vdmUgdGhlIGRhdGUgcHJlZGljdG9ycyBhZnRlcndhcmRzPC9saT4NCg0KPGxpPkNyZWF0ZSBkdW1teSB2YXJpYWJsZXMgb2Ygbm9taW5hbCBwcmVkaWN0b3JzLjwvbGk+DQoNCjxsaT5Ob3JtYWxpemUgbnVtZXJpYyBkYXRhIHRvIGhhdmUgYSBzdGFuZGFyZCBkZXZpYXRpb24gb2Ygb25lIGFuZCBhIG1lYW4gb2YgemVybzwvbGk+DQo8L3VsPg0KPC9wPg0KYGBge3J9DQpyZWNpcGVfb2JqIDwtIHJlY2lwZSggaW50X3JhdGUgfiAuLCBkYXRhID0gdHJhaW4gKSAlPiUNCiAgc3RlcF9uenYoYWxsX3ByZWRpY3RvcnMoKSkgJT4lDQogIHN0ZXBfZGF0ZSggaGFzX3R5cGUoIG1hdGNoID0gImRhdGUiICkgKSAlPiUNCiAgc3RlcF9ybSggaGFzX3R5cGUoIG1hdGNoID0gImRhdGUiICkgKSAlPiUNCiAgc3RlcF9kdW1teSggYWxsX25vbWluYWwoKSwgLWFsbF9vdXRjb21lcygpICkgJT4lDQogIHN0ZXBfbm9ybWFsaXplKCBhbGxfcHJlZGljdG9ycygpICkNCg0KcmVjaXBlX29iag0KYGBgDQoNCjxoMz5EZWZpbmUgdGhlIHJlc2FtcGxpbmcgbWV0aG9kIGZvciBtb2RlbCB0cmFpbmluZzwvaDM+DQo8cD5XZSBhcHBseSBhIDEwLXRpbWUgY3Jvc3MgdmFsaWRhdGlvbiBmb3Igb3VyIHJlZ3Jlc3Npb24gbW9kZWxzLjwvcD4NCmBgYHtyfQ0KZml0Q29udHJvbCA8LSB0cmFpbkNvbnRyb2wobWV0aG9kID0gImN2IiwgdmVyYm9zZUl0ZXIgPSBUUlVFKQ0KYGBgDQoNCjxoMz5UcmFpbiBsaW5lYXIgcmVncmVzc2lvbiBtb2RlbDwvaDM+DQpgYGB7cn0NCm1vZGVsIDwtIHRyYWluKHJlY2lwZV9vYmosIGRhdGEgPSB0cmFpbiwNCiAgICAgICAgICAgICAgIG1ldGhvZCA9ICJsbSIsDQogICAgICAgICAgICAgICB0dW5lTGVuZ3RoID0gMTAsDQogICAgICAgICAgICAgICB0ckNvbnRyb2wgPSBmaXRDb250cm9sKQ0KDQptb2RlbA0KYGBgDQoNCjxoMz5TYXZlIHRoZSByZXF1aXJlZCBkYXRhIHRvIHRoZSBmaWxlc3lzdGVtPC9oMz4NCmBgYHtyfQ0Kc2F2ZVJEUyhtb2RlbF9tbF9sbSwgIm1vZGVsLmxtIikNCndyaXRlLmNzdih0cmFpbl9maWx0ZXJlZCwgIm1sX3RyYWluLmNzdiIsIHJvdy5uYW1lcyA9IFRSVUUpDQp3cml0ZS5jc3YodGVzdCwgIm1sX3Rlc3QuY3N2Iiwgcm93Lm5hbWVzID0gVFJVRSkNCmBgYA0KDQoNCmBgYHtyfQ0KbW9kZWxfbG1fcHJlZF8xIDwtIA0KICBwcmVkaWN0LmxtKG9iamVjdCA9IG1vZGVsX2xtLCBuZXdkYXRhID0gdGVzdCwgdHlwZSA9ICJyZXNwb25zZSIpDQptb2RlbF9wcmVkX3QgPC0gZnVuY3Rpb24ocHJlZCwgdCkgaWZlbHNlKHByZWQgPiB0LCBUUlVFLCBGQUxTRSkNCmNhcmV0Ojpjb25mdXNpb25NYXRyaXgoZGF0YSA9IG1vZGVsX3ByZWRfdChtb2RlbF9sbSwgMC41KSwgDQogICAgICAgICAgICAgICAgICAgICAgIHJlZmVyZW5jZSA9IHRlc3QkaW50X3JhdGUsDQogICAgICAgICAgICAgICAgICAgICAgIHBvc2l0aXZlID0gIlRSVUUiKQ0KYGBg</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFzc2lnbm1lbnQgMTogTWFjaGluZSBMZWFybmluZyBNb2RlbCINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCjxoMT5MZXNzb25zIGxlYXJuZWQ8L2gxPg0KPHA+VGhlIGFzc2lnbm1lbnRzIGdhdmUgdXMgdGhlIG9wcG9ydHVuaXR5IHRvIGFwcGx5IHRoZSBtZXRob2RzIHdlIGdvdCB0byBrbm93IGR1cmluZyB0aGUgbGVjdHVyZXMgb24gcmVhbC13b3JsZCBkYXRhLiBXb3JraW5nIHdpdGggR2l0SHViIGZvciBleGNoYW5naW5nIGRldmVsb3BtZW50IHByb2dyZXNzZXMgYW5kIE1pY3Jvc29mdCBUZWFtcyBmb3IgdmlydHVhbCBtZWV0dXBzIHByb3ZlZCB0byBiZSB2YWx1YWJsZSwgZXZlbiBtb3JlIHNvIHVuZGVyIHRoZSBzcGVjaWFsIGNpcmN1bXN0YW5jZXMgcHJlc2VudCB0b2RheS4gQXMgZXhwZWN0ZWQsIHRoZSBkYXRhIHByZXBhcmF0aW9uIHRvb2sgYXQgbGVhc3QgYXMgbG9uZyBhcyBkZXZlbG9waW5nIHRoZSBtb2RlbHMuIEFsdGhvdWdoIHdlIGFwcGxpZWQgdGhlIG1ldGhvZHMgbGVhcm5lZCBkdXJpbmcgdGhlIGNvdXJzZXMsIHdlIGZvdW5kIGZ1cnRoZXIgUlN0dWRpbyBmdW5jdGlvbnMgdGhhdCB2YXN0bHkgYXNzaXN0ZWQgaW4gcHJlLXByb2Nlc3Npbmcgb2YgdGhlIGRhdGEuIFdpdGhvdXQgcHJvcGVyIHByZS1wcm9jZXNzaW5nLCBlc3BlY2lhbGx5IGNvbnZlcnNpb24gb2YgZGF0ZSBhbmQgbnVtZXJpYyBhdHRyaWJ1dGVzIHRvIHRoZWlyIHJlc3BlY3RpdmUgZGF0YSB0eXBlLCBhbnkgbW9kZWwgZGV2ZWxvcG1lbnQgaXMgZnV0aWxlLiBXZSBvdmVybG9va2VkIHNvbWUgYXR0cmlidXRlcyBpbiB0aGUgYmVnaW5uaW5nIHdoaWNoIGxlZCB0byB3ZWlyZCBwcmVkaWN0aW9ucy4gRXhjbHVkaW5nIG5lYXItemVybyB2YXJpYW5jZSBwcmVkaWN0b3JzIHdhcyBhIHN0ZXAgd2Ugb25seSBsZWFybmVkIHRvIGFwcGx5IGR1ZSB0byB0aGUgd2FybmluZyBtZXNzYWdlcyBvZiB0cmFpbmVkIG1vZGVscy4gSW4gdGhlIEFJIGFzc2lnbm1lbnQgd2UgbGVhcm5lZCB0byBub3QgYXBwbHkgdG9vIG1hbnkgaGlkZGVuIGxheWVycyAod2Ugc3RpY2tlZCB3aXRoIDIpIGFuZCAxNiBuZXVyb25zIHBlciBoaWRkZW4gbGF5ZXIgYXJlIHN1ZmZpY2llbnQsIGluIHRoZSBjb250ZXh0IG9mIGJpbmFyeSBjcm9zcy1lbnRyb3B5LjwvcD4NCg0KPHA+T3ZlcmFsbCB3ZSBmb3VuZCBsaWJyYXJpZXMgZHVyaW5nIG91ciByZXNlYXJjaCB0aGF0IG1hc3NpdmVseSBoZWxwZWQgdXMgaW4gdGhlIHByZS1wcm9jZXNzaW5nIHN0ZXAsIHN1Y2ggYXMga25pdHIsIGFuZCBsYXRlciBvbiByZWNpcGVzLiBXZSBoYWQgZGlmZmljdWx0aWVzIHRvIHJ1biBtb2RlbHMgd2l0aCBoaWdoIG51bWJlcnMgb2YgY3Jvc3MtdmFsaWRhdGlvbnMsIHdoaWNoIGlzIHNvbWV0aGluZyB0aGF0IHNob3VsZCBiZSBrZXB0IGluIG1pbmQgZm9yIHRoZSBmdXR1cmUuIE92ZXJhbGwsIGl0IHdhcyBpbnRlcmVzdGluZyB0byBoYXZlIGEgY29tcGxldGUgcGVyc3BlY3RpdmUgb24gZGF0YSBzY2llbmNlIHByb2Nlc3MsIGhvd2V2ZXIgd2UgZGlkIG5vdCBmZWVsIHJlYWR5IHRvIHRhY2tsZSB0aGUgYXNzaWdubWVudCBwdXJlbHkgd2l0aCB0aGUgaW5wdXRzIGZyb20gdGhlIGxlY3R1cmVzLiBFeHRlbnNpdmUgcmVzZWFyY2ggd2FzIHJlcXVpcmVkIHRvIHByb3Blcmx5IHVuZGVyc3RhbmQgYWxsIHJlcXVpcmVkIHByZS1wcm9jZXNzaW5nIHN0ZXBzLjwvcD4NCg0KPGgzPkRlZmluZSwgaW5zdGFsbCBhbmQgaW1wb3J0IHVzZWQgbGlicmFyaWVzPC9oMz4NCmBgYHtyfQ0KbGlicmFyaWVzX3VzZWQgPC0gYygibGF6eWV2YWwiLCAicmVhZHIiLCJwbHlyIiAsImRwbHlyIiwgInJlYWR4bCIsICJnZ3Bsb3QyIiwgDQogICAgImZ1bk1vZGVsaW5nIiwgInNjYWxlcyIsICJ0aWR5dmVyc2UiLCAiY29ycnBsb3QiLCAiR0dhbGx5IiwgImNhcmV0IiwNCiAgICAicnBhcnQiLCAicmFuZG9tRm9yZXN0IiwgImdibSIsICJjaG9yb3BsZXRociIsICJjaG9yb3BsZXRock1hcHMiLA0KICAgICJtaWNyb2JlbmNobWFyayIsICJkb1BhcmFsbGVsIiwgImUxMDcxIikNCg0KbGlicmFyaWVzX21pc3NpbmcgPC0gbGlicmFyaWVzX3VzZWRbIShsaWJyYXJpZXNfdXNlZCAlaW4lIGluc3RhbGxlZC5wYWNrYWdlcygpWywiUGFja2FnZSJdKV0NCmlmKGxlbmd0aChsaWJyYXJpZXNfbWlzc2luZykpIGluc3RhbGwucGFja2FnZXMobGlicmFyaWVzX21pc3NpbmcpDQoNCmxpYnJhcnkoZHBseXIpDQpsaWJyYXJ5KHJlY2lwZXMpDQpsaWJyYXJ5KGNhcmV0KQ0KbGlicmFyeShjb3JycGxvdCkNCg0Kc2V0LnNlZWQoMSkNCmBgYA0KDQo8aDM+TG9hZCBEYXRhc2V0PC9oMz4NCmBgYHtyfQ0KZGYgPC0gcmVhZC5jc3YoInJlZ3Jlc3Npb25fdHJhaW5fbG9hbi5jc3YiKQ0KYGBgDQoNCjxoMz5FeHRyYWN0IG1ldGEgaW5mb3JtYXRpb24gYW5kIG91dHB1dCBpdDwvaDM+DQpgYGB7cn0NCm1ldGFfZGYgPC0gZnVuTW9kZWxpbmc6OmRmX3N0YXR1cyggZGYsIHByaW50X3Jlc3VsdHMgPSBGQUxTRSApDQoNCmtuaXRyOjprYWJsZShtZXRhX2RmKQ0KYGBgDQoNCjxoMz5HZXQgYW1vdW50IGFuZCBwZXJjZW50YWdlIG9mIHVuaXF1ZTwvaDM+DQpgYGB7cn0NCm1ldGFfZGZfcCA8LSBtZXRhX2RmICU+JSBtdXRhdGUodW5pcV9yYXQgPSB1bmlxdWUgLyBucm93KGRmKSkNCm1ldGFfZGZfcCAlPiUgc2VsZWN0KHZhcmlhYmxlLCB1bmlxdWUsIHVuaXFfcmF0KSAlPiUgbXV0YXRlKHVuaXF1ZSA9IHVuaXF1ZSwgdW5pcV9yYXQgPSBzY2FsZXM6OnBlcmNlbnQodW5pcV9yYXQpKSAlPiUga25pdHI6OmthYmxlKCkNCmBgYA0KDQo8aDM+Q29udmVydCBEYXRlIGF0dHJpYnV0ZXM8L2gzPg0KYGBge3J9DQpjaHJfdG9fZGF0ZV92YXJzIDwtICBjKCJpc3N1ZV9kIiwgImxhc3RfcHltbnRfZCIsICJsYXN0X2NyZWRpdF9wdWxsX2QiLCAibmV4dF9weW1udF9kIiwgImVhcmxpZXN0X2NyX2xpbmUiLCAibmV4dF9weW1udF9kIikNCmNvbnZlcnRfZGF0ZSA8LSBmdW5jdGlvbih4KXsNCiAgYXMuRGF0ZShwYXN0ZTAoIjAxLSIsIHgpLCBmb3JtYXQgPSAiJWQtJWItJVkiKQ0KfQ0KDQpkZiA8LSBkZiAlPiUgbXV0YXRlX2F0KC5mdW5zID0gZnVucyhjb252ZXJ0X2RhdGUpLCAudmFycyA9IGNocl90b19kYXRlX3ZhcnMpDQpgYGANCg0KPGgzPkNvbnZlcnQgTnVtZXJpYyBhdHRyaWJ1dGVzPC9oMz4NCmBgYHtyfQ0KY2hyX3RvX251bV92YXJzIDwtIA0KICBjKCJhbm51YWxfaW5jX2pvaW50IiwgIm10aHNfc2luY2VfbGFzdF9tYWpvcl9kZXJvZyIsICJvcGVuX2FjY182bSIsDQogICAgIm9wZW5faWxfNm0iLCAib3Blbl9pbF8xMm0iLCAib3Blbl9pbF8yNG0iLCAibXRoc19zaW5jZV9yY250X2lsIiwNCiAgICAidG90YWxfYmFsX2lsIiwgImlsX3V0aWwiLCAib3Blbl9ydl8xMm0iLCAib3Blbl9ydl8yNG0iLA0KICAgICJtYXhfYmFsX2JjIiwgImFsbF91dGlsIiwgInRvdGFsX3Jldl9oaV9saW0iLCAidG90YWxfY3VfdGwiLA0KICAgICJpbnFfbGFzdF8xMm0iLCAiZHRpX2pvaW50IiwgImlucV9maSIsICJ0b3RfY3VyX2JhbCIsICJ0b3RfY29sbF9hbXQiLCAiaW50X3JhdGUiKQ0KDQpkZiA8LSBkZiAlPiUgIG11dGF0ZV9hdCguZnVucyA9IGZ1bnMoYXMubnVtZXJpYyksIC52YXJzID0gY2hyX3RvX251bV92YXJzKQ0KYGBgDQoNCjxoMz5PdXRwdXQgYSB0YWJsZSB3aXRoIGFtb3VudCBvZiB1bmlxdWUsIE4vQSwgYW5kIHplcm8gdmFsdWVzPC9oMz4NCmBgYHtyfQ0KbWV0YV9kZiAlPiUgc2VsZWN0KHZhcmlhYmxlLCBwX3plcm9zLCBwX25hLCB1bmlxdWUpICU+JSBrbml0cjo6a2FibGUoKQ0KYGBgDQoNCjxoMz5SZW1vdmUgY29sdW1ucyBkZWVtZWQgdW5maXQgZm9yIG1vZGVsaW5nPC9oMz4NCjxwPkFsbCBjb2x1bW5zIHdpdGggbW9yZSB0aGFuIDcwJSBtaXNzaW5nIHZhbHVlcyBhcmUgZGVlbWVkIHRvIGJlIHVuaGVscGZ1bCBpbiBtb2RlbGluZyBhbmQgZXhwbG9yYXRpb24sIGFzIHdlbGwgYXMgY2VydGFpbiBmZWF0dXJlczwvcD4NCmBgYHtyfQ0KdmFyc190b19yZW1vdmUgPC0gYygiYW5udWFsX2luY19qb2ludCIsICJkdGlfam9pbnQiLCAicG9saWN5X2NvZGUiLCAiaWQiLCAibWVtYmVyX2lkIiwNCiAgICAgICAgICAgICAgICAgICAgImVtcF90aXRsZSIsICJ1cmwiLCAiZGVzYyIsICJ0aXRsZSIsICJvcGVuX2FjY182bSIsICJvcGVuX2lsXzZtIiwgDQogICAgICAgICAgICAgICAgICAgICJvcGVuX2lsXzEybSIsICJvcGVuX2lsXzI0bSIsICJtdGhzX3NpbmNlX3JjbnRfaWwiLCAidG90YWxfYmFsX2lsIiwgDQogICAgICAgICAgICAgICAgICAgICJpbF91dGlsIiwgIm9wZW5fcnZfMTJtIiwgIm9wZW5fcnZfMjRtIiwgIm1heF9iYWxfYmMiLCAiYWxsX3V0aWwiLA0KICAgICAgICAgICAgICAgICAgICAidG90YWxfcmV2X2hpX2xpbSIsICJpbnFfZmkiLCAidG90YWxfY3VfdGwiLCAiaW5xX2xhc3RfMTJtIiwNCiAgICAgICAgICAgICAgICAgICAgInZlcmlmaWNhdGlvbl9zdGF0dXNfam9pbnQiLCAibmV4dF9weW1udF9kIiwgInN1Yl9ncmFkZSIsICJYIiwgInppcF9jb2RlIiwgImFwcGxpY2F0aW9uX3R5cGUiLA0KICAgICAgICAgICAgICAgICAgICAibXRoc19zaW5jZV9sYXN0X21ham9yX2Rlcm9nIiwgImxhc3RfcHltbnRfZCIsICJsYXN0X2NyZWRpdF9wdWxsX2QiLCAiaXNzdWVfZCIsICJkZWxpbnFfMnlycyIsICJpbnFfbGFzdF82bXRocyIsICJ0b3RhbF9yZWNfaW50IiwNCiAgICAgICAgICAgICAgICAgICAgInRvdGFsX3JlY19sYXRlX2ZlZSIsICJsYXN0X3B5bW50X2FtbnQiKQ0KDQpkZiA8LSBkZiAlPiUgc2VsZWN0KC1vbmVfb2YodmFyc190b19yZW1vdmUpKQ0KYGBgDQoNCjxoMz5Db252ZXJ0ICJ0ZXJtIiBjb2x1bW4gdG8gbnVtYmVyPC9oMz4NCmBgYHtyfQ0KZGYkdGVybSA8LSBhcy5udW1lcmljKGdzdWIoICIuKihbMC05XSspLioiLCAiXFwxIiwgZGYkdGVybSApKQ0KYGBgDQoNCjxoMz5Db252ZXJ0ICJlbXBfbGVuZ3RoIiB0byBudW1lcmljIHZhbHVlczwvaDM+DQpgYGB7cn0NCmRmJGVtcF9sZW5ndGhbZGYkZW1wX2xlbmd0aCA9PSAibi9hIl0gPC0gOTkNCmRmJGVtcF9sZW5ndGhbZGYkZW1wX2xlbmd0aCA9PSAiPCAxIHllYXIiXSA8LSAwDQpkZiRlbXBfbGVuZ3RoIDwtIGFzLm51bWVyaWMoZ3N1YiggIihbMC05XSspLioiLCAiXFwxIiwgZGYkZW1wX2xlbmd0aCApKQ0KYGBgDQoNCjxoMz5PdXRwdXQgbnVtZXJpY2FsIHZhcnM8L2gzPg0KYGBge3J9DQpudW1fdmFycyA8LSANCiAgZGYgJT4lIA0KICBzYXBwbHkoaXMubnVtZXJpYykgJT4lIA0KICB3aGljaCgpICU+JSANCiAgbmFtZXMoKQ0KDQptZXRhX2RmIDwtIGZ1bk1vZGVsaW5nOjpkZl9zdGF0dXMoZGYsIHByaW50X3Jlc3VsdHMgPSBGQUxTRSkNCg0KbWV0YV9kZiAlPiUNCiAgc2VsZWN0KHZhcmlhYmxlLCBwX3plcm9zLCBwX25hLCB1bmlxdWUpICU+JQ0KICBmaWx0ZXJfKH4gdmFyaWFibGUgJWluJSBudW1fdmFycykgJT4lDQogIGtuaXRyOjprYWJsZSgpDQoNCmBgYA0KDQo8aDM+Q29ycmVsYXRpb24gcGxvdDwvaDM+IA0KPHA+Rmlyc3Qgc3RlcCB0byBnZXQgYW4gb3ZlcnZpZXcgb2YgcG90ZW50aWFsIGNvbGxpbmVhcml0aWVzLiBGYWlsaW5nIHRvIGlkZW50aWZ5IG11bHRpY29sbGluZWFyaXR5IGNvdWxkIHJlc3VsdCBpbiBtaXNsZWFkaW5nIGludGVycHJldGF0aW9ucyBvZiB0aGUgcmVzdWx0cy48L3A+DQpgYGB7cn0NCmNvcnJwbG90Ojpjb3JycGxvdChjb3IoZGZbLCBudW1fdmFyc10sIHVzZSA9ICJjb21wbGV0ZS5vYnMiKSwgDQogICAgICAgICAgICAgICAgICAgbWV0aG9kID0gInBpZSIsIHR5cGUgPSAidXBwZXIiLHRsLmNleCA9IDAuNjUpDQpgYGANCg0KPGgzPkRpc3BsYXkgaGlnaGx5IGNvcnJlbGF0ZWQgdmFyaWFibGVzPC9oMz4NCjxwPldlIHdhbnQgdG8gaWRlbnRpZnkgY29sbGluZWFyaXRpZXMgd2hpY2ggY291bGQgYWZmZWN0IG91ciByZWdyZXNzaW9uIG1vZGVsLiBBIEN1dC1vZmYgYXQgMC41IGlzIGFwcGxpZWQuPC9wPg0KDQpgYGB7cn0NCmNhcmV0OjpmaW5kQ29ycmVsYXRpb24oY29yKGRmWywgbnVtX3ZhcnNdLCB1c2UgPSAiY29tcGxldGUub2JzIiksIA0KICAgICAgICAgICAgICAgICAgICAgICBuYW1lcyA9IFRSVUUsIGN1dG9mZiA9IC41KQ0KYGBgDQoNCjxoMz5SZW1vdmUgaGlnaGx5IGNvcnJlbGF0ZWQgdmFyaWFibGVzIHRvIGF2b2lkIHRoZSBpbnRlcmZlcmVuY2Ugb2YgY29sbGluZWFyaXR5IGluIG91ciBtb2RlbDwvaDM+DQo8cD5NdWx0aWNvbGxpbmVhcml0eSBhcmlzZXMgd2hlbiBhdCBsZWFzdCB0d28gaGlnaGx5IGNvcnJlbGF0ZWQgcHJlZGljdG9ycyBhcmUgYXNzZXNzZWQgc2ltdWx0YW5lb3VzbHkgaW4gYSByZWdyZXNzaW9uIG1vZGVsLjwvcD4NCmBgYHtyfQ0KdmFyc190b19yZW1vdmUgPC0gDQogIGMoImxvYW5fYW1udCIsICJmdW5kZWRfYW1udCIsICJmdW5kZWRfYW1udF9pbnYiLCAiaW5zdGFsbG1lbnQiLCAidG90YWxfcHltbnRfaW52IiwgDQogICAgIm91dF9wcm5jcCIsICJ0b3RhbF9weW1udCIsICJ0b3RhbF9yZWNfcHJuY3AiLCAidG90YWxfYWNjIiwNCiAgICAibXRoc19zaW5jZV9sYXN0X3JlY29yZCIsICAibXRoc19zaW5jZV9sYXN0X2RlbGlucSIsICJyZWNvdmVyaWVzIikNCg0KZGYgPC0gZGYgJT4lIHNlbGVjdCgtb25lX29mKHZhcnNfdG9fcmVtb3ZlKSkNCg0KYGBgDQoNCjxoMz5SZW1vdmUgcm93cyB3aGVyZSBkYXRlIGNvbHVtbnMgY29udGFpbiBOL0EgdmFsdWVzICgyNSByZWNzKTwvaDM+DQpgYGB7cn0NCmRmIDwtIGRmW2NvbXBsZXRlLmNhc2VzKGRmKSwgXQ0KYGBgDQoNCjxoMz5SZWNyZWF0ZSBtZXRhIHRhYmxlPC9oMz4NCmBgYHtyfQ0KbWV0YV9kZiA8LSBmdW5Nb2RlbGluZzo6ZGZfc3RhdHVzKGRmLCBwcmludF9yZXN1bHRzID0gRkFMU0UpDQprbml0cjo6a2FibGUoIG1ldGFfZGYgKQ0KYGBgDQoNCjxoMz5TZXQgdGhlIHRyYWluaW5nIGFuZCB0ZXN0IGRhdGEgKDgwJSB0cmFpbiwgMjAlIHRlc3QpPC9oMz4NCmBgYHtyfQ0KdHJhaW5faW5kZXggPC0gY2FyZXQ6OmNyZWF0ZURhdGFQYXJ0aXRpb24oeSA9IGRmJGludF9yYXRlLCB0aW1lcyA9IDEsIHAgPSAuOCwgbGlzdCA9IEZBTFNFKQ0KDQp0cmFpbiA8LSBkZlt0cmFpbl9pbmRleCwgXQ0KdGVzdCA8LSBkZlstdHJhaW5faW5kZXgsIF0NCmBgYA0KDQoNCjxoMz5EYXRhIHByZXByb2Nlc3Npbmc8L2gzPg0KDQo8cD4NClRoZSBmb2xsb3dpbmcgc3RlcHMgYXJlIGV4ZWN1dGVkOg0KDQo8dWw+DQo8bGk+UmVtb3ZlIG5lYXItemVybyB2YXJpYW5jZSBwcmVkaWN0b3JzLiBUaGVzZSBwcmVkaWN0b3JzIGNhbiBpbnRlcmZlcmUgd2l0aCBvdXIgbW9kZWwgdHJhaW5pbmcgdXNpbmcgY3Jvc3MtdmFsaWRhdGlvbnMuIFdlIHdhbnQgdG8gcmVtb3ZlIHZhcmlhYmxlcyB3aXRoIGEgaGlnaCBmcmVxdWVuY3kgcmF0aW8gYW5kIGEgaGlnaCBwZXJjZW50YWdlIG9mIHVuaXF1ZSB2YWx1ZXMuPC9saT4NCg0KPGxpPkNvbnZlcnQgZGF0ZSBwcmVkaWN0b3JzIGludG8gZmFjdG9ycy9udW1lcmljIHZhcmlhYmxlcyBhbmQgcmVtb3ZlIHRoZSBkYXRlIHByZWRpY3RvcnMgYWZ0ZXJ3YXJkczwvbGk+DQoNCjxsaT5DcmVhdGUgZHVtbXkgdmFyaWFibGVzIG9mIG5vbWluYWwgcHJlZGljdG9ycy48L2xpPg0KDQo8bGk+Tm9ybWFsaXplIG51bWVyaWMgZGF0YSB0byBoYXZlIGEgc3RhbmRhcmQgZGV2aWF0aW9uIG9mIG9uZSBhbmQgYSBtZWFuIG9mIHplcm88L2xpPg0KPC91bD4NCjwvcD4NCmBgYHtyfQ0KcmVjaXBlX29iaiA8LSByZWNpcGUoIGludF9yYXRlIH4gLiwgZGF0YSA9IHRyYWluICkgJT4lDQogIHN0ZXBfbnp2KGFsbF9wcmVkaWN0b3JzKCkpICU+JQ0KICBzdGVwX2RhdGUoIGhhc190eXBlKCBtYXRjaCA9ICJkYXRlIiApICkgJT4lDQogIHN0ZXBfcm0oIGhhc190eXBlKCBtYXRjaCA9ICJkYXRlIiApICkgJT4lDQogIHN0ZXBfZHVtbXkoIGFsbF9ub21pbmFsKCksIC1hbGxfb3V0Y29tZXMoKSApICU+JQ0KICBzdGVwX25vcm1hbGl6ZSggYWxsX3ByZWRpY3RvcnMoKSApDQoNCnJlY2lwZV9vYmoNCmBgYA0KDQo8aDM+RGVmaW5lIHRoZSByZXNhbXBsaW5nIG1ldGhvZCBmb3IgbW9kZWwgdHJhaW5pbmc8L2gzPg0KPHA+V2UgYXBwbHkgYSAxMC10aW1lIGNyb3NzIHZhbGlkYXRpb24gZm9yIG91ciByZWdyZXNzaW9uIG1vZGVscy48L3A+DQpgYGB7cn0NCmZpdENvbnRyb2wgPC0gdHJhaW5Db250cm9sKG1ldGhvZCA9ICJjdiIsIHZlcmJvc2VJdGVyID0gVFJVRSkNCmBgYA0KDQo8aDM+VHJhaW4gbGluZWFyIHJlZ3Jlc3Npb24gbW9kZWw8L2gzPg0KYGBge3J9DQptb2RlbCA8LSB0cmFpbihyZWNpcGVfb2JqLCBkYXRhID0gdHJhaW4sDQogICAgICAgICAgICAgICBtZXRob2QgPSAibG0iLA0KICAgICAgICAgICAgICAgdHVuZUxlbmd0aCA9IDEwLA0KICAgICAgICAgICAgICAgdHJDb250cm9sID0gZml0Q29udHJvbCkNCg0KbW9kZWwNCmBgYA0KDQo8aDM+R2VuZXJhdGUgcHJlZGljdGlvbnMgYW5kIGRpc3BsYXkgUk1TRSwgUnNxdWFyZWQgYW5kIE1BRTwvaDM+DQpgYGB7cn0NCnRlc3RfcmVzdWx0cyA8LSBkYXRhLmZyYW1lKENsYXNzID0gdGVzdCRpbnRfcmF0ZSkNCnRlc3RfcmVzdWx0cyRwcmVkaWN0ZWQuaW50X3JhdGUgPC0gcHJlZGljdChtb2RlbCwgdGVzdCkNCg0KcG9zdFJlc2FtcGxlKHByZWQgPSB0ZXN0X3Jlc3VsdHMkcHJlZGljdGVkLmludF9yYXRlLCBvYnMgPSB0ZXN0JGludF9yYXRlKQ0KYGBgDQoNCjxoMz5TaG93IHRoZSB0ZXN0IHNldCByZXN1bHRzPC9oMz4NCmBgYHtyfQ0KaGVhZCh0ZXN0X3Jlc3VsdHMpDQpgYGANCg0KPGgzPlNhdmUgdGhlIHJlcXVpcmVkIGRhdGEgdG8gdGhlIGZpbGVzeXN0ZW08L2gzPg0KYGBge3J9DQpzYXZlUkRTKG1vZGVsX21sX2xtLCAibW9kZWwubG0iKQ0Kd3JpdGUuY3N2KHRyYWluX2ZpbHRlcmVkLCAibWxfdHJhaW4uY3N2Iiwgcm93Lm5hbWVzID0gVFJVRSkNCndyaXRlLmNzdih0ZXN0LCAibWxfdGVzdC5jc3YiLCByb3cubmFtZXMgPSBUUlVFKQ0KYGBg</div>
 
 
 
